@@ -1,14 +1,11 @@
 fileFormatVersion: 2
-guid: 3026d9c8b31fe504083ba3bb782bfaf6
+guid: 1be90381566c8f845a9b03b46ee08f45
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
   - first:
-      74: -5324238279805231817
-    second: metarig|Idle
-  - first:
-      74: -2063010765771964711
-    second: metarig|poses
+      74: -203655887218126122
+    second: mixamo.com
   externalObjects: {}
   materials:
     materialImportMode: 1
@@ -29,7 +26,7 @@ ModelImporter:
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
     importConstraints: 0
-    animationCompression: 3
+    animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
     animationScaleError: 0.5
@@ -94,13 +91,13 @@ ModelImporter:
     globalScale: 1
     rootMotionBoneName: 
     hasTranslationDoF: 0
-    hasExtraRoot: 1
+    hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
   autoGenerateAvatarMappingIfUnspecified: 1
-  animationType: 3
+  animationType: 2
   humanoidOversampling: 1
-  avatarSetup: 1
+  avatarSetup: 0
   additionalBone: 0
   userData: 
   assetBundleName: 

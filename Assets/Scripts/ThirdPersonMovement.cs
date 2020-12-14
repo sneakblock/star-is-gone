@@ -10,11 +10,13 @@ public class ThirdPersonMovement : MonoBehaviour
     public CharacterController myCC;
     public Transform cam;
 
-    public float speed = 6f;
+    private float speed = 3f;
 
     public float turnSmoothTime = 0.1f;
 
     private float turnSmoothVelocity;
+
+    private bool isSneaking = false;
 
     public Vector3 fallVector;
 
@@ -29,6 +31,19 @@ public class ThirdPersonMovement : MonoBehaviour
     void Update()
     {
         anim.SetBool("isMoving", false);
+        if (Input.GetKeyDown(KeyCode.LeftControl) && !isSneaking)
+        {
+            isSneaking = true;
+            anim.SetBool("isSneaking", true);
+            Debug.Log("Character is now sneaking.");
+        } else if (Input.GetKeyDown(KeyCode.LeftControl) && isSneaking)
+        {
+            isSneaking = false;
+            anim.SetBool("isSneaking", false);
+            Debug.Log("Character is no longer sneaking.");
+        }
+        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        
         footstepSource.mute = true;
 
         fallVector = Vector3.zero;
@@ -39,8 +54,42 @@ public class ThirdPersonMovement : MonoBehaviour
             myCC.Move(fallVector * Time.deltaTime);
         }
 
+        if (myCC.velocity.y < -9.8f)
+        {
+            anim.SetBool("isFalling", true);
+        }
+        else
+        {
+            anim.SetBool("isFalling", false);
+        }
+
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+        
+
+        if (isRunning)
+        {
+            anim.SetBool("isRunning", true);
+            anim.SetBool("isSneaking", false);
+            Debug.Log("Character is no longer sneaking.");
+            footstepSource.pitch = 2.5f;
+            isSneaking = false;
+            speed = 5.5f;
+        }
+        else if (!isRunning && !isSneaking)
+        {
+            anim.SetBool("isRunning", false);
+            anim.SetBool("isSneaking", false);
+            Debug.Log("Character is no longer sneaking.");
+            footstepSource.pitch = 1.3f;
+            speed = 2.5f;
+        } else if (!isRunning && isSneaking)
+        {
+            anim.SetBool("isSneaking", true);
+            Debug.Log("Character is now sneaking.");
+            footstepSource.pitch = 1.2f;
+            speed = 1.3f;
+        }
 
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
         

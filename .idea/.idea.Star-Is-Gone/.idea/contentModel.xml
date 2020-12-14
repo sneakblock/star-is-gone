@@ -355,6 +355,7 @@
           <e p="EndGame.cs" t="Include" />
           <e p="EnterDiner.cs" t="Include" />
           <e p="FlickerLight.cs" t="Include" />
+          <e p="IKFootPlacement.cs" t="Include" />
           <e p="LightFlickerEffect.cs" t="Include" />
           <e p="PopUpSystem.cs" t="Include" />
           <e p="ThirdPersonMovement.cs" t="Include" />
