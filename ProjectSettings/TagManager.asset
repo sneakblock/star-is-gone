@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DialogManager
   - strobelight
+  - Walkable
   layers:
   - Default
   - TransparentFX
@@ -16,7 +17,7 @@ TagManager:
   - 
   - 
   - postprocess
-  - 
+  - player
   - 
   - 
   - 

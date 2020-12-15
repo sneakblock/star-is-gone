@@ -14,6 +14,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/ThirdPersonMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/IKFootPlacement.cs" />
       </list>
     </option>
   </component>
@@ -83,6 +84,7 @@
       <workItem from="1607902963847" duration="33000" />
       <workItem from="1607903254113" duration="1013000" />
       <workItem from="1607904479336" duration="6943000" />
+      <workItem from="1607985874406" duration="4466000" />
     </task>
     <servers />
   </component>
