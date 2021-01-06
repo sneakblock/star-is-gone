@@ -269,6 +269,141 @@
             </e>
           </e>
         </e>
+        <e p="Emerald AI" t="Include">
+          <e p="Credit" t="Include">
+            <e p="Credit.txt" t="Include" />
+          </e>
+          <e p="Demo Source" t="Include">
+            <e p="AI Models" t="Include">
+              <e p="BitGem" t="Include">
+                <e p="Skeleton_Swordsman" t="Include">
+                  <e p="Animations" t="Include">
+                    <e p="skeleton_swordsman_animation_list.txt" t="Include" />
+                  </e>
+                </e>
+              </e>
+              <e p="MeshSmith" t="Include">
+                <e p="ToonMonsterII" t="Include">
+                  <e p="Toon Demon" t="Include">
+                    <e p="Mesh" t="Include">
+                      <e p="readMe.txt" t="Include" />
+                    </e>
+                  </e>
+                  <e p="Toon Mouse Spear" t="Include">
+                    <e p="Mesh" t="Include">
+                      <e p="readMe.txt" t="Include" />
+                    </e>
+                  </e>
+                  <e p="Toon Rock" t="Include">
+                    <e p="Mesh" t="Include">
+                      <e p="readMe.txt" t="Include" />
+                    </e>
+                  </e>
+                </e>
+              </e>
+              <e p="MikeMoose" t="Include">
+                <e p="Art" t="Include">
+                  <e p="Shaders" t="Include">
+                    <e p="SeeThrough.shader" t="Include" />
+                  </e>
+                </e>
+              </e>
+              <e p="RainEntertainment" t="Include">
+                <e p="FantasyMonster2" t="Include">
+                  <e p="Elf Mage Pack" t="Include">
+                    <e p="readMe.txt" t="Include" />
+                  </e>
+                </e>
+              </e>
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Character Controller" t="Include">
+              <e p="EmeraldAICharacterController.cs" t="Include" />
+              <e p="EmeraldAICharacterControllerTopDown.cs" t="Include" />
+              <e p="EmeraldAIHideMouse.cs" t="Include" />
+              <e p="EmeraldAIMouseLook.cs" t="Include" />
+              <e p="EmeraldAISmoothFollow.cs" t="Include" />
+            </e>
+            <e p="Components" t="Include">
+              <e p="AnimationProfile.cs" t="Include" />
+              <e p="CombatTextSystem.cs" t="Include" />
+              <e p="EmeraldAIAbility.cs" t="Include" />
+              <e p="EmeraldAIBehaviors.cs" t="Include" />
+              <e p="EmeraldAICombatManager.cs" t="Include" />
+              <e p="EmeraldAICombatTextData.cs" t="Include" />
+              <e p="EmeraldAIDamageOverTime.cs" t="Include" />
+              <e p="EmeraldAIDetection.cs" t="Include" />
+              <e p="EmeraldAIEventsManager.cs" t="Include" />
+              <e p="EmeraldAIFactionData.cs" t="Include" />
+              <e p="EmeraldAIInitializer.cs" t="Include" />
+              <e p="EmeraldAINeedsSystem.cs" t="Include" />
+              <e p="EmeraldAINonAIDamage.cs" t="Include" />
+              <e p="EmeraldAIObjectPool.cs" t="Include" />
+              <e p="EmeraldAIPlayerDamage.cs" t="Include" />
+              <e p="EmeraldAIProjectile.cs" t="Include" />
+              <e p="EmeraldAIProjectileTimeout.cs" t="Include" />
+              <e p="EmeraldAITimedDespawn.cs" t="Include" />
+              <e p="SummonedAIComponent.cs" t="Include" />
+              <e p="VisibilityCheck.cs" t="Include" />
+              <e p="VisibilityCheckDelay.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="AnimationProfileExporter.cs" t="Include" />
+              <e p="CustomEditorProperties.cs" t="Include" />
+              <e p="EmeraldAIAbilityEditor.cs" t="Include" />
+              <e p="EmeraldAIAnimatorGenerator.cs" t="Include" />
+              <e p="EmeraldAICombatTextManager.cs" t="Include" />
+              <e p="EmeraldAIDefine.cs" t="Include" />
+              <e p="EmeraldAIEditor.cs" t="Include" />
+              <e p="EmeraldAIFactionManager.cs" t="Include" />
+              <e p="EmeraldAINeedsSystemEditor.cs" t="Include" />
+              <e p="EmeraldAISetupManager.cs" t="Include" />
+            </e>
+            <e p="Example Systems" t="Include">
+              <e p="AISchedule.cs" t="Include" />
+              <e p="CameraShake.cs" t="Include" />
+              <e p="DamageAIByAngle.cs" t="Include" />
+              <e p="DamageAIByCollision.cs" t="Include" />
+              <e p="DebugEvent.cs" t="Include" />
+              <e p="HUDHealthBar.cs" t="Include" />
+              <e p="HUDHealthBarTopDown.cs" t="Include" />
+              <e p="MoveToMousePosition.cs" t="Include" />
+              <e p="NeedsSystemDisplay.cs" t="Include" />
+              <e p="PlayAIsEmote.cs" t="Include" />
+              <e p="RaycastHitAI.cs" t="Include" />
+              <e p="SpawnCompanion.cs" t="Include" />
+              <e p="SpawnObjectEvent.cs" t="Include" />
+              <e p="TameAI.cs" t="Include" />
+              <e p="UpdatePlayerHealthOrbUI.cs" t="Include" />
+              <e p="UpdatePlayerHealthUI.cs" t="Include" />
+            </e>
+            <e p="Player" t="Include">
+              <e p="DamageAISystem.cs" t="Include" />
+              <e p="Editor" t="Include">
+                <e p="PlayerWeaponEditor.cs" t="Include" />
+                <e p="PlayerWeaponEditor3rdPerson.cs" t="Include" />
+              </e>
+              <e p="EmeraldAIPlayerHealth.cs" t="Include" />
+              <e p="PlayerWeapon.cs" t="Include" />
+              <e p="PlayerWeapon3rdPerson.cs" t="Include" />
+              <e p="SwordAnimation.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="Emerald AI Outline Shader.shader" t="Include" />
+              <e p="Emerald AI UI +1.shader" t="Include" />
+              <e p="Emerald AI UI.shader" t="Include" />
+            </e>
+            <e p="System" t="Include">
+              <e p="EmeraldAISystem.cs" t="Include" />
+            </e>
+            <e p="UI" t="Include">
+              <e p="CombatText.cs" t="Include" />
+              <e p="CombatTextAnimator.cs" t="Include" />
+              <e p="EmeraldAIHealthBar.cs" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="PSXEffects" t="Include">
           <e p="Documentation.txt" t="Include" />
           <e p="Editor" t="Include">
@@ -383,6 +518,7 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AttackPlayer.cs" t="Include" />
           <e p="CountManager.cs" t="Include" />
           <e p="dialogRange.cs" t="Include" />
           <e p="EndGame.cs" t="Include" />
