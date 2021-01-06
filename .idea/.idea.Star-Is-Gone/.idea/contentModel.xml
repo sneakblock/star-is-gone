@@ -269,6 +269,39 @@
             </e>
           </e>
         </e>
+        <e p="PSXEffects" t="Include">
+          <e p="Documentation.txt" t="Include" />
+          <e p="Editor" t="Include">
+            <e p="PS1EffectsEditor.cs" t="Include" />
+            <e p="PS1ShaderEditor.cs" t="Include" />
+            <e p="SCProcessor.cs" t="Include" />
+            <e p="SCWindow.cs" t="Include" />
+          </e>
+          <e p="Example" t="Include">
+            <e p="Scripts" t="Include">
+              <e p="CameraFlythrough.cs" t="Include" />
+              <e p="CameraMovement.cs" t="Include" />
+              <e p="CameraOrbit.cs" t="Include" />
+              <e p="DemoInfo.cs" t="Include" />
+              <e p="DemoValueChanger.cs" t="Include" />
+              <e p="ObjectRotate.cs" t="Include" />
+              <e p="PlayerMovement.cs" t="Include" />
+              <e p="PropertyModifier.cs" t="Include" />
+              <e p="VertexColors.cs" t="Include" />
+            </e>
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="PSXEffects.cs" t="Include" />
+          </e>
+          <e p="Shaders" t="Include">
+            <e p="Resources" t="Include">
+              <e p="PS1PostProcessing.shader" t="Include" />
+              <e p="PS1Shader.shader" t="Include" />
+              <e p="PSXEffects.cginc" t="Include" />
+              <e p="PSXLightmapping.cginc" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Sandbox_Ben" t="Include">
           <e p="Demo Files" t="Include">
             <e p="Utilities" t="Include">

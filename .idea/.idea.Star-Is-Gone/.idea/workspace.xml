@@ -15,6 +15,7 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Scripts/ThirdPersonMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/IKFootPlacement.cs" />
+        <option value="$PROJECT_DIR$/Assets/PSXEffects/Shaders/Resources/PS1Shader.shader" />
       </list>
     </option>
   </component>
@@ -85,6 +86,11 @@
       <workItem from="1607903254113" duration="1013000" />
       <workItem from="1607904479336" duration="6943000" />
       <workItem from="1607985874406" duration="4466000" />
+      <workItem from="1609828548476" duration="599000" />
+      <workItem from="1609882402065" duration="424000" />
+      <workItem from="1609882840773" duration="3000" />
+      <workItem from="1609882895543" duration="6000" />
+      <workItem from="1609882998023" duration="19000" />
     </task>
     <servers />
   </component>
