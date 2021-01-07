@@ -520,10 +520,13 @@
         <e p="Scripts" t="Include">
           <e p="AttackPlayer.cs" t="Include" />
           <e p="CountManager.cs" t="Include" />
+          <e p="DamagePlayer.cs" t="Include" />
+          <e p="DamagePlayerTest.cs" t="Include" />
           <e p="dialogRange.cs" t="Include" />
           <e p="EndGame.cs" t="Include" />
           <e p="EnterDiner.cs" t="Include" />
           <e p="FlickerLight.cs" t="Include" />
+          <e p="HealthSystem.cs" t="Include" />
           <e p="IKFootPlacement.cs" t="Include" />
           <e p="LightFlickerEffect.cs" t="Include" />
           <e p="PopUpSystem.cs" t="Include" />

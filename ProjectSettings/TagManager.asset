@@ -8,7 +8,7 @@ TagManager:
   - strobelight
   - Walkable
   - DemoRoom
-  - Enemy
+  - AI
   layers:
   - Default
   - TransparentFX
@@ -19,7 +19,7 @@ TagManager:
   - 
   - 
   - postprocess
-  - player
+  - Player
   - Enemy
   - 
   - 

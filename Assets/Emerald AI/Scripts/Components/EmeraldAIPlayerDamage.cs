@@ -35,11 +35,10 @@ namespace EmeraldAI
 
         void DamagePlayerStandard(int DamageAmount)
         {
-            if (GetComponent<EmeraldAIPlayerHealth>() != null)
-            {
-                EmeraldAIPlayerHealth PlayerHealth = GetComponent<EmeraldAIPlayerHealth>();
-                PlayerHealth.DamagePlayer(DamageAmount);
-            }
+            Debug.Log("Enemy did damage");
+            GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
+            HealthSystem target = playerGameObject.GetComponent<HealthSystem>();
+            target.takeDamage(DamageAmount);
         }
 
         /*
