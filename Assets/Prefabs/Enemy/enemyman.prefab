@@ -673,7 +673,7 @@ MonoBehaviour:
   StartingAttackDistance: 4
   AttackDistance: 1
   RangedAttackDistance: 25
-  RunAttackDistance: 5
+  RunAttackDistance: 3
   CautiousSeconds: 8
   DeactivateDelay: 5
   SecondsToDisable: 6
@@ -811,7 +811,7 @@ MonoBehaviour:
   ActionAnimationRef: 2
   PickTargetMethodRef: 0
   UseNonAITagRef: 0
-  UseRunAttacksRef: 1
+  UseRunAttacksRef: 0
   UseMagicEffectsPackRef: 0
   WeaponTypeRef: 0
   StartingWeaponTypeRef: 0
