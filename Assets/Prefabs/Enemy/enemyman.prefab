@@ -403,7 +403,7 @@ MonoBehaviour:
   NewDestination: {x: 0, y: 0, z: 0}
   ForceTransform: {fileID: 0}
   ReceivedRagdollForceAmount: 0
-  SentRagdollForceAmount: 200
+  SentRagdollForceAmount: 500
   HitTransform: {fileID: 0}
   RagdollTransform: {fileID: 0}
   TargetDestination: {x: 0, y: 0, z: 0}
