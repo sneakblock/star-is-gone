@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using EmeraldAI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -12,30 +13,34 @@ public class EnemyFormChangeManager : MonoBehaviour
 
     void Start()
     {
-        form1.SetActive(true);
-        form2.SetActive(false);
+        //form1.SetActive(true);
+        //form2.SetActive(false);
+        form1.GetComponentInChildren<Renderer>().enabled = true;
+        form2.GetComponentInChildren<Renderer>().enabled = false;
         InvokeRepeating("FormChanger", 0, 4);
     }
 
+    /*
     void Update()
     {
-        if (form1.activeSelf && !form2.activeSelf)
+        if (form1.GetComponentInChildren<Renderer>().enabled && !form2.GetComponentInChildren<Renderer>().enabled)
         {
             form2.transform.position = form1.transform.position;
             form2.transform.forward = form1.transform.forward;
-        } else if (!form1.activeSelf && form2.activeSelf)
+        } else if (!form1.GetComponentInChildren<Renderer>().enabled && form2.GetComponentInChildren<Renderer>().enabled)
         {
             form1.transform.position = form2.transform.position;
             form1.transform.forward = form2.transform.forward;
         }
     }
+    */
 
 
     void FormChanger()
     {
         if (Random.Range(0, 100) <= 50)
         {
-            if (form1.activeSelf && !form2.activeSelf)
+            if (form1.GetComponentInChildren<Renderer>().enabled && !form2.GetComponentInChildren<Renderer>().enabled)
             {
                 Debug.Log("changing to feral form");
                 SwapForms(form1, form2);
@@ -43,7 +48,7 @@ public class EnemyFormChangeManager : MonoBehaviour
         }
         else
         {
-            if (form2.activeSelf && !form1.activeSelf)
+            if (form2.GetComponentInChildren<Renderer>().enabled && !form1.GetComponentInChildren<Renderer>().enabled)
             {
                 Debug.Log("changing to human form");
                 SwapForms(form2, form1);
@@ -56,12 +61,13 @@ public class EnemyFormChangeManager : MonoBehaviour
         yield return new WaitForSeconds(2);
     }
 
-    void SwapForms(GameObject form1, GameObject form2)
+    void SwapForms(GameObject fromForm, GameObject toForm)
     {
-        form2.GetComponentInChildren<Renderer>().enabled = false;
-        form2.SetActive(true);
-        Cooldown();
-        form2.GetComponentInChildren<Renderer>().enabled = true;
-        form1.SetActive(false);
+        fromForm.GetComponentInChildren<Renderer>().enabled = false;
+        fromForm.GetComponent<EmeraldAISystem>().enabled = false;
+        toForm.transform.position = fromForm.transform.position;
+        toForm.transform.forward = fromForm.transform.forward;
+        toForm.GetComponent<EmeraldAISystem>().enabled = true;
+        toForm.GetComponentInChildren<Renderer>().enabled = true;
     }
 }
