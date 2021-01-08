@@ -524,6 +524,9 @@
           <e p="DamagePlayerTest.cs" t="Include" />
           <e p="dialogRange.cs" t="Include" />
           <e p="EndGame.cs" t="Include" />
+          <e p="Enemy" t="Include">
+            <e p="EnemyFormChangeManager.cs" t="Include" />
+          </e>
           <e p="EnterDiner.cs" t="Include" />
           <e p="FlickerLight.cs" t="Include" />
           <e p="HealthSystem.cs" t="Include" />

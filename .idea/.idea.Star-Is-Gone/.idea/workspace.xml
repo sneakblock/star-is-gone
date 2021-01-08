@@ -17,7 +17,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/Assets/Scripts/ThirdPersonMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/IKFootPlacement.cs" />
         <option value="$PROJECT_DIR$/Assets/PSXEffects/Shaders/Resources/PS1Shader.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/AttackPlayer.cs" />
@@ -25,6 +24,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/DamagePlayerTest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Emerald AI/Scripts/Components/EmeraldAIPlayerDamage.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyFormChangeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ThirdPersonMovement.cs" />
       </list>
     </option>
   </component>
@@ -105,6 +106,8 @@
       <workItem from="1609984537940" duration="3450000" />
       <workItem from="1609988753652" duration="950000" />
       <workItem from="1610078791827" duration="7000" />
+      <workItem from="1610131110340" duration="2421000" />
+      <workItem from="1610133669374" duration="11000" />
     </task>
     <servers />
   </component>

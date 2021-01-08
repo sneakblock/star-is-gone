@@ -35,12 +35,12 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             isSneaking = true;
             anim.SetBool("isSneaking", true);
-            Debug.Log("Character is now sneaking.");
+            //Debug.Log("Character is now sneaking.");
         } else if (Input.GetKeyDown(KeyCode.LeftControl) && isSneaking)
         {
             isSneaking = false;
             anim.SetBool("isSneaking", false);
-            Debug.Log("Character is no longer sneaking.");
+            //Debug.Log("Character is no longer sneaking.");
         }
         bool isRunning = Input.GetKey(KeyCode.LeftShift);
         
@@ -71,7 +71,7 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             anim.SetBool("isRunning", true);
             anim.SetBool("isSneaking", false);
-            Debug.Log("Character is no longer sneaking.");
+            //Debug.Log("Character is no longer sneaking.");
             footstepSource.pitch = 2.5f;
             isSneaking = false;
             speed = 5.5f;
@@ -80,13 +80,13 @@ public class ThirdPersonMovement : MonoBehaviour
         {
             anim.SetBool("isRunning", false);
             anim.SetBool("isSneaking", false);
-            Debug.Log("Character is no longer sneaking.");
+            //Debug.Log("Character is no longer sneaking.");
             footstepSource.pitch = 1.3f;
             speed = 2.5f;
         } else if (!isRunning && isSneaking)
         {
             anim.SetBool("isSneaking", true);
-            Debug.Log("Character is now sneaking.");
+            //Debug.Log("Character is now sneaking.");
             footstepSource.pitch = 1.2f;
             speed = 1.3f;
         }
