@@ -24,8 +24,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/DamagePlayerTest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Emerald AI/Scripts/Components/EmeraldAIPlayerDamage.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyFormChangeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ThirdPersonMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyFormChangeManager.cs" />
       </list>
     </option>
   </component>

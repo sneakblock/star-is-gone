@@ -14,7 +14,7 @@ public class EnemyFormChangeManager : MonoBehaviour
     {
         form1.SetActive(true);
         form2.SetActive(false);
-        InvokeRepeating("FormChanger", 0, 2);
+        InvokeRepeating("FormChanger", 0, 4);
     }
 
     void Update()
@@ -33,21 +33,27 @@ public class EnemyFormChangeManager : MonoBehaviour
 
     void FormChanger()
     {
-        if (Random.Range(0, 100) <= 20)
+        if (Random.Range(0, 100) <= 50)
         {
-            Debug.Log("changing to feral form");
-            SwapForms(form1, form2);
+            if (form1.activeSelf && !form2.activeSelf)
+            {
+                Debug.Log("changing to feral form");
+                SwapForms(form1, form2);
+            }
         }
         else
         {
-            Debug.Log("changing to human form");
-            SwapForms(form2, form1);
+            if (form2.activeSelf && !form1.activeSelf)
+            {
+                Debug.Log("changing to human form");
+                SwapForms(form2, form1);
+            }
         }
     }
 
     IEnumerator Cooldown()
     {
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
     }
 
     void SwapForms(GameObject form1, GameObject form2)
