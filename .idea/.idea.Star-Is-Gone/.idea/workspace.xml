@@ -23,8 +23,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/AttackPlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DamagePlayer.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DamagePlayerTest.cs" />
-        <option value="$PROJECT_DIR$/Assets/Emerald AI/Scripts/Components/EmeraldAIPlayerDamage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem.cs" />
+        <option value="$PROJECT_DIR$/Assets/Emerald AI/Scripts/Components/EmeraldAIPlayerDamage.cs" />
       </list>
     </option>
   </component>
@@ -104,6 +104,7 @@
       <workItem from="1609984329994" duration="59000" />
       <workItem from="1609984537940" duration="3450000" />
       <workItem from="1609988753652" duration="950000" />
+      <workItem from="1610078791827" duration="7000" />
     </task>
     <servers />
   </component>
