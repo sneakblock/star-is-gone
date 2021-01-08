@@ -26,6 +26,7 @@
         <option value="$PROJECT_DIR$/Assets/Emerald AI/Scripts/Components/EmeraldAIPlayerDamage.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ThirdPersonMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyFormChangeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/ScaryJitter.cs" />
       </list>
     </option>
   </component>

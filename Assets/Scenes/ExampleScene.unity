@@ -1573,11 +1573,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 851434404426201627, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
       propertyPath: TemperamentTabNumber
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 851434404426201627, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
       propertyPath: AnimationsUpdated
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 851434404426201627, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
       propertyPath: WalkSpeed
@@ -1590,6 +1590,18 @@ PrefabInstance:
     - target: {fileID: 851434404426201627, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
       propertyPath: WalkBackwardsSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 851434404426201627, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
+      propertyPath: UseRunAttacksRef
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 851434404426201627, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
+      propertyPath: CombatTabNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 851434404426201627, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
+      propertyPath: TabNumber
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 5215013123245439640, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
       propertyPath: m_Name
@@ -2099,15 +2111,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2227008465865348907, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.00969136
+      value: -0.009691361
       objectReference: {fileID: 0}
     - target: {fileID: 2227008465865348907, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 8.297204e-10
+      value: -4.1756323e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2227008465865348907, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 8.041497e-12
+      value: -4.0469472e-12
       objectReference: {fileID: 0}
     - target: {fileID: 2227008465865348907, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3030,6 +3042,50 @@ PrefabInstance:
     - target: {fileID: 3255351885369112627, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
       propertyPath: m_Name
       value: feralT-Pose 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: TabNumber
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: AttackAnimationList.Array.data[0].AnimationClip
+      value: 
+      objectReference: {fileID: 5559951070893279444, guid: 1eac958d6f996904fa0f55e7fecad4a2, type: 3}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: AnimationListsChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: RunAttackAnimationList.Array.data[0].AnimationClip
+      value: 
+      objectReference: {fileID: 5559951070893279444, guid: 1eac958d6f996904fa0f55e7fecad4a2, type: 3}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: Attack1Animation
+      value: 
+      objectReference: {fileID: 5559951070893279444, guid: 1eac958d6f996904fa0f55e7fecad4a2, type: 3}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: RunAttack1Animation
+      value: 
+      objectReference: {fileID: 5559951070893279444, guid: 1eac958d6f996904fa0f55e7fecad4a2, type: 3}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: TemperamentTabNumber
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: AttackDistance
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: CombatTabNumber
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: SentRagdollForceAmount
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: RunAttackDistance
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
