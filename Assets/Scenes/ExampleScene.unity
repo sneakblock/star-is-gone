@@ -1567,6 +1567,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: enemyman
       objectReference: {fileID: 0}
+    - target: {fileID: 851434404426201603, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 851434404426201627, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
       propertyPath: SentRagdollForceAmount
       value: 500
@@ -1621,7 +1625,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 859667605}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cfc3545ea75c7d947a688c42fad033b9, type: 3}
   m_Name: 
@@ -2188,15 +2192,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2227008466794399162, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.00845084
+      value: 0.008450839
       objectReference: {fileID: 0}
     - target: {fileID: 2227008466794399162, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 2.4704236e-10
+      value: -0.000000001631848
       objectReference: {fileID: 0}
     - target: {fileID: 2227008466794399162, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -2.0877909e-12
+      value: 1.3790976e-11
       objectReference: {fileID: 0}
     - target: {fileID: 2227008466794399162, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2204,15 +2208,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2227008467165256071, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: 0.02663829
+      value: 0.02663827
       objectReference: {fileID: 0}
     - target: {fileID: 2227008467165256071, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0.000000017267432
+      value: -0.000000017166746
       objectReference: {fileID: 0}
     - target: {fileID: 2227008467165256071, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -4.6013823e-10
+      value: 4.5745482e-10
       objectReference: {fileID: 0}
     - target: {fileID: 2227008467165256071, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2236,11 +2240,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2227008467736066375, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 9.634988e-10
+      value: -0.0000000024763132
       objectReference: {fileID: 0}
     - target: {fileID: 2227008467736066375, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -8.142661e-12
+      value: 2.0927666e-11
       objectReference: {fileID: 0}
     - target: {fileID: 2227008467736066375, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3058,7 +3062,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
       propertyPath: TabNumber
-      value: 1
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
       propertyPath: AttackAnimationList.Array.data[0].AnimationClip
@@ -3086,7 +3090,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
       propertyPath: AttackDistance
-      value: 2
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
       propertyPath: CombatTabNumber
@@ -3103,6 +3107,46 @@ PrefabInstance:
     - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
       propertyPath: UseRunAttacksRef
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: TooCloseDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: AnimationsUpdated
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: WalkBackwardsSpeed
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: StoppingDistance
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: AnimationTabNumber
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: CombatWalkAnimationSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: CombatRunAnimationSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: MovementTabNumber
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: NonCombatWalkAnimationSpeed
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: NonCombatRunAnimationSpeed
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
@@ -3262,7 +3306,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1698110975}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 94204336f0dbb0a44b7fed50fac16192, type: 3}
   m_Name: 

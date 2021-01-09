@@ -12,6 +12,7 @@ public class SpeedModifier : MonoBehaviour
     {
         sys.WalkSpeed *= 3;
         sys.RunSpeed *= 3;
+        //sys.WalkBackwardsSpeed *= 3;
     }
 
     
