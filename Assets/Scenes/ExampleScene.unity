@@ -1614,6 +1614,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 3255351885369112627, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
   m_PrefabInstance: {fileID: 1478692148}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &859667606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859667605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfc3545ea75c7d947a688c42fad033b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sys: {fileID: 1478692149}
 --- !u!4 &859667615 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2767046245311750793, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
@@ -2111,15 +2124,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2227008465865348907, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.009691361
+      value: -0.0096913595
       objectReference: {fileID: 0}
     - target: {fileID: 2227008465865348907, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -4.1756323e-10
+      value: -0.0000000016756768
       objectReference: {fileID: 0}
     - target: {fileID: 2227008465865348907, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -4.0469472e-12
+      value: -1.624035e-11
       objectReference: {fileID: 0}
     - target: {fileID: 2227008465865348907, guid: 49ac2800d304f9e43b8182207190acc3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3045,7 +3058,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
       propertyPath: TabNumber
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
       propertyPath: AttackAnimationList.Array.data[0].AnimationClip
@@ -3073,7 +3086,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
       propertyPath: AttackDistance
-      value: 5
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
       propertyPath: CombatTabNumber
@@ -3087,8 +3100,23 @@ PrefabInstance:
       propertyPath: RunAttackDistance
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: UseRunAttacksRef
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+--- !u!114 &1478692149 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+  m_PrefabInstance: {fileID: 1478692148}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 859667605}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 147c566cda086894c8206928a751fa91, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1480493206 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100150, guid: bbbd76db8c4f3984f9d3c945f53bd14e, type: 3}

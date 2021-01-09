@@ -27,6 +27,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ThirdPersonMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyFormChangeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/ScaryJitter.cs" />
+        <option value="$PROJECT_DIR$/Assets/SpeedModifier.cs" />
       </list>
     </option>
   </component>
@@ -109,6 +110,7 @@
       <workItem from="1610078791827" duration="7000" />
       <workItem from="1610131110340" duration="2421000" />
       <workItem from="1610133669374" duration="11000" />
+      <workItem from="1610167188559" duration="67000" />
     </task>
     <servers />
   </component>

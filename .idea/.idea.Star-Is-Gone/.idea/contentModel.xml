@@ -542,7 +542,6 @@
           <e p="EndGame.cs" t="Include" />
           <e p="Enemy" t="Include">
             <e p="EnemyFormChangeManager.cs" t="Include" />
-            <e p="ScaryJitter.cs" t="Include" />
           </e>
           <e p="EnterDiner.cs" t="Include" />
           <e p="FlickerLight.cs" t="Include" />
@@ -552,6 +551,7 @@
           <e p="PopUpSystem.cs" t="Include" />
           <e p="ThirdPersonMovement.cs" t="Include" />
         </e>
+        <e p="SpeedModifier.cs" t="Include" />
       </e>
       <e p="obj" t="ExcludeRecursive" />
       <e p="Packages" t="ExcludeRecursive" />
