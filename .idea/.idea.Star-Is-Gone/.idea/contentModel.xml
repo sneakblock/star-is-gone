@@ -1593,6 +1593,13 @@
             </e>
           </e>
         </e>
+        <e p="Scenes" t="Include">
+          <e p="Other" t="Include">
+            <e p="shadertestshaders" t="Include">
+              <e p="testShader.shader" t="Include" />
+            </e>
+          </e>
+        </e>
         <e p="Scripts" t="Include">
           <e p="AttackPlayer.cs" t="Include" />
           <e p="CountManager.cs" t="Include" />
