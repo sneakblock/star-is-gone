@@ -253,7 +253,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2227008465865348906}
-  m_LocalRotation: {x: -0.009691359, y: -0.000000001491227, z: -1.4452694e-11, w: 0.99995303}
+  m_LocalRotation: {x: -0.009691361, y: 4.1756323e-10, z: 4.0469472e-12, w: 0.99995303}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -1280,7 +1280,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2227008467082238846}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!198 &2227008466601796346
 ParticleSystem:
@@ -6221,12 +6221,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2227008466978025683}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 12.879323, y: -18.23725, z: 56.749947}
-  m_LocalScale: {x: 2.6365051, y: 2.6365051, z: 2.6365051}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2227008467082238846}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &2227008466978025681
 AudioSource:
@@ -6691,8 +6691,8 @@ Transform:
   - {fileID: 2227008465844944827}
   - {fileID: 2227008467704482904}
   - {fileID: 2227008465774661875}
-  - {fileID: 2227008466978025680}
   - {fileID: 2227008466601796340}
+  - {fileID: 2227008466978025680}
   m_Father: {fileID: 2227008466462062830}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6835,7 +6835,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2227008467165256070}
-  m_LocalRotation: {x: 0.02663829, y: -0.000000017267432, z: 4.6013823e-10, w: 0.9996452}
+  m_LocalRotation: {x: 0.02663827, y: 0.000000017166746, z: -4.5745482e-10, w: 0.9996452}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7944,7 +7944,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2227008467736066374}
-  m_LocalRotation: {x: 0.008450837, y: 9.634988e-10, z: -8.142661e-12, w: 0.9999643}
+  m_LocalRotation: {x: 0.008450837, y: -9.634988e-10, z: 8.142661e-12, w: 0.9999643}
   m_LocalPosition: {x: -288.99475, y: -50.84423, z: 145.7597}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -8050,7 +8050,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cfuStatus: PSXEffects v1.18 - up to date.
   sections: 01010100
-  customRes: {x: 577, y: 233}
+  customRes: {x: 663, y: 301}
   resolutionFactor: 2
   limitFramerate: -1
   skipFrames: 0
