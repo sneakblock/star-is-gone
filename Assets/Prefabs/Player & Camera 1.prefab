@@ -253,7 +253,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2227008465865348906}
-  m_LocalRotation: {x: -0.039898515, y: -0.0047308323, z: -0.00018890573, w: 0.99919254}
+  m_LocalRotation: {x: -0.039898522, y: -0.0047298893, z: -0.0001888681, w: 0.99919254}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -563,7 +563,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2227008466197501284}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -288.93808, y: -51.207027, z: 145.77713}
+  m_LocalPosition: {x: -288.9381, y: -51.207027, z: 145.77713}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2227008467165256071}
@@ -6117,7 +6117,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2227008466794399157}
-  m_LocalRotation: {x: -0.02176514, y: -0.0047334637, z: -0.00010305006, w: 0.9997519}
+  m_LocalRotation: {x: -0.02176515, y: -0.004732519, z: -0.00010302953, w: 0.9997519}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6835,7 +6835,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2227008467165256070}
-  m_LocalRotation: {x: -0.0035765637, y: -0.0047345553, z: -0.000016933735, w: 0.9999824}
+  m_LocalRotation: {x: -0.003576573, y: -0.0047336114, z: -0.000016930404, w: 0.9999824}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -7925,10 +7925,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2227008467736066375}
-  - component: {fileID: 2705699923826530668}
   - component: {fileID: 2227008467736066376}
   - component: {fileID: 2227008467736066379}
   - component: {fileID: 2227008467736066378}
+  - component: {fileID: 2705699923826530668}
   - component: {fileID: 2227008467736066372}
   m_Layer: 0
   m_Name: Main Camera
@@ -7944,56 +7944,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2227008467736066374}
-  m_LocalRotation: {x: -0.02361894, y: -0.004733268, z: -0.00011182723, w: 0.99970984}
-  m_LocalPosition: {x: -288.93808, y: -51.207027, z: 145.77713}
+  m_LocalRotation: {x: -0.023618948, y: -0.0047323224, z: -0.00011180492, w: 0.99970984}
+  m_LocalPosition: {x: -288.9381, y: -51.207027, z: 145.77713}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2227008467056391757}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2705699923826530668
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2227008467736066374}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2b416fbce5a38cc47a3a1e709f95f5e3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cfuStatus: PSXEffects v1.18 - up to date.
-  sections: 01010100
-  customRes: {x: 578, y: 297}
-  resolutionFactor: 2
-  limitFramerate: -1
-  skipFrames: 0
-  affineMapping: 1
-  polygonalDrawDistance: 0
-  vertexInaccuracy: 30
-  polygonInaccuracy: 2
-  colorDepth: 5
-  scanlines: 0
-  scanlineIntensity: 5
-  ditherTexture: {fileID: 0}
-  dithering: 1
-  ditherThreshold: 1
-  ditherIntensity: 12
-  maxDarkness: 20
-  subtractFade: 0
-  favorRed: 1
-  worldSpaceSnapping: 0
-  postProcessing: 1
-  verticalScanlines: 1
-  shadowIntensity: 0.5
-  downscale: 0
-  snapCamera: 0
-  camInaccuracy: 0.05
-  camSnapping: 0
-  shadowType: 0
-  ditherSky: 0
-  ditherType: 1
 --- !u!20 &2227008467736066376
 Camera:
   m_ObjectHideFlags: 0
@@ -8079,6 +8036,49 @@ MonoBehaviour:
   m_CameraActivatedEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2705699923826530668
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2227008467736066374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b416fbce5a38cc47a3a1e709f95f5e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cfuStatus: PSXEffects v1.18 - up to date.
+  sections: 01010100
+  customRes: {x: 578, y: 297}
+  resolutionFactor: 2
+  limitFramerate: -1
+  skipFrames: 0
+  affineMapping: 1
+  polygonalDrawDistance: 0
+  vertexInaccuracy: 30
+  polygonInaccuracy: 2
+  colorDepth: 5
+  scanlines: 0
+  scanlineIntensity: 5
+  ditherTexture: {fileID: 0}
+  dithering: 1
+  ditherThreshold: 1
+  ditherIntensity: 12
+  maxDarkness: 20
+  subtractFade: 0
+  favorRed: 1
+  worldSpaceSnapping: 0
+  postProcessing: 1
+  verticalScanlines: 1
+  shadowIntensity: 0.5
+  downscale: 0
+  snapCamera: 0
+  camInaccuracy: 0.05
+  camSnapping: 0
+  shadowType: 0
+  ditherSky: 0
+  ditherType: 1
 --- !u!114 &2227008467736066372
 MonoBehaviour:
   m_ObjectHideFlags: 0
