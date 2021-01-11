@@ -104,7 +104,7 @@ Material:
     - _SpecularHighlights: 1
     - _SrcBlend: 1
     - _UVSec: 0
-    - _Unlit: 1
+    - _Unlit: 0
     - _VertexInaccuracy: -1
     - _ZWrite: 1
     m_Colors:
