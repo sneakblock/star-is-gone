@@ -9,6 +9,7 @@ TagManager:
   - Walkable
   - DemoRoom
   - AI
+  - windable
   layers:
   - Default
   - TransparentFX
@@ -21,7 +22,7 @@ TagManager:
   - postprocess
   - Player
   - Enemy
-  - 
+  - snow collide
   - 
   - 
   - 

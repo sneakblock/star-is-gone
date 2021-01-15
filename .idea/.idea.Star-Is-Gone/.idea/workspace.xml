@@ -28,6 +28,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyFormChangeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/ScaryJitter.cs" />
         <option value="$PROJECT_DIR$/Assets/SpeedModifier.cs" />
+        <option value="$PROJECT_DIR$/Assets/Prefabs/Lantern/AutoConnectJoint.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/WindBlower.cs" />
       </list>
     </option>
   </component>
@@ -115,6 +117,8 @@
       <workItem from="1610231740946" duration="49000" />
       <workItem from="1610232984202" duration="608000" />
       <workItem from="1610311234942" duration="1020000" />
+      <workItem from="1610674589825" duration="739000" />
+      <workItem from="1610678325445" duration="1937000" />
     </task>
     <servers />
   </component>
