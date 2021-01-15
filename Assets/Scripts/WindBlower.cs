@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WindBlower : MonoBehaviour
 {
-    public int Xdir = 0;
-    public int Ydir = 0;
-    public int Zdir = 0;
+    public float Xdir = 0;
+    public float Ydir = 0;
+    public float Zdir = 0;
 
     private GameObject[] windObjects;
     
@@ -26,8 +26,8 @@ public class WindBlower : MonoBehaviour
             Rigidbody[] rbs = obj.GetComponentsInChildren<Rigidbody>();
             foreach (Rigidbody rb in rbs)
             {
-                rb.AddForce(new Vector3(Xdir + Random.Range(-1, 1), Ydir + Random.Range(-1, 1), Zdir + 
-                    Random.Range(-1, 1)));
+                rb.AddForce(new Vector3(Xdir + Random.Range(-2, 1), Ydir + Random.Range(-2, 1), Zdir + 
+                    Random.Range(-2, 1)));
             }
         }
     }
