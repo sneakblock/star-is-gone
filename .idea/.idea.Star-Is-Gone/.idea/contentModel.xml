@@ -1705,6 +1705,9 @@
             </e>
           </e>
         </e>
+        <e p="Fonts" t="Include">
+          <e p="OFL.txt" t="Include" />
+        </e>
         <e p="Plugins" t="Include">
           <e p="Pixelplacement" t="Include">
             <e p="iTween" t="Include">
@@ -1818,6 +1821,9 @@
           <e p="DamagePlayer.cs" t="Include" />
           <e p="DamagePlayerTest.cs" t="Include" />
           <e p="dialogRange.cs" t="Include" />
+          <e p="Dialogue.cs" t="Include" />
+          <e p="DialogueManager.cs" t="Include" />
+          <e p="DialogueTrigger.cs" t="Include" />
           <e p="EndGame.cs" t="Include" />
           <e p="Enemy" t="Include">
             <e p="EnemyFormChangeManager.cs" t="Include" />
@@ -1828,6 +1834,7 @@
           <e p="IKFootPlacement.cs" t="Include" />
           <e p="LightFlickerEffect.cs" t="Include" />
           <e p="PopUpSystem.cs" t="Include" />
+          <e p="RandomSoundLerper.cs" t="Include" />
           <e p="ThirdPersonMovement.cs" t="Include" />
           <e p="WindBlower.cs" t="Include" />
         </e>

@@ -1,0 +1,24 @@
+fileFormatVersion: 2
+guid: 38a469f03703a334080c5ac7b93fb8ee
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - Xanh Mono
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 21fc5a0186ca6874c860cf775f7d5af7, type: 3}
+  - {fileID: 12800000, guid: ab3d692306860b240b433cd872deb6b6, type: 3}
+  - {fileID: 12800000, guid: 42a8591dcea951d4ba8c48f052f86483, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
