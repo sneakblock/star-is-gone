@@ -1,13 +1,16 @@
 ﻿
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.Specialized;
 using UnityEngine;
-//using UnityEngine.InputSystem;
+using UnityEngine.InputSystem;
 
-public class ThirdPersonMovement : MonoBehaviour
+public class NewPlayerMovement : MonoBehaviour
 {
-    //private PlayerControls controls;
+    private Vector2 leftStickMove;
+    private Vector2 rightStickMove;
+    private PlayerControls controls;
     public Animator anim;
     public CharacterController myCC;
     public Transform cam;
@@ -24,27 +27,45 @@ public class ThirdPersonMovement : MonoBehaviour
 
     public AudioSource footstepSource;
 
-    void Start()
+    private Vector3 worldDirection;
+
+    void Awake()
     {
         Cursor.visible = false;
+        controls = new PlayerControls();
+        controls.Standard.Move.performed += ctx => leftStickMove = ctx.ReadValue<Vector2>();
+        controls.Standard.Move.canceled += ctx => leftStickMove = Vector2.zero;
+        controls.Standard.RotateCamera.performed += ctx => rightStickMove = ctx.ReadValue<Vector2>();
+        controls.Standard.RotateCamera.canceled += ctx => rightStickMove = Vector2.zero;
+        controls.Standard.Sneak.performed += ctx => isSneaking = !isSneaking;
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
     }
 
     // Update is called once per frame
     void Update()
     {
+
         anim.SetBool("isMoving", false);
-        if (Input.GetKeyDown(KeyCode.LeftControl) && !isSneaking)
+
+        if (isSneaking)
         {
-            isSneaking = true;
             anim.SetBool("isSneaking", true);
-            //Debug.Log("Character is now sneaking.");
-        } else if (Input.GetKeyDown(KeyCode.LeftControl) && isSneaking)
+        } else if (!isSneaking)
         {
-            isSneaking = false;
             anim.SetBool("isSneaking", false);
-            //Debug.Log("Character is no longer sneaking.");
         }
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
+        
+        //bool isRunning = (Math.Abs(leftStickMove.x) > Math.Abs(.75) || Math.Abs(leftStickMove.y) > Math.Abs(.75));
+        bool isRunning = (new Vector2(leftStickMove.x, leftStickMove.y).magnitude > .75f);
         
         footstepSource.mute = true;
 
@@ -65,51 +86,52 @@ public class ThirdPersonMovement : MonoBehaviour
             anim.SetBool("isFalling", false);
         }
 
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
+        //float horizontal = Input.GetAxisRaw("Horizontal");
+        //float vertical = Input.GetAxisRaw("Vertical");
         
 
         if (isRunning)
         {
             anim.SetBool("isRunning", true);
             anim.SetBool("isSneaking", false);
-            //Debug.Log("Character is no longer sneaking.");
             footstepSource.pitch = 2.5f;
             isSneaking = false;
             speed = 5.5f;
         }
-        else if (!isRunning && !isSneaking)
+        else if (!isSneaking)
         {
             anim.SetBool("isRunning", false);
             anim.SetBool("isSneaking", false);
-            //Debug.Log("Character is no longer sneaking.");
             footstepSource.pitch = 1.3f;
             speed = 2.5f;
-        } else if (!isRunning && isSneaking)
+        } else if (isSneaking)
         {
             anim.SetBool("isSneaking", true);
-            //Debug.Log("Character is now sneaking.");
             footstepSource.pitch = 1.2f;
             speed = 1.3f;
         }
 
-        Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
+        //Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
         
+        worldDirection = new Vector3(leftStickMove.x, 0, leftStickMove.y);
         
-        if (direction.magnitude >= 0.1f)
+        if (worldDirection.magnitude >= 0.1f)
         {
+            Debug.Log("Detecting stick input of " + leftStickMove);
+            Debug.Log("Attempting to move CC along vector" + worldDirection);
 
-            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg + cam.eulerAngles.y;
-            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmoothTime);
+            float targetAngle = Mathf.Atan2(worldDirection.x, worldDirection.z) * 
+                Mathf.Rad2Deg + cam.eulerAngles.y;
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, 
+                targetAngle, ref turnSmoothVelocity, turnSmoothTime);
             transform.rotation = Quaternion.Euler(0f, angle, 0f);
-
             Vector3 moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             if (moveDir != Vector3.zero)
             {
                 anim.SetBool("isMoving", true);
                 footstepSource.mute = false;
             }
-            myCC.Move(moveDir.normalized * speed * Time.deltaTime);
+            myCC.Move(moveDir.normalized * (speed * Time.deltaTime));
                 
         }
     }

@@ -1708,6 +1708,10 @@
         <e p="Fonts" t="Include">
           <e p="OFL.txt" t="Include" />
         </e>
+        <e p="Input" t="Include">
+          <e p="PlayerControls.cs" t="Include" />
+        </e>
+        <e p="MoveTester.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Pixelplacement" t="Include">
             <e p="iTween" t="Include">
@@ -1833,6 +1837,7 @@
           <e p="HealthSystem.cs" t="Include" />
           <e p="IKFootPlacement.cs" t="Include" />
           <e p="LightFlickerEffect.cs" t="Include" />
+          <e p="NewPlayerMovement.cs" t="Include" />
           <e p="PopUpSystem.cs" t="Include" />
           <e p="RandomSoundLerper.cs" t="Include" />
           <e p="ThirdPersonMovement.cs" t="Include" />

@@ -13,7 +13,9 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DamagePlayerTest.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/DialogueTrigger.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/NewPlayerMovement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/AttackPlayer.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.cinemachine@2.6.3/Runtime/Core/AxisState.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/RandomSoundLerper.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
@@ -26,7 +28,6 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/DamagePlayerTest.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/HealthSystem.cs" />
         <option value="$PROJECT_DIR$/Assets/Emerald AI/Scripts/Components/EmeraldAIPlayerDamage.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ThirdPersonMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/EnemyFormChangeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemy/ScaryJitter.cs" />
         <option value="$PROJECT_DIR$/Assets/SpeedModifier.cs" />
@@ -36,7 +37,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Dialogue.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DialogueManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/RandomSoundLerper.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ThirdPersonMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
+        <option value="$PROJECT_DIR$/Assets/MoveTester.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DialogueTrigger.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NewPlayerMovement.cs" />
       </list>
     </option>
   </component>
@@ -129,6 +134,8 @@
       <workItem from="1610736221200" duration="640000" />
       <workItem from="1610841677529" duration="7836000" />
       <workItem from="1610861152618" duration="2967000" />
+      <workItem from="1610871735447" duration="2588000" />
+      <workItem from="1610912919926" duration="4099000" />
     </task>
     <servers />
   </component>

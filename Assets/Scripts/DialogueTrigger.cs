@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class DialogueTrigger : MonoBehaviour
 {
+    private PlayerControls controls;
     private Collider _collider;
     public Dialogue dialogue;
     private bool hasBeenTriggered = false;
@@ -13,6 +14,12 @@ public class DialogueTrigger : MonoBehaviour
     private GameObject _animGO;
     private Animator _anim;
     private bool didPress = false;
+
+
+    public void Awake()
+    {
+        controls = new PlayerControls();
+    }
 
     public void Start()
     {
@@ -41,13 +48,24 @@ public class DialogueTrigger : MonoBehaviour
             {
                 _anim.SetBool("showButton", true);
             }
-            if (Input.GetKeyDown(KeyCode.E))
+            if (controls.Standard.Interact.ReadValue<float>() > .5f)
             {
                 TriggerDialogue();
                 didPress = true;
                 _anim.SetBool("showButton", false);
             }
+            
         }
+    }
+
+    private void OnEnable()
+    {
+        controls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        controls.Disable();
     }
 
     public void OnTriggerExit(Collider _collider)
