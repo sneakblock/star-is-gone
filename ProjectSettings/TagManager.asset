@@ -10,6 +10,7 @@ TagManager:
   - DemoRoom
   - AI
   - windable
+  - buttonprompt
   layers:
   - Default
   - TransparentFX
