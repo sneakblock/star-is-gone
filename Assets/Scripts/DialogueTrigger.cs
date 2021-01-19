@@ -3,17 +3,20 @@ using System.Collections;
 using System.Collections.Generic;
 using AmplifyShaderEditor;
 using UnityEngine;
+using Yarn.Unity;
 
 public class DialogueTrigger : MonoBehaviour
 {
     private PlayerControls controls;
     private Collider _collider;
-    public Dialogue dialogue;
+    //public Dialogue dialogue;
     private bool hasBeenTriggered = false;
     public bool isAutomatic;
     private GameObject _animGO;
     private Animator _anim;
     private bool didPress = false;
+    public string startNode;
+    
 
 
     public void Awake()
@@ -75,6 +78,8 @@ public class DialogueTrigger : MonoBehaviour
             _anim.SetBool("showButton", false);
             StartCoroutine(DidPressResetter());
         }
+        FindObjectOfType<DialogueRunner>().Stop();
+        FindObjectOfType<DialogueUI>().DialogueComplete();
     }
 
     IEnumerator DidPressResetter()
@@ -85,7 +90,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
-        FindObjectOfType<DialogueManager>().StartDialogue(dialogue);
+        FindObjectOfType<DialogueRunner>().StartDialogue(startNode);
     }
 
 }

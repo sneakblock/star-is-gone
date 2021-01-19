@@ -11,6 +11,8 @@ TagManager:
   - AI
   - windable
   - buttonprompt
+  - DialogueText
+  - DialogueButton
   layers:
   - Default
   - TransparentFX

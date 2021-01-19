@@ -1570,6 +1570,7 @@
             </e>
           </e>
         </e>
+        <e p="DialogueChoiceBehavior.cs" t="Include" />
         <e p="Emerald AI" t="Include">
           <e p="Credit" t="Include">
             <e p="Credit.txt" t="Include" />
@@ -1705,6 +1706,7 @@
             </e>
           </e>
         </e>
+        <e p="FadeInOutManager.cs" t="Include" />
         <e p="Fonts" t="Include">
           <e p="OFL.txt" t="Include" />
         </e>
@@ -1879,6 +1881,54 @@
           </e>
         </e>
         <e p="SpeedModifier.cs" t="Include" />
+        <e p="TriggerDialogueRunner.cs" t="Include" />
+        <e p="YarnSpinner" t="Include">
+          <e p="Editor" t="Include">
+            <e p="YarnEditorUtility.cs" t="Include" />
+            <e p="YarnImporter.cs" t="Include" />
+            <e p="YarnImporterEditor.cs" t="Include" />
+            <e p="YarnProgramEditor.cs" t="Include" />
+            <e p="YarnScriptTemplate.txt" t="Include" />
+            <e p="YarnSpinner.Unity.Editor.asmdef" t="Include" />
+            <e p="YarnSpinnerEditorWindow.cs" t="Include" />
+            <e p="YarnSpinnerTests.cs" t="Include" />
+            <e p="YarnTranslationDrawer.cs" t="Include" />
+          </e>
+          <e p="Runtime" t="Include">
+            <e p="Culture.cs" t="Include" />
+            <e p="DialogueRunner.cs" t="Include" />
+            <e p="DialogueUI.cs" t="Include" />
+            <e p="InMemoryVariableStorage.cs" t="Include" />
+            <e p="YarnProgram.cs" t="Include" />
+            <e p="YarnSpinner.Unity.asmdef" t="Include" />
+            <e p="YarnTranslation.cs" t="Include" />
+          </e>
+          <e p="Samples" t="Include">
+            <e p="Space" t="Include">
+              <e p="Scripts" t="Include">
+                <e p="CameraFollow.cs" t="Include" />
+                <e p="MobileOnly.cs" t="Include" />
+                <e p="NodeVisitedTracker.cs" t="Include" />
+                <e p="NPC.cs" t="Include" />
+                <e p="PlayerCharacter.cs" t="Include" />
+                <e p="SpriteSwitcher.cs" t="Include" />
+              </e>
+            </e>
+            <e p="YarnSpinner.Unity.Example.asmdef" t="Include" />
+          </e>
+          <e p="Tests" t="Include">
+            <e p="Editor" t="Include">
+              <e p="YarnImporterTests.cs" t="Include" />
+              <e p="YarnSpinnerEditorTests.asmdef" t="Include" />
+            </e>
+            <e p="Runtime" t="Include">
+              <e p="DialogueRunnerMockUI.cs" t="Include" />
+              <e p="DialogueRunnerTests.cs" t="Include" />
+              <e p="DialogueUITests.cs" t="Include" />
+              <e p="YarnSpinnerTests.asmdef" t="Include" />
+            </e>
+          </e>
+        </e>
       </e>
       <e p="Aura2_Core.csproj" t="IncludeRecursive" />
       <e p="Aura2_Editor.csproj" t="IncludeRecursive" />
@@ -1886,6 +1936,11 @@
       <e p="Packages" t="ExcludeRecursive" />
       <e p="Star-Is-Gone.sln" t="IncludeFlat" />
       <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="YarnSpinner.Unity.csproj" t="IncludeRecursive" />
+      <e p="YarnSpinner.Unity.Editor.csproj" t="IncludeRecursive" />
+      <e p="YarnSpinner.Unity.Example.csproj" t="IncludeRecursive" />
+      <e p="YarnSpinnerEditorTests.csproj" t="IncludeRecursive" />
+      <e p="YarnSpinnerTests.csproj" t="IncludeRecursive" />
     </e>
   </component>
 </project>

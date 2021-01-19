@@ -1,0 +1,39 @@
+title: SittingGuy
+tags: 
+colorID: 0
+position: 37,268
+---
+Hello. Choose an option.
+
+[[ answer: I choose 1.|Option1]]
+[[ answer: 2.|Option2]]
+[[ answer: 3.|Option3]]
+===
+title: Option1
+tags: 
+colorID: 0
+position: 378,62
+---
+Option 1. Hm. Predictable.
+===
+title: Option2
+tags: 
+colorID: 0
+position: 483,354
+---
+Okay, 2 then.
+===
+title: Option3
+tags: 
+colorID: 0
+position: 374,658
+---
+Three? You're trying too hard.
+===
+title: CryingGuy
+tags: 
+colorID: 0
+position: 32,908
+---
+I'm super, super sad.
+===
