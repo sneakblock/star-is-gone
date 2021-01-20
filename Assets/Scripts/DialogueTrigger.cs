@@ -50,14 +50,13 @@ public class DialogueTrigger : MonoBehaviour
             if (!didPress)
             {
                 _anim.SetBool("showButton", true);
+                if (controls.Standard.Interact.ReadValue<float>() > .5f)
+                {
+                    TriggerDialogue();
+                    didPress = true;
+                    _anim.SetBool("showButton", false);
+                }
             }
-            if (controls.Standard.Interact.ReadValue<float>() > .5f)
-            {
-                TriggerDialogue();
-                didPress = true;
-                _anim.SetBool("showButton", false);
-            }
-            
         }
     }
 
@@ -77,9 +76,10 @@ public class DialogueTrigger : MonoBehaviour
         {
             _anim.SetBool("showButton", false);
             StartCoroutine(DidPressResetter());
+            FindObjectOfType<DialogueRunner>().Stop();
+            FindObjectOfType<DialogueUI>().DialogueComplete();
         }
-        FindObjectOfType<DialogueRunner>().Stop();
-        FindObjectOfType<DialogueUI>().DialogueComplete();
+        
     }
 
     IEnumerator DidPressResetter()
@@ -91,6 +91,7 @@ public class DialogueTrigger : MonoBehaviour
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueRunner>().StartDialogue(startNode);
+        Debug.Log("Sent order to start " + startNode + "to dialogue runner.");
     }
 
 }

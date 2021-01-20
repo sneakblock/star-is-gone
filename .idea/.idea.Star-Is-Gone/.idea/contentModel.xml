@@ -1882,6 +1882,7 @@
         </e>
         <e p="SpeedModifier.cs" t="Include" />
         <e p="TriggerDialogueRunner.cs" t="Include" />
+        <e p="UINavigationAccentsHandler.cs" t="Include" />
         <e p="YarnSpinner" t="Include">
           <e p="Editor" t="Include">
             <e p="YarnEditorUtility.cs" t="Include" />

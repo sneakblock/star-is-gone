@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c4c2f4c56874f1b43a6de551492559e1
+guid: 5f431c2c5d7b5a643be53e14d3f9cf6b
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -9,11 +9,12 @@ ScriptedImporter:
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
   baseLanguageID: en-US
-  stringIDs: []
+  stringIDs:
+  - Statues-Statue1-0
+  - Statues-Statue1-1
   compilationStatus: 1
-  isSuccesfullyCompiled: 0
-  compilationErrorMessage: "Error on line 8 at position 37:\nextraneous input ' 1'
-    expecting ']]'\r\n[[ answer: I choose option 1.|Option 1]] ]]\r\n                                   
-    ^^"
-  baseLanguage: {instanceID: 0}
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: The node 'Statue 1' contains illegal characters in its
+    title.
+  baseLanguage: {fileID: 7128917941130120860, guid: 5f431c2c5d7b5a643be53e14d3f9cf6b, type: 3}
   localizations: []

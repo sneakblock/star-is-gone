@@ -44,8 +44,8 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/NewPlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/DialogueChoiceBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/FadeInOutManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/DialogueTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/YarnSpinner/Runtime/DialogueUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/DialogueTrigger.cs" />
       </list>
     </option>
   </component>
@@ -145,7 +145,8 @@
       <workItem from="1610990487667" duration="3965000" />
       <workItem from="1611004542444" duration="2371000" />
       <workItem from="1611013953765" duration="2686000" />
-      <workItem from="1611019614717" duration="3642000" />
+      <workItem from="1611019614717" duration="4241000" />
+      <workItem from="1611100368642" duration="3484000" />
     </task>
     <servers />
   </component>

@@ -61,6 +61,8 @@ namespace Yarn.Unity {
 
         public Animator anim;
 
+        private EventSystem _eventSystem;
+
         /// <summary>
         /// How quickly to show the text, in seconds per character
         /// </summary>
@@ -264,6 +266,8 @@ namespace Yarn.Unity {
             foreach (var button in optionButtons) {
                 button.gameObject.SetActive (false);
             }
+
+            _eventSystem = GameObject.FindGameObjectWithTag("UIEventSystem").GetComponent<EventSystem>();
         }
 
         /// Runs a line.
@@ -356,6 +360,13 @@ namespace Yarn.Unity {
             
             foreach (var optionString in optionsCollection.Options) {
                 optionButtons [i].gameObject.SetActive (true);
+
+                if (optionButtons.Count != 0)
+                {
+                    _eventSystem.SetSelectedGameObject(null);
+                    _eventSystem.SetSelectedGameObject(optionButtons[0].gameObject);
+                    Debug.Log("Selected" + optionButtons[0]);
+                }
 
                 // When the button is selected, tell the dialogue about it
                 optionButtons [i].onClick.RemoveAllListeners();
