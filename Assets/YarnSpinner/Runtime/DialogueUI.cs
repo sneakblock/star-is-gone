@@ -447,6 +447,8 @@ namespace Yarn.Unity {
             
             StartCoroutine(fadeOutWaiter("DialogueText", true));
             StartCoroutine(fadeOutWaiter("DialogueButton", true));
+            
+            
 
             // Hide the dialogue interface.
 

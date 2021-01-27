@@ -5267,7 +5267,7 @@ GameObject:
   m_Component:
   - component: {fileID: 516254332910022961}
   m_Layer: 0
-  m_Name: Player & Camera 1
+  m_Name: Player & Camera
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5746,7 +5746,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516254333233831669}
-  m_LocalRotation: {x: -0.039898496, y: -0.00472989, z: -0.000188868, w: 0.99919254}
+  m_LocalRotation: {x: -0.039898496, y: -0.004729855, z: -0.00018886662, w: 0.99919254}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -6418,7 +6418,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 516254333510643865}
-  m_LocalRotation: {x: -0.02361892, y: -0.0047323224, z: -0.00011180479, w: 0.99970984}
+  m_LocalRotation: {x: -0.02361892, y: -0.0047323154, z: -0.00011180462, w: 0.99970984}
   m_LocalPosition: {x: -288.9381, y: -51.207027, z: 145.77713}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -6524,7 +6524,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cfuStatus: PSXEffects v1.18 - up to date.
   sections: 01010100
-  customRes: {x: 425, y: 386}
+  customRes: {x: 493, y: 350}
   resolutionFactor: 2
   limitFramerate: -1
   skipFrames: 0

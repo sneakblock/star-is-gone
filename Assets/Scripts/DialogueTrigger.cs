@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using AmplifyShaderEditor;
+using Aura2API;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -75,9 +76,9 @@ public class DialogueTrigger : MonoBehaviour
         if (!isAutomatic)
         {
             _anim.SetBool("showButton", false);
-            StartCoroutine(DidPressResetter());
-            FindObjectOfType<DialogueRunner>().Stop();
             FindObjectOfType<DialogueUI>().DialogueComplete();
+            FindObjectOfType<DialogueRunner>().ResetDialogue();
+            StartCoroutine(DidPressResetter());
         }
         
     }
@@ -90,6 +91,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void TriggerDialogue()
     {
+        FindObjectOfType<DialogueRunner>().Stop();
         FindObjectOfType<DialogueRunner>().StartDialogue(startNode);
         Debug.Log("Sent order to start " + startNode + "to dialogue runner.");
     }

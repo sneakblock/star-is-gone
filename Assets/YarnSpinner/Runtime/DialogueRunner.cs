@@ -266,7 +266,7 @@ namespace Yarn.Unity
         public void ResetDialogue()
         {
             variableStorage.ResetToDefaults();
-            StartDialogue();
+            //StartDialogue();
         }
 
         /// <summary>

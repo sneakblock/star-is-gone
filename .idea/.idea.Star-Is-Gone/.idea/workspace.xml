@@ -41,10 +41,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/ThirdPersonMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/PlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/MoveTester.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/NewPlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/DialogueChoiceBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/FadeInOutManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/NewPlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/YarnSpinner/Runtime/DialogueUI.cs" />
+        <option value="$PROJECT_DIR$/Assets/YarnSpinner/Runtime/DialogueRunner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DialogueTrigger.cs" />
       </list>
     </option>
@@ -147,6 +148,10 @@
       <workItem from="1611013953765" duration="2686000" />
       <workItem from="1611019614717" duration="4241000" />
       <workItem from="1611100368642" duration="3484000" />
+      <workItem from="1611124278937" duration="366000" />
+      <workItem from="1611715573525" duration="20000" />
+      <workItem from="1611715835493" duration="2520000" />
+      <workItem from="1611718857155" duration="1063000" />
     </task>
     <servers />
   </component>
