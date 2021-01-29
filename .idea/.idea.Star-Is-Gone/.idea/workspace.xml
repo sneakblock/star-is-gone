@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5a09af4-1e72-4e91-b2d9-4af807f4bc97" name="Default Changelist" comment="" />
+    <list default="true" id="a5a09af4-1e72-4e91-b2d9-4af807f4bc97" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Text.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/Text.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/appear.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/appear.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/fadeOut.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/fadeOut.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/gone.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/gone.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Dialogue/Dialogue.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Dialogue/Dialogue.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/PlayerPrefabs/Player &amp; Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/PlayerPrefabs/Player &amp; Camera.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/neon_Arrow_4 (2).prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/neon_Arrow_4 (2).prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Demo Build/Overworld.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Demo Build/Overworld.unity" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -152,6 +163,7 @@
       <workItem from="1611715573525" duration="20000" />
       <workItem from="1611715835493" duration="2520000" />
       <workItem from="1611718857155" duration="1063000" />
+      <workItem from="1611887475901" duration="752000" />
     </task>
     <servers />
   </component>
