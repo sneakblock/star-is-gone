@@ -38,6 +38,8 @@ public class NewPlayerMovement : MonoBehaviour
         controls.Standard.RotateCamera.performed += ctx => rightStickMove = ctx.ReadValue<Vector2>();
         controls.Standard.RotateCamera.canceled += ctx => rightStickMove = Vector2.zero;
         controls.Standard.Sneak.performed += ctx => isSneaking = !isSneaking;
+        controls.Standard.Sprint.performed += ctx => leftStickMove *= 3;
+        controls.Standard.Sprint.canceled += ctx => leftStickMove /= 3;
     }
 
     private void OnEnable()
