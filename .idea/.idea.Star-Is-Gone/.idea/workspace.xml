@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a5a09af4-1e72-4e91-b2d9-4af807f4bc97" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Input/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/PlayerControls.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Input/PlayerControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/PlayerControls.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/NewPlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/NewPlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Yarns/Guy.yarn" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Yarns/Guy.yarn" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Yarns/Guy.yarn.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Yarns/Guy.yarn.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +158,8 @@
       <workItem from="1611718857155" duration="1063000" />
       <workItem from="1611887475901" duration="752000" />
       <workItem from="1613082735662" duration="929000" />
+      <workItem from="1613184872096" duration="1747000" />
+      <workItem from="1613438456151" duration="1541000" />
     </task>
     <servers />
   </component>

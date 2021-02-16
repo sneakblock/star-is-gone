@@ -18,7 +18,7 @@
                     "type": "Value",
                     "id": "02a1f773-76d6-4d16-8664-3ff057773b56",
                     "expectedControlType": "Vector2",
-                    "processors": "ScaleVector2(x=0.25,y=0.25)",
+                    "processors": "ScaleVector2(x=0.15,y=0.15)",
                     "interactions": ""
                 },
                 {
@@ -171,7 +171,7 @@
                 {
                     "name": "",
                     "id": "9f1de603-f2a5-4c1c-8371-675db1ea57b6",
-                    "path": "<Keyboard>/e",
+                    "path": "<Mouse>/leftButton",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard & Mouse",

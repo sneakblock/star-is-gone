@@ -8,11 +8,24 @@ ScriptedImporter:
   assetBundleName: 
   assetBundleVariant: 
   script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
-  baseLanguageID: 
+  baseLanguageID: en-US
   stringIDs:
   - Guy-Guy-0
+  - Guy-Guy-1
+  - Guy-Guy-2
+  - Guy-NotTooBad-3
+  - Guy-NotTooBad-4
+  - Guy-NotTooBad-5
+  - Guy-NotTooBad-6
+  - Guy-NotTooBad-7
+  - Guy-PrettyScary-8
+  - Guy-PrettyScary-9
+  - Guy-PrettyScary-10
+  - Guy-PrettyScary-11
+  - Guy-PrettyScary-12
+  - Guy-PrettyScary-13
   compilationStatus: 1
   isSuccesfullyCompiled: 1
   compilationErrorMessage: 
-  baseLanguage: {instanceID: 0}
+  baseLanguage: {fileID: 7128917941130120860, guid: 202c3f7a7978bd4468635293a5300403, type: 3}
   localizations: []
