@@ -64,10 +64,8 @@ public class EnemyFormChangeManager : MonoBehaviour
     void SwapForms(GameObject fromForm, GameObject toForm)
     {
         fromForm.GetComponentInChildren<Renderer>().enabled = false;
-        fromForm.GetComponent<EmeraldAISystem>().enabled = false;
         toForm.transform.position = fromForm.transform.position;
         toForm.transform.forward = fromForm.transform.forward;
-        toForm.GetComponent<EmeraldAISystem>().enabled = true;
         toForm.GetComponentInChildren<Renderer>().enabled = true;
     }
 }

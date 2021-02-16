@@ -1,0 +1,206 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class AIManager : MonoBehaviour {
+    Animator animator1;
+    Animator animator2;
+    public List<GameObject> waypoints;
+    public GameObject player;
+    public GameObject form1;
+    public GameObject form2;
+
+    public int health = 100;
+    public float detectionRange = 10f;
+    public int waypointRandomness = 1;
+    public float baseSpeed = 5f;
+    public float fov = 160f;
+    float speed;
+    Vector3 lastPositionPlayerSeen;
+    int currWaypoint = 0;
+    int lookingAround = 0;
+    Quaternion fromRotation;
+
+    // state parameters
+    bool moving = false;
+    bool dead = false;
+    bool playerInView = false;
+    bool playerNear = false;
+    bool playerSeen = false;
+    float timeSincePlayerInView = 0f;
+
+
+    // Start is called before the first frame update
+    void Start() {
+        animator1 = gameObject.transform.Find("human_form").GetComponent<Animator>();
+        animator2 = gameObject.transform.Find("feral_form").GetComponent<Animator>();
+
+        speed = baseSpeed;
+    }
+
+    // Update is called once per frame
+    void Update() {
+        var stateInfo = animator1.GetCurrentAnimatorStateInfo(0);
+
+        animator1.SetBool("PlayerInView", playerInView);
+        animator2.SetBool("PlayerInView", playerInView);
+        animator1.SetBool("PlayerNear", playerNear);
+        animator2.SetBool("PlayerNear", playerNear);
+        animator1.SetInteger("TimeSincePlayerInView", (int) timeSincePlayerInView);
+        animator2.SetInteger("TimeSincePlayerInView", (int) timeSincePlayerInView);
+        animator1.SetBool("Moving", moving);
+        animator2.SetBool("Moving", moving);
+        animator1.SetBool("Dead", dead);
+        animator2.SetBool("Dead", dead); 
+
+        bool touchingPlayer = CheckPlayerContact();
+
+        // manage activity based off parameters
+        if (playerInView) {
+            lastPositionPlayerSeen = player.transform.position;
+        }
+        if (health <= 0) {
+            dead = true;
+        }
+
+        // manage activity while in certain states
+        if (stateInfo.IsName("Idle")) {
+            if (waypoints != null && waypoints.Count > 0) {
+                moving = true; // basically never be idle; this can be changed if desired
+            }
+        } else if (stateInfo.IsName("Wandering")) {
+            if (moving) {
+                if (Vector3.Distance(gameObject.transform.position, waypoints[currWaypoint].transform.position) < 0.1f) {
+                    currWaypoint += Random.Range(1, 1 + waypointRandomness);
+                    if (currWaypoint >= waypoints.Count) {
+                        currWaypoint = 0;
+                    }
+                } 
+                if (Vector3.Distance(gameObject.transform.position, waypoints[currWaypoint].transform.position) >= 0.1f) {
+                    MoveTowardPoint(waypoints[currWaypoint].transform.position);
+                }
+            }
+        } else if (stateInfo.IsName("Searching")) {
+            if (Vector3.Distance(gameObject.transform.position, lastPositionPlayerSeen) < 0.1f) {
+                fromRotation = transform.rotation;
+                LookAround();
+            } else {
+                MoveTowardPoint(lastPositionPlayerSeen);
+            }
+        } else if (stateInfo.IsName("PursuingPlayer")) {
+            MoveTowardPoint(lastPositionPlayerSeen);
+            if (Vector3.Distance(gameObject.transform.position, player.transform.position) < 0.5f) {
+                int rand = Random.Range(0, 2);
+                if (rand == 0) {
+                    animator1.SetTrigger("BasicAttack");
+                    animator2.SetTrigger("BasicAttack");
+                } else if (rand == 1) {
+                    animator1.SetTrigger("SpecialAttack");
+                    animator2.SetTrigger("SpecialAttack");
+                }
+            }
+        } else if (stateInfo.IsName("BasicAttack")) {
+            if (touchingPlayer) {
+                // deal damage
+            }
+
+        } else if (stateInfo.IsName("SpecialAttack")) {
+            if (touchingPlayer) {
+                // deal extra damage
+            }
+
+        } else if (stateInfo.IsName("TakingHit")) {
+
+        } else if (stateInfo.IsName("Death")) {
+
+        }
+
+        UpdatePlayerInView();
+        UpdatePlayerNear();
+        UpdateTimeSincePlayerInView();
+
+        updateForm();
+    }
+
+    void UpdatePlayerInView () {
+        bool inView = false;
+        Vector3 dirToPlayer = player.transform.position - transform.position;
+        float angleToPlayer = Vector3.Angle(new Vector3(dirToPlayer.x, 0, dirToPlayer.z), new Vector3(transform.forward.x, 0, transform.forward.z));
+            
+        if (angleToPlayer > 360 - (fov / 2) || angleToPlayer < (fov / 2)) { // player is in front of enemy
+            RaycastHit hit;
+            // Debug.DrawRay (transform.position, dirToPlayer, Color.red, 0f, true);
+            if(Physics.Raycast(transform.position, dirToPlayer, out hit, 100f)) {
+                if(hit.collider.gameObject == player || hit.collider.gameObject.transform.IsChildOf(player.transform)) { // line of sight is not blocked
+                    inView = true;
+                }
+            }
+        }
+        playerInView = inView;
+    }
+
+    void UpdatePlayerNear() {
+        playerNear = Vector3.Distance(gameObject.transform.position, player.transform.position) <= detectionRange;
+    }
+
+    bool CheckPlayerContact() {
+        return false;
+    }
+
+    void UpdateTimeSincePlayerInView() {
+        if (playerSeen && timeSincePlayerInView >= 0f && !playerInView) {
+            timeSincePlayerInView += Time.deltaTime;
+            if (timeSincePlayerInView > 10f) {
+                playerSeen = false;
+                timeSincePlayerInView = 0f;
+            }
+        } 
+    }
+
+    void MoveTowardPoint(Vector3 target) {
+        
+
+
+    }
+
+    void LookAround() {
+        if (lookingAround == 0) {
+            Quaternion toRotate = transform.rotation * Quaternion.Euler(0, 90f * Time.deltaTime, 0);
+            transform.rotation = Quaternion.Lerp(fromRotation, toRotate, Time.time * 1);
+
+            if (Quaternion.Angle(transform.rotation, toRotate) < 0.5) {
+                lookingAround = 1;
+            }
+        } else if (lookingAround == 1) {
+            Quaternion toRotate = transform.rotation * Quaternion.Euler(0, -180f * Time.deltaTime, 0);
+            transform.rotation = Quaternion.Lerp(fromRotation * Quaternion.Euler(0, 90f * Time.deltaTime, 0), toRotate, Time.time * 1);
+
+            if (Quaternion.Angle(transform.rotation, toRotate) < 0.5) {
+                lookingAround = 2;
+            }
+        } else if (lookingAround == 2) {
+            Quaternion toRotate = transform.rotation * Quaternion.Euler(0, 90f * Time.deltaTime, 0);
+            transform.rotation = Quaternion.Lerp(fromRotation * Quaternion.Euler(0, -90f * Time.deltaTime, 0), toRotate, Time.time * 1);
+
+            if (Quaternion.Angle(transform.rotation, toRotate) < 0.5) {
+                lookingAround = 0;
+            }
+        }
+    }
+
+    public void TakeHit(int damage) {
+        // subtract health, set taking hit trigger
+        health -= damage;
+        animator1.SetTrigger("TakeHit");
+        animator2.SetTrigger("TakeHit");
+    }
+
+    public void updateForm() {
+        if (form1.GetComponentInChildren<Renderer>().enabled) {
+            speed = baseSpeed;
+        } else if (form2.GetComponentInChildren<Renderer>().enabled) {
+            speed = baseSpeed * 1.5f;
+        }
+        
+    }
+}
