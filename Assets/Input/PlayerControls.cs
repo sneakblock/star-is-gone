@@ -31,7 +31,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""type"": ""Value"",
                     ""id"": ""02a1f773-76d6-4d16-8664-3ff057773b56"",
                     ""expectedControlType"": ""Vector2"",
-                    ""processors"": ""ScaleVector2(x=0.15,y=0.15)"",
+                    ""processors"": ""ScaleVector2(x=0.05,y=0.05)"",
                     ""interactions"": """"
                 },
                 {
@@ -263,7 +263,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""8cbe4c15-e9bc-4231-81bd-56af08207522"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard & Mouse"",
