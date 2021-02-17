@@ -33,6 +33,7 @@ public class AIManager : MonoBehaviour {
     bool playerNear = false;
     bool playerSeen = false;
     float timeSincePlayerInView = 0f;
+    float timeSinceLastAttack = 0f;
 
 
     // Start is called before the first frame update
@@ -60,8 +61,6 @@ public class AIManager : MonoBehaviour {
         animator2.SetBool("Moving", moving);
         animator1.SetBool("Dead", dead);
         animator2.SetBool("Dead", dead); 
-
-        bool touchingPlayer = CheckPlayerContact();
 
         // manage activity based off parameters
         if (playerInView) {
@@ -101,7 +100,8 @@ public class AIManager : MonoBehaviour {
             }
         } else if (stateInfo.IsName("PursuingPlayer")) {
             MoveTowardPoint(lastPositionPlayerSeen);
-            if (Vector3.Distance(gameObject.transform.position, player.transform.position) < 2.5f) {
+            float dist = Vector3.Distance(gameObject.transform.position, player.transform.position);
+            if ((dist < 1.5f || (form2.GetComponentInChildren<Renderer>().enabled && dist < 5f)) && timeSinceLastAttack > 3f) {
                 int rand = Random.Range(0, 2);
                 if (rand == 0) {
                     animator1.SetTrigger("BasicAttack");
@@ -110,14 +110,19 @@ public class AIManager : MonoBehaviour {
                     animator1.SetTrigger("SpecialAttack");
                     animator2.SetTrigger("SpecialAttack");
                 }
+                timeSinceLastAttack = 0f;
+            } else {
+                timeSinceLastAttack += Time.deltaTime;
             }
         } else if (stateInfo.IsName("BasicAttack")) {
-            if (touchingPlayer) {
+            if (checkPlayerTouching()) {
+                Debug.Log("Dealt damage!");
                 // deal damage
             }
 
         } else if (stateInfo.IsName("SpecialAttack")) {
-            if (touchingPlayer) {
+            if (checkPlayerTouching()) {
+                Debug.Log("Dealt damage!");
                 // deal extra damage
             }
 
@@ -145,10 +150,13 @@ public class AIManager : MonoBehaviour {
             if(Physics.Raycast(transform.position, dirToPlayer, out hit, 100f)) {
                 if(hit.collider.gameObject == player || hit.collider.gameObject.transform.IsChildOf(player.transform)) { // line of sight is not blocked
                     inView = true;
-                    playerSeen = true;
-                    timeSincePlayerInView = 0f;
                 }
             }
+        }
+        inView = inView || checkPlayerTouching();
+        if (inView) {
+            playerSeen = true;
+            timeSincePlayerInView = 0f;
         }
         playerInView = inView;
     }
@@ -157,8 +165,8 @@ public class AIManager : MonoBehaviour {
         playerNear = Vector3.Distance(gameObject.transform.position, player.transform.position) <= detectionRange;
     }
 
-    bool CheckPlayerContact() {
-        return false;
+    bool checkPlayerTouching() {
+        return Vector3.Distance(gameObject.transform.position, player.transform.position) <= 2f;
     }
 
     void UpdateTimeSincePlayerInView() {
