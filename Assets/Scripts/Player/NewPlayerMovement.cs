@@ -29,6 +29,8 @@ public class NewPlayerMovement : MonoBehaviour
 
     private Vector3 worldDirection;
 
+    private bool isRunning = false;
+
     void Awake()
     {
         Cursor.visible = false;
@@ -38,8 +40,8 @@ public class NewPlayerMovement : MonoBehaviour
         controls.Standard.RotateCamera.performed += ctx => rightStickMove = ctx.ReadValue<Vector2>();
         controls.Standard.RotateCamera.canceled += ctx => rightStickMove = Vector2.zero;
         controls.Standard.Sneak.performed += ctx => isSneaking = !isSneaking;
-        controls.Standard.Sprint.performed += ctx => leftStickMove *= 3;
-        controls.Standard.Sprint.canceled += ctx => leftStickMove /= 3;
+        controls.Standard.Sprint.performed += ctx => isRunning = true;
+        controls.Standard.Sprint.canceled += ctx => isRunning = false;
     }
 
     private void OnEnable()
@@ -67,8 +69,12 @@ public class NewPlayerMovement : MonoBehaviour
         }
         
         //bool isRunning = (Math.Abs(leftStickMove.x) > Math.Abs(.75) || Math.Abs(leftStickMove.y) > Math.Abs(.75));
-        bool isRunning = (new Vector2(leftStickMove.x, leftStickMove.y).magnitude > .75f);
-        
+       
+        if (!isRunning)
+        {
+            isRunning = (new Vector2(leftStickMove.x, leftStickMove.y).magnitude > .75f);
+        }
+
         footstepSource.mute = true;
 
         fallVector = Vector3.zero;
