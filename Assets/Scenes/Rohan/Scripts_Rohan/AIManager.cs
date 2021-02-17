@@ -1,10 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class AIManager : MonoBehaviour {
     Animator animator1;
     Animator animator2;
+    NavMeshAgent agent;
+    NavMeshAgent agent1;
+    NavMeshAgent agent2;
+
     public List<GameObject> waypoints;
     public GameObject player;
     public GameObject form1;
@@ -13,7 +18,7 @@ public class AIManager : MonoBehaviour {
     public int health = 100;
     public float detectionRange = 10f;
     public int waypointRandomness = 1;
-    public float baseSpeed = 5f;
+    public float baseSpeed = 1f;
     public float fov = 160f;
     float speed;
     Vector3 lastPositionPlayerSeen;
@@ -34,6 +39,9 @@ public class AIManager : MonoBehaviour {
     void Start() {
         animator1 = gameObject.transform.Find("human_form").GetComponent<Animator>();
         animator2 = gameObject.transform.Find("feral_form").GetComponent<Animator>();
+        agent = GetComponent<NavMeshAgent>();
+        agent1 = gameObject.transform.Find("human_form").GetComponent<NavMeshAgent>();
+        agent2 = gameObject.transform.Find("feral_form").GetComponent<NavMeshAgent>();
 
         speed = baseSpeed;
     }
@@ -62,6 +70,9 @@ public class AIManager : MonoBehaviour {
         if (health <= 0) {
             dead = true;
         }
+        if (!stateInfo.IsName("Searching")) {
+            lookingAround = 0;
+        }
 
         // manage activity while in certain states
         if (stateInfo.IsName("Idle")) {
@@ -69,14 +80,15 @@ public class AIManager : MonoBehaviour {
                 moving = true; // basically never be idle; this can be changed if desired
             }
         } else if (stateInfo.IsName("Wandering")) {
+            timeSincePlayerInView = 0f;
             if (moving) {
-                if (Vector3.Distance(gameObject.transform.position, waypoints[currWaypoint].transform.position) < 0.1f) {
+                if (Vector3.Distance(gameObject.transform.position, waypoints[currWaypoint].transform.position) < 2f) {
                     currWaypoint += Random.Range(1, 1 + waypointRandomness);
                     if (currWaypoint >= waypoints.Count) {
                         currWaypoint = 0;
                     }
                 } 
-                if (Vector3.Distance(gameObject.transform.position, waypoints[currWaypoint].transform.position) >= 0.1f) {
+                if (Vector3.Distance(gameObject.transform.position, waypoints[currWaypoint].transform.position) >= 2f) {
                     MoveTowardPoint(waypoints[currWaypoint].transform.position);
                 }
             }
@@ -89,7 +101,7 @@ public class AIManager : MonoBehaviour {
             }
         } else if (stateInfo.IsName("PursuingPlayer")) {
             MoveTowardPoint(lastPositionPlayerSeen);
-            if (Vector3.Distance(gameObject.transform.position, player.transform.position) < 0.5f) {
+            if (Vector3.Distance(gameObject.transform.position, player.transform.position) < 2.5f) {
                 int rand = Random.Range(0, 2);
                 if (rand == 0) {
                     animator1.SetTrigger("BasicAttack");
@@ -133,6 +145,8 @@ public class AIManager : MonoBehaviour {
             if(Physics.Raycast(transform.position, dirToPlayer, out hit, 100f)) {
                 if(hit.collider.gameObject == player || hit.collider.gameObject.transform.IsChildOf(player.transform)) { // line of sight is not blocked
                     inView = true;
+                    playerSeen = true;
+                    timeSincePlayerInView = 0f;
                 }
             }
         }
@@ -148,19 +162,21 @@ public class AIManager : MonoBehaviour {
     }
 
     void UpdateTimeSincePlayerInView() {
-        if (playerSeen && timeSincePlayerInView >= 0f && !playerInView) {
+        if (playerSeen && !playerInView) {
             timeSincePlayerInView += Time.deltaTime;
-            if (timeSincePlayerInView > 10f) {
+            if (timeSincePlayerInView >= 10f) {
                 playerSeen = false;
-                timeSincePlayerInView = 0f;
             }
         } 
     }
 
     void MoveTowardPoint(Vector3 target) {
-        
-
-
+        agent.destination = target; 
+        agent1.destination = target;
+        agent2.destination = target; 
+        agent.speed = speed;
+        agent1.speed = speed;
+        agent2.speed = speed; 
     }
 
     void LookAround() {
@@ -199,7 +215,7 @@ public class AIManager : MonoBehaviour {
         if (form1.GetComponentInChildren<Renderer>().enabled) {
             speed = baseSpeed;
         } else if (form2.GetComponentInChildren<Renderer>().enabled) {
-            speed = baseSpeed * 1.5f;
+            speed = baseSpeed * 3f;
         }
         
     }
