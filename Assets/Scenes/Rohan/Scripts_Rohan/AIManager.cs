@@ -34,6 +34,7 @@ public class AIManager : MonoBehaviour {
     bool playerSeen = false;
     float timeSincePlayerInView = 0f;
     float timeSinceLastAttack = 0f;
+    bool playerTakenDamageYet = false;
 
 
     // Start is called before the first frame update
@@ -110,19 +111,22 @@ public class AIManager : MonoBehaviour {
                     animator1.SetTrigger("SpecialAttack");
                     animator2.SetTrigger("SpecialAttack");
                 }
+                playerTakenDamageYet = false;
                 timeSinceLastAttack = 0f;
             } else {
                 timeSinceLastAttack += Time.deltaTime;
             }
         } else if (stateInfo.IsName("BasicAttack")) {
-            if (checkPlayerTouching()) {
+            if (checkPlayerTouching() && !playerTakenDamageYet) {
                 Debug.Log("Dealt damage!");
+                playerTakenDamageYet = true;
                 // deal damage
             }
 
         } else if (stateInfo.IsName("SpecialAttack")) {
-            if (checkPlayerTouching()) {
+            if (checkPlayerTouching() && !playerTakenDamageYet) {
                 Debug.Log("Dealt damage!");
+                playerTakenDamageYet = true;
                 // deal extra damage
             }
 
