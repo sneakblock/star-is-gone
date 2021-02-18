@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using EmeraldAI;
 using UnityEngine;
 using Random = UnityEngine.Random;
 

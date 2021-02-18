@@ -10,6 +10,7 @@ public class AIManager : MonoBehaviour {
     NavMeshAgent agent1;
     NavMeshAgent agent2;
 
+    public bool changesForm;
     public List<GameObject> waypoints;
     public GameObject player;
     public GameObject form1;
@@ -39,12 +40,17 @@ public class AIManager : MonoBehaviour {
 
     // Start is called before the first frame update
     void Start() {
-        animator1 = gameObject.transform.Find("human_form").GetComponent<Animator>();
-        animator2 = gameObject.transform.Find("feral_form").GetComponent<Animator>();
+        animator1 = form1.GetComponent<Animator>();
+        if (changesForm)
+        {
+            animator2 = form2.GetComponent<Animator>();
+        }
         agent = GetComponent<NavMeshAgent>();
-        agent1 = gameObject.transform.Find("human_form").GetComponent<NavMeshAgent>();
-        agent2 = gameObject.transform.Find("feral_form").GetComponent<NavMeshAgent>();
-
+        agent1 = form1.GetComponent<NavMeshAgent>();
+        if (changesForm)
+        {
+            agent2 = gameObject.transform.Find("feral_form").GetComponent<NavMeshAgent>();
+        }
         speed = baseSpeed;
     }
 
@@ -53,15 +59,19 @@ public class AIManager : MonoBehaviour {
         var stateInfo = animator1.GetCurrentAnimatorStateInfo(0);
 
         animator1.SetBool("PlayerInView", playerInView);
-        animator2.SetBool("PlayerInView", playerInView);
         animator1.SetBool("PlayerNear", playerNear);
-        animator2.SetBool("PlayerNear", playerNear);
         animator1.SetInteger("TimeSincePlayerInView", (int) timeSincePlayerInView);
-        animator2.SetInteger("TimeSincePlayerInView", (int) timeSincePlayerInView);
         animator1.SetBool("Moving", moving);
-        animator2.SetBool("Moving", moving);
         animator1.SetBool("Dead", dead);
-        animator2.SetBool("Dead", dead); 
+        
+        if (changesForm)
+        {
+            animator2.SetBool("PlayerInView", playerInView);
+            animator2.SetBool("PlayerNear", playerNear);
+            animator2.SetInteger("TimeSincePlayerInView", (int) timeSincePlayerInView);
+            animator2.SetBool("Moving", moving);
+            animator2.SetBool("Dead", dead);
+        }
 
         // manage activity based off parameters
         if (playerInView) {
@@ -106,10 +116,16 @@ public class AIManager : MonoBehaviour {
                 int rand = Random.Range(0, 2);
                 if (rand == 0) {
                     animator1.SetTrigger("BasicAttack");
-                    animator2.SetTrigger("BasicAttack");
+                    if (changesForm)
+                    {
+                        animator2.SetTrigger("BasicAttack");
+                    }
                 } else if (rand == 1) {
                     animator1.SetTrigger("SpecialAttack");
-                    animator2.SetTrigger("SpecialAttack");
+                    if (changesForm)
+                    {
+                        animator2.SetTrigger("SpecialAttack");
+                    }
                 }
                 playerTakenDamageYet = false;
                 timeSinceLastAttack = 0f;
@@ -140,7 +156,10 @@ public class AIManager : MonoBehaviour {
         UpdatePlayerNear();
         UpdateTimeSincePlayerInView();
 
-        updateForm();
+        if (changesForm)
+        {
+            updateForm();
+        }
     }
 
     void UpdatePlayerInView () {
@@ -185,10 +204,16 @@ public class AIManager : MonoBehaviour {
     void MoveTowardPoint(Vector3 target) {
         agent.destination = target; 
         agent1.destination = target;
-        agent2.destination = target; 
+        if (changesForm)
+        {
+            agent2.destination = target; 
+        }
         agent.speed = speed;
         agent1.speed = speed;
-        agent2.speed = speed; 
+        if (changesForm)
+        {
+            agent2.speed = speed; 
+        }
     }
 
     void LookAround() {
