@@ -80,6 +80,7 @@ public class DialogueTriggerAI : MonoBehaviour
             _anim.SetBool("showButton", false);
             FindObjectOfType<DialogueUI>().DialogueComplete();
             FindObjectOfType<DialogueRunner>().ResetDialogue();
+            gameObject.transform.parent.gameObject.GetComponent<AIManager>().Interact(false);
             StartCoroutine(DidPressResetter());
         }
         
@@ -89,7 +90,7 @@ public class DialogueTriggerAI : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         didPress = false;
-        gameObject.transform.parent.gameObject.GetComponent<AIManager>().Interact(false);
+        //gameObject.transform.parent.gameObject.GetComponent<AIManager>().Interact(false);
         Debug.Log("untriggered");
     }
 

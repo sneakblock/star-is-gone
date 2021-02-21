@@ -12,27 +12,16 @@ public class EnemyFormChangeManager : MonoBehaviour
 
     void Start()
     {
-        //form1.SetActive(true);
-        //form2.SetActive(false);
+        
         form1.GetComponentInChildren<Renderer>().enabled = true;
         form2.GetComponentInChildren<Renderer>().enabled = false;
-        InvokeRepeating("FormChanger", 0, 4);
-    }
-
-    /*
-    void Update()
-    {
-        if (form1.GetComponentInChildren<Renderer>().enabled && !form2.GetComponentInChildren<Renderer>().enabled)
+        if (GetComponent<AIManager>().changesForm)
         {
-            form2.transform.position = form1.transform.position;
-            form2.transform.forward = form1.transform.forward;
-        } else if (!form1.GetComponentInChildren<Renderer>().enabled && form2.GetComponentInChildren<Renderer>().enabled)
-        {
-            form1.transform.position = form2.transform.position;
-            form1.transform.forward = form2.transform.forward;
+            InvokeRepeating("FormChanger", 0, 4);
         }
     }
-    */
+
+   
 
 
     void FormChanger()

@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a5a09af4-1e72-4e91-b2d9-4af807f4bc97" name="Default Changelist" comment="" />
+    <list default="true" id="a5a09af4-1e72-4e91-b2d9-4af807f4bc97" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/Enemies/Prototype Enemy/Double Leg Takedown - Attacker.fbx.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Enemies/Prototype Enemy/Double Leg Takedown - Attacker.fbx.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rohan/AITestScene_Rohan.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Rohan/AITestScene_Rohan.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/DialogueTriggerAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/DialogueTriggerAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/EnemyFormChangeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/EnemyFormChangeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -43,8 +51,9 @@
         <option value="$PROJECT_DIR$/Assets/YarnSpinner/Runtime/DialogueRunner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DialogueTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/NewPlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/AIManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/DialogueTriggerAI.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/EnemyFormChangeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/AIManager.cs" />
       </list>
     </option>
   </component>
@@ -157,6 +166,7 @@
       <workItem from="1613606689924" duration="3345000" />
       <workItem from="1613688817255" duration="7000" />
       <workItem from="1613690566391" duration="17000" />
+      <workItem from="1613944702930" duration="3642000" />
     </task>
     <servers />
   </component>

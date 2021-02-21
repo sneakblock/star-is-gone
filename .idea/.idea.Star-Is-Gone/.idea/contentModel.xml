@@ -1685,6 +1685,7 @@
           <e p="Rohan" t="Include">
             <e p="Scripts_Rohan" t="Include">
               <e p="AIManager.cs" t="Include" />
+              <e p="DialogueTriggerAI.cs" t="Include" />
             </e>
           </e>
           <e p="Tests" t="Include">
