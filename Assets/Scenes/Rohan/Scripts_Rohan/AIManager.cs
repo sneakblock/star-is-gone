@@ -7,10 +7,10 @@ public class AIManager : MonoBehaviour {
     Animator animator1;
     Animator animator2;
     NavMeshAgent agent;
-    NavMeshAgent agent1;
-    NavMeshAgent agent2;
 
     public bool changesForm;
+    public bool isEnemy;
+    public bool canBeLost;
     public List<GameObject> waypoints;
     public GameObject player;
     public GameObject form1;
@@ -46,12 +46,16 @@ public class AIManager : MonoBehaviour {
             animator2 = form2.GetComponent<Animator>();
         }
         agent = GetComponent<NavMeshAgent>();
-        agent1 = form1.GetComponent<NavMeshAgent>();
-        if (changesForm)
-        {
-            agent2 = gameObject.transform.Find("feral_form").GetComponent<NavMeshAgent>();
+
+        animator1.SetBool("IsEnemy", isEnemy);
+        animator1.SetBool("CanBeLost", canBeLost);
+        if (changesForm) {
+            animator2.SetBool("IsEnemy", isEnemy);
+            animator2.SetBool("CanBeLost", canBeLost);
         }
+
         speed = baseSpeed;
+        moving = true;
     }
 
     // Update is called once per frame
@@ -86,9 +90,12 @@ public class AIManager : MonoBehaviour {
 
         // manage activity while in certain states
         if (stateInfo.IsName("Idle")) {
-            if (waypoints != null && waypoints.Count > 0) {
-                moving = true; // basically never be idle; this can be changed if desired
-            }
+            // do nothing
+            agent.ResetPath(); 
+            // look at player
+            Vector3 targetDirection = player.transform.position - transform.position;
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, speed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(newDirection);
         } else if (stateInfo.IsName("Wandering")) {
             timeSincePlayerInView = 0f;
             if (moving) {
@@ -103,11 +110,15 @@ public class AIManager : MonoBehaviour {
                 }
             }
         } else if (stateInfo.IsName("Searching")) {
-            if (Vector3.Distance(gameObject.transform.position, lastPositionPlayerSeen) < 0.1f) {
-                fromRotation = transform.rotation;
-                LookAround();
+            if (canBeLost) {
+                if (Vector3.Distance(gameObject.transform.position, lastPositionPlayerSeen) < 0.1f) {
+                    fromRotation = transform.rotation;
+                    LookAround();
+                } else {
+                    MoveTowardPoint(lastPositionPlayerSeen);
+                }
             } else {
-                MoveTowardPoint(lastPositionPlayerSeen);
+                MoveTowardPoint(player.transform.position);
             }
         } else if (stateInfo.IsName("PursuingPlayer")) {
             MoveTowardPoint(lastPositionPlayerSeen);
@@ -158,7 +169,7 @@ public class AIManager : MonoBehaviour {
 
         if (changesForm)
         {
-            updateForm();
+            UpdateForm();
         }
     }
 
@@ -203,16 +214,11 @@ public class AIManager : MonoBehaviour {
 
     void MoveTowardPoint(Vector3 target) {
         agent.destination = target; 
-        agent1.destination = target;
-        if (changesForm)
-        {
-            agent2.destination = target; 
-        }
         agent.speed = speed;
-        agent1.speed = speed;
+        form1.transform.position = gameObject.transform.position;
         if (changesForm)
         {
-            agent2.speed = speed; 
+            form2.transform.position = gameObject.transform.position;
         }
     }
 
@@ -248,12 +254,16 @@ public class AIManager : MonoBehaviour {
         animator2.SetTrigger("TakeHit");
     }
 
-    public void updateForm() {
+    public void UpdateForm() {
         if (form1.GetComponentInChildren<Renderer>().enabled) {
             speed = baseSpeed;
         } else if (form2.GetComponentInChildren<Renderer>().enabled) {
             speed = baseSpeed * 3f;
         }
         
+    }
+
+    public void Interact(bool start) {
+        moving = !start;
     }
 }
