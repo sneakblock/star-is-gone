@@ -1562,7 +1562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 516254333233831668, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0047307974
+      value: -0.004730798
       objectReference: {fileID: 0}
     - target: {fileID: 516254333233831668, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalRotation.z
@@ -4548,7 +4548,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changesForm: 1
-  isEnemy: 0
+  isEnemy: 1
+  canBeLost: 0
   waypoints:
   - {fileID: 250164369}
   - {fileID: 1019711688}

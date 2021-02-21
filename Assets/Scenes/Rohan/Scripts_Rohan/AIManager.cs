@@ -10,6 +10,7 @@ public class AIManager : MonoBehaviour {
 
     public bool changesForm;
     public bool isEnemy;
+    public bool canBeLost;
     public List<GameObject> waypoints;
     public GameObject player;
     public GameObject form1;
@@ -47,8 +48,10 @@ public class AIManager : MonoBehaviour {
         agent = GetComponent<NavMeshAgent>();
 
         animator1.SetBool("IsEnemy", isEnemy);
+        animator1.SetBool("CanBeLost", canBeLost);
         if (changesForm) {
             animator2.SetBool("IsEnemy", isEnemy);
+            animator2.SetBool("CanBeLost", canBeLost);
         }
 
         speed = baseSpeed;
@@ -107,11 +110,15 @@ public class AIManager : MonoBehaviour {
                 }
             }
         } else if (stateInfo.IsName("Searching")) {
-            if (Vector3.Distance(gameObject.transform.position, lastPositionPlayerSeen) < 0.1f) {
-                fromRotation = transform.rotation;
-                LookAround();
+            if (canBeLost) {
+                if (Vector3.Distance(gameObject.transform.position, lastPositionPlayerSeen) < 0.1f) {
+                    fromRotation = transform.rotation;
+                    LookAround();
+                } else {
+                    MoveTowardPoint(lastPositionPlayerSeen);
+                }
             } else {
-                MoveTowardPoint(lastPositionPlayerSeen);
+                MoveTowardPoint(player.transform.position);
             }
         } else if (stateInfo.IsName("PursuingPlayer")) {
             MoveTowardPoint(lastPositionPlayerSeen);
