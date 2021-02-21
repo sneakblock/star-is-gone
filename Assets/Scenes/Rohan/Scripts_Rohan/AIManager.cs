@@ -11,6 +11,7 @@ public class AIManager : MonoBehaviour {
     NavMeshAgent agent2;
 
     public bool changesForm;
+    public bool isEnemy;
     public List<GameObject> waypoints;
     public GameObject player;
     public GameObject form1;
@@ -36,6 +37,7 @@ public class AIManager : MonoBehaviour {
     float timeSincePlayerInView = 0f;
     float timeSinceLastAttack = 0f;
     bool playerTakenDamageYet = false;
+    bool interactingWithPlayer = false;
 
 
     // Start is called before the first frame update
@@ -51,7 +53,14 @@ public class AIManager : MonoBehaviour {
         {
             agent2 = gameObject.transform.Find("feral_form").GetComponent<NavMeshAgent>();
         }
+
+        animator1.SetBool("IsEnemy", isEnemy);
+        if (changesForm) {
+            animator2.SetBool("IsEnemy", isEnemy);
+        }
+
         speed = baseSpeed;
+        moving = true;
     }
 
     // Update is called once per frame
@@ -86,9 +95,7 @@ public class AIManager : MonoBehaviour {
 
         // manage activity while in certain states
         if (stateInfo.IsName("Idle")) {
-            if (waypoints != null && waypoints.Count > 0) {
-                moving = true; // basically never be idle; this can be changed if desired
-            }
+            // do nothing
         } else if (stateInfo.IsName("Wandering")) {
             timeSincePlayerInView = 0f;
             if (moving) {
@@ -158,7 +165,7 @@ public class AIManager : MonoBehaviour {
 
         if (changesForm)
         {
-            updateForm();
+            UpdateForm();
         }
     }
 
@@ -248,12 +255,16 @@ public class AIManager : MonoBehaviour {
         animator2.SetTrigger("TakeHit");
     }
 
-    public void updateForm() {
+    public void UpdateForm() {
         if (form1.GetComponentInChildren<Renderer>().enabled) {
             speed = baseSpeed;
         } else if (form2.GetComponentInChildren<Renderer>().enabled) {
             speed = baseSpeed * 3f;
         }
         
+    }
+
+    public void Interact(bool start) {
+        moving = !start;
     }
 }
