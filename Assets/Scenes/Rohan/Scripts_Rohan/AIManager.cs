@@ -7,8 +7,6 @@ public class AIManager : MonoBehaviour {
     Animator animator1;
     Animator animator2;
     NavMeshAgent agent;
-    NavMeshAgent agent1;
-    NavMeshAgent agent2;
 
     public bool changesForm;
     public bool isEnemy;
@@ -47,11 +45,6 @@ public class AIManager : MonoBehaviour {
             animator2 = form2.GetComponent<Animator>();
         }
         agent = GetComponent<NavMeshAgent>();
-        agent1 = form1.GetComponent<NavMeshAgent>();
-        if (changesForm)
-        {
-            agent2 = gameObject.transform.Find("feral_form").GetComponent<NavMeshAgent>();
-        }
 
         animator1.SetBool("IsEnemy", isEnemy);
         if (changesForm) {
@@ -96,11 +89,6 @@ public class AIManager : MonoBehaviour {
         if (stateInfo.IsName("Idle")) {
             // do nothing
             agent.ResetPath(); 
-            agent1.ResetPath();
-            if (changesForm)
-            {
-                agent2.ResetPath(); 
-            }
             // look at player
             Vector3 targetDirection = player.transform.position - transform.position;
             Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, speed * Time.deltaTime, 0.0f);
@@ -219,16 +207,11 @@ public class AIManager : MonoBehaviour {
 
     void MoveTowardPoint(Vector3 target) {
         agent.destination = target; 
-        agent1.destination = target;
-        if (changesForm)
-        {
-            agent2.destination = target; 
-        }
         agent.speed = speed;
-        agent1.speed = speed;
+        form1.transform.position = gameObject.transform.position;
         if (changesForm)
         {
-            agent2.speed = speed; 
+            form2.transform.position = gameObject.transform.position;
         }
     }
 

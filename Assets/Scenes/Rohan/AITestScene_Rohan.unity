@@ -2185,6 +2185,10 @@ PrefabInstance:
       propertyPath: m_AngularSpeed
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 851434404426201629, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 856158051085507113, guid: 291cb02846b2a6241b0987994e749cbc, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -3433,6 +3437,10 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2872860202749186735, guid: 45b471707a1073e4882ba9bbb82fb1fa, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -99.200195
+      objectReference: {fileID: 0}
     - target: {fileID: 2872860202804452314, guid: 45b471707a1073e4882ba9bbb82fb1fa, type: 3}
       propertyPath: yarnScripts.Array.data[0]
       value: 
@@ -3969,6 +3977,10 @@ PrefabInstance:
       propertyPath: m_AngularSpeed
       value: 200
       objectReference: {fileID: 0}
+    - target: {fileID: 3255351885369112629, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3255351885369112635, guid: 3bf3f0ec60a6c8043b449367435f5882, type: 3}
       propertyPath: TabNumber
       value: 1
@@ -4256,32 +4268,6 @@ CapsuleCollider:
   m_Height: 1.42
   m_Direction: 2
   m_Center: {x: 0.0000023841858, y: -0.0000009536743, z: 0.63612854}
---- !u!114 &1503980990
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59306422a2ca4454aabce3daa79c3334, type: 3}
-  m_Name: New Aura Base Settings
-  m_EditorClassIdentifier: 
-  useDensity: 1
-  density: 0.25
-  useScattering: 1
-  scattering: 0.5
-  useAmbientLighting: 1
-  ambientLightingStrength: 1
-  useColor: 0
-  color: {r: 0, g: 0.5, b: 0.5, a: 0.5}
-  colorStrength: 1
-  useTint: 0
-  tint: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
-  tintStrength: 1
-  useExtinction: 0
-  extinction: 0.75
 --- !u!1 &1519244673 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100124, guid: bbbd76db8c4f3984f9d3c945f53bd14e, type: 3}
