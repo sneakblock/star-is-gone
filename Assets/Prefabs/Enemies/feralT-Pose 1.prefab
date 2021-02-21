@@ -708,7 +708,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2767046245311750793}
   - component: {fileID: 3255351885369112634}
-  - component: {fileID: 3255351885369112629}
   - component: {fileID: 3255351885369112628}
   m_Layer: 0
   m_Name: feralT-Pose 1
@@ -746,28 +745,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.1515964, y: 2.8243382, z: 0.3644297}
   m_Center: {x: 0, y: 1.4121691, z: 0}
---- !u!195 &3255351885369112629
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3255351885369112627}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 2
-  m_BaseOffset: 0
-  m_WalkableMask: 4294967295
-  m_ObstacleAvoidanceType: 4
 --- !u!82 &3255351885369112628
 AudioSource:
   m_ObjectHideFlags: 0
