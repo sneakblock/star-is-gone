@@ -37,7 +37,6 @@ public class AIManager : MonoBehaviour {
     float timeSincePlayerInView = 0f;
     float timeSinceLastAttack = 0f;
     bool playerTakenDamageYet = false;
-    bool interactingWithPlayer = false;
 
 
     // Start is called before the first frame update
@@ -96,6 +95,16 @@ public class AIManager : MonoBehaviour {
         // manage activity while in certain states
         if (stateInfo.IsName("Idle")) {
             // do nothing
+            agent.ResetPath(); 
+            agent1.ResetPath();
+            if (changesForm)
+            {
+                agent2.ResetPath(); 
+            }
+            // look at player
+            Vector3 targetDirection = player.transform.position - transform.position;
+            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, speed * Time.deltaTime, 0.0f);
+            transform.rotation = Quaternion.LookRotation(newDirection);
         } else if (stateInfo.IsName("Wandering")) {
             timeSincePlayerInView = 0f;
             if (moving) {
