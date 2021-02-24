@@ -520,6 +520,7 @@
         <e p="Input" t="Include">
           <e p="PlayerControls.cs" t="Include" />
         </e>
+        <e p="Interactable.cs" t="Include" />
         <e p="MoveTester.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="AmplifyShaderEditor" t="Include">
@@ -1682,12 +1683,6 @@
           </e>
         </e>
         <e p="Scenes" t="Include">
-          <e p="Rohan" t="Include">
-            <e p="Scripts_Rohan" t="Include">
-              <e p="AIManager.cs" t="Include" />
-              <e p="DialogueTriggerAI.cs" t="Include" />
-            </e>
-          </e>
           <e p="Tests" t="Include">
             <e p="shadertestshaders" t="Include">
               <e p="testShader.shader" t="Include" />
@@ -1695,6 +1690,18 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
+          <e p="AI" t="Include">
+            <e p="AIManager.cs" t="Include" />
+            <e p="DialogueTriggerAI.cs" t="Include" />
+            <e p="Enemies" t="Include">
+              <e p="Prototype Enemy" t="Include">
+                <e p="AttackPlayer.cs" t="Include" />
+                <e p="DamagePlayer.cs" t="Include" />
+                <e p="DamagePlayerTest.cs" t="Include" />
+                <e p="EnemyFormChangeManager.cs" t="Include" />
+              </e>
+            </e>
+          </e>
           <e p="Deprecated" t="Include">
             <e p="EndGame.cs" t="Include" />
             <e p="EnterDiner.cs" t="Include" />
@@ -1707,14 +1714,6 @@
             <e p="Dialogue.cs" t="Include" />
             <e p="DialogueManager.cs" t="Include" />
             <e p="DialogueTrigger.cs" t="Include" />
-          </e>
-          <e p="Enemies" t="Include">
-            <e p="Prototype Enemy" t="Include">
-              <e p="AttackPlayer.cs" t="Include" />
-              <e p="DamagePlayer.cs" t="Include" />
-              <e p="DamagePlayerTest.cs" t="Include" />
-              <e p="EnemyFormChangeManager.cs" t="Include" />
-            </e>
           </e>
           <e p="Player" t="Include">
             <e p="HealthSystem.cs" t="Include" />
