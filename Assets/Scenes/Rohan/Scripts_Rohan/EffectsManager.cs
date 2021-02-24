@@ -11,6 +11,7 @@ public class EffectsManager : MonoBehaviour
     Datamosh datamosh;
     DigitalGlitch digitalGlitch;
     AnalogGlitch analogGlitch;
+    float timeSinceGlitch = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,27 +25,39 @@ public class EffectsManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        timeSinceGlitch += Time.deltaTime;
     }
 
     void UpdateEffects() {
-        Vector3 dirToCam = camera.transform.position - transform.position;
-        float angleToCam = Vector3.Angle(new Vector3(dirToCam.x, 0, dirToCam.z), new Vector3(camera.transform.forward.x, 0, camera.transform.forward.z));
-        angleToCam = Math.Abs(180f - angleToCam); 
-        if (angleToCam > 30) {
-            angleToCam = 0;
+        bool inView = false;
+        Vector3 dirToEnemy = transform.position - camera.transform.position;
+        float angleToEnemy = Vector3.Angle(new Vector3(dirToEnemy.x, 0, dirToEnemy.z), new Vector3(camera.transform.forward.x, 0, camera.transform.forward.z));
+        angleToEnemy = Math.Abs(180f - angleToEnemy); 
+
+        RaycastHit hit;
+        // Debug.DrawRay (transform.position, dirToPlayer, Color.red, 0f, true);
+        if(Physics.Raycast(camera.transform.position, dirToEnemy, out hit, 100f)) {
+            if(hit.collider.gameObject == gameObject || hit.collider.gameObject.transform.IsChildOf(transform)) { // line of sight is not blocked
+                inView = true;
+            }
         }
-        SetDatamosh(intensityMultiplier * angleToCam / 180f);  
-        SetDigitalGlitch(intensityMultiplier * angleToCam / 180f);  
-        SetAnalogGlitch(intensityMultiplier * angleToCam / 180f);  
+
+        if (angleToEnemy < (180f - camera.GetComponent<Camera>().fieldOfView) || !inView) {
+            angleToEnemy = 0;
+        }
+            
+        SetDatamosh(intensityMultiplier * angleToEnemy / 180f);  
+        SetDigitalGlitch(intensityMultiplier * angleToEnemy / 180f);  
+        SetAnalogGlitch(intensityMultiplier * angleToEnemy / 180f);  
     }
 
     void SetDatamosh(float intensity) {
         datamosh.entropy = Mathf.Clamp(intensity, 0, 1);
-        if (intensity == 0f) {
+        if (intensity == 0f && timeSinceGlitch > 0.5f) {
             datamosh.Reset();
-        } else {
+        } else if (intensity > 0f) {
             datamosh.Glitch();
+            timeSinceGlitch = 0f;
         }
     }
 
