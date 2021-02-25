@@ -7,7 +7,8 @@ using Kino;
 public class EffectsManager : MonoBehaviour
 {
     public GameObject camera;
-    public float intensityMultiplier = 1;
+    public float intensityMultiplier = 1f;
+    public float duration = 0.5f;
     Datamosh datamosh;
     DigitalGlitch digitalGlitch;
     AnalogGlitch analogGlitch;
@@ -53,7 +54,7 @@ public class EffectsManager : MonoBehaviour
 
     void SetDatamosh(float intensity) {
         datamosh.entropy = Mathf.Clamp(intensity, 0, 1);
-        if (intensity == 0f && timeSinceGlitch > 0.5f) {
+        if (intensity == 0f && timeSinceGlitch > duration) {
             datamosh.Reset();
         } else if (intensity > 0f) {
             datamosh.Glitch();
