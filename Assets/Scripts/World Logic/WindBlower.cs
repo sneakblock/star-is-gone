@@ -22,13 +22,13 @@ public class WindBlower : MonoBehaviour
     void Update()
     {
         foreach (GameObject obj in windObjects)
-        {
-            Rigidbody[] rbs = obj.GetComponentsInChildren<Rigidbody>();
-            foreach (Rigidbody rb in rbs)
             {
-                rb.AddForce(new Vector3(Xdir + Random.Range(-2, 1), Ydir + Random.Range(-2, 1), Zdir + 
-                    Random.Range(-2, 1)));
+                Rigidbody[] rbs = obj.GetComponentsInChildren<Rigidbody>();
+                foreach (Rigidbody rb in rbs)
+                {
+                    rb.AddForce(new Vector3(Xdir + Random.Range(-1, 1), Ydir + Random.Range(-1, 1), Zdir + 
+                        Random.Range(-1, 1)));
+                }
             }
-        }
     }
 }

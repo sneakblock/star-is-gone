@@ -3,23 +3,58 @@
   <component name="ChangeListManager">
     <list default="true" id="a5a09af4-1e72-4e91-b2d9-4af807f4bc97" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rohan/AITestScene_Rohan.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Rohan/AITestScene_Rohan.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/AIManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/AIManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/DialogueTriggerAI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/DialogueTriggerAI.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/Default_Material.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/Default_Material.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/door.mat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/door.mat.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/lambert1.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/lambert1.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/lambert2.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/lambert2.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/lambert3.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/lambert3.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/lambert4.mat" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Models/Structures/Motel/Materials/lambert4.mat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel10.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel10.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel11.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel11.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel12.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel12.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel2.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel2.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel3.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel3.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel4.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel4.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel5.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel5.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel6.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel6.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel7.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel7.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel8.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Models/Structures/Motel/motel8.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/New Terrain.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/New Terrain.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Sandbox_Ben/New Post-processing Profile.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Sandbox_Ben/New Post-processing Profile.asset" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/AttackPlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/AttackPlayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/DamagePlayer.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/DamagePlayer.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/DamagePlayerTest.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/DamagePlayerTest.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/EnemyFormChangeManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/EnemyFormChangeManager.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/LightingData.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_shadowmask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_shadowmask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_dir.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_light.exr" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_shadowmask.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Overworld Light Settings.lighting" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Overworld Light Settings.lighting" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World Logic/WindBlower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World Logic/WindBlower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerrainData_398343d0-225c-4c92-9425-82257a3dcaae.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TerrainData_398343d0-225c-4c92-9425-82257a3dcaae.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerrainData_7ab66bde-d757-4f13-b5da-cde0ca88acab.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TerrainData_7ab66bde-d757-4f13-b5da-cde0ca88acab.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerrainData_c5adca57-8e02-4261-a0d6-34fce593bebe.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TerrainData_c5adca57-8e02-4261-a0d6-34fce593bebe.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerrainData_f29a1ca7-e420-487b-874a-a52e305839c0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TerrainData_f29a1ca7-e420-487b-874a-a52e305839c0.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerrainData_fbc19fe5-7977-4b9f-929f-0b0806ff7084.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TerrainData_fbc19fe5-7977-4b9f-929f-0b0806ff7084.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/ProjectSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +101,7 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/EnemyFormChangeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/AIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Interactable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World Logic/WindBlower.cs" />
       </list>
     </option>
   </component>
@@ -181,6 +217,7 @@
       <workItem from="1613944702930" duration="3642000" />
       <workItem from="1614122353453" duration="815000" />
       <workItem from="1614124147824" duration="2248000" />
+      <workItem from="1614289082060" duration="1814000" />
     </task>
     <servers />
   </component>
