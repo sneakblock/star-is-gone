@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\sneak\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\sneak\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Star-Is-Gone.-452421224.00" t="ExcludeRecursive" />
-    <e p="C:\Users\sneak\Documents\Star-Is-Gone_testthot\Star-Is-Gone" t="IncludeRecursive">
+    <e p="C:\Users\sneak\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Star-Is-Gone.546111729.00" t="ExcludeRecursive" />
+    <e p="C:\Users\sneak\Documents\Star-Is-Gone" t="IncludeRecursive">
       <e p="AmplifyShaderEditor.csproj" t="IncludeRecursive" />
       <e p="AmplifyShaderEditor.Samples.BuiltIn.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
@@ -1683,6 +1683,13 @@
         </e>
         <e p="SceneLoader.cs" t="Include" />
         <e p="Scenes" t="Include">
+          <e p="Avery" t="Include">
+            <e p="Scripts_Avery" t="Include">
+              <e p="InstanceExit.cs" t="Include" />
+              <e p="ParkInteractable.cs" t="Include" />
+              <e p="PuzzleUI.cs" t="Include" />
+            </e>
+          </e>
           <e p="Rohan" t="Include">
             <e p="Assets_Rohan" t="Include">
               <e p="Datamosh" t="Include">
