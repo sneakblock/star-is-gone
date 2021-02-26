@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Alpha Build/Levels/diner/diner.unity
     guid: e4e6c4bd66dc346438297cc7e9376514
+  - enabled: 1
+    path: Assets/Scenes/VGDev Build/Overworld.unity
+    guid: a2a0177d9c7b88349a9d7e061fa0fe3e
+  - enabled: 1
+    path: Assets/Scenes/Rohan/AITestScene_Rohan.unity
+    guid: 5422ba72ad398458397a814b713f8ef7
   m_configObjects: {}
