@@ -30,7 +30,6 @@ public class EnemyFormChangeManager : MonoBehaviour
         {
             if (form1.GetComponentInChildren<Renderer>().enabled && !form2.GetComponentInChildren<Renderer>().enabled)
             {
-                Debug.Log("changing to feral form");
                 SwapForms(form1, form2);
             }
         }
@@ -38,7 +37,6 @@ public class EnemyFormChangeManager : MonoBehaviour
         {
             if (form2.GetComponentInChildren<Renderer>().enabled && !form1.GetComponentInChildren<Renderer>().enabled)
             {
-                Debug.Log("changing to human form");
                 SwapForms(form2, form1);
             }
         }

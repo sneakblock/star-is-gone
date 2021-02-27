@@ -1562,11 +1562,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 516254333233831668, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.004730798
+      value: -0.0047308323
       objectReference: {fileID: 0}
     - target: {fileID: 516254333233831668, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00018890433
+      value: -0.00018890573
       objectReference: {fileID: 0}
     - target: {fileID: 516254333233831668, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1598,11 +1598,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 516254333510643864, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00473326
+      value: -0.004733267
       objectReference: {fileID: 0}
     - target: {fileID: 516254333510643864, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000111827016
+      value: -0.00011182718
       objectReference: {fileID: 0}
     - target: {fileID: 516254333510643864, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalPosition.x
@@ -4606,8 +4606,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f44b46250a6e4592ae39bbfa5a55ad6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changesForm: 0
-  isEnemy: 0
+  changesForm: 1
+  isEnemy: 1
   canBeLost: 1
   waypoints:
   - {fileID: 250164369}
@@ -4617,10 +4617,10 @@ MonoBehaviour:
   form1: {fileID: 1872798190}
   form2: {fileID: 859667605}
   health: 100
-  detectionRange: 10
-  waypointRandomness: 1
+  baseDetectionRange: 10
+  waypointRandomness: 0
   baseSpeed: 2
-  fov: 160
+  baseFov: 160
 --- !u!195 &1698110979
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -4656,7 +4656,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 710652675}
-  intensityMultiplier: 0.1
+  intensityMultiplier: 0
+  duration: 0.5
 --- !u!1 &1714958204
 GameObject:
   m_ObjectHideFlags: 0
