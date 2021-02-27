@@ -122,7 +122,6 @@ public class AIManager : MonoBehaviour {
             if (canBeLost) {
                 if (Vector3.Distance(gameObject.transform.position, lastPositionPlayerSeen) < 2f) {
                     if (lookAroundPoint == Vector3.zero || Vector3.Distance(gameObject.transform.position, lookAroundPoint) < 2f) {
-                        Debug.Log("look around");
                         LookAround();
                     } else {
                         MoveTowardPoint(lookAroundPoint);
@@ -160,14 +159,14 @@ public class AIManager : MonoBehaviour {
             if (checkPlayerTouching() && !playerTakenDamageYet) {
                 Debug.Log("Dealt damage!");
                 playerTakenDamageYet = true;
-                // deal damage
+                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage(10);
             }
 
         } else if (stateInfo.IsName("SpecialAttack")) {
             if (checkPlayerTouching() && !playerTakenDamageYet) {
                 Debug.Log("Dealt damage!");
                 playerTakenDamageYet = true;
-                // deal extra damage
+                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage(20);
             }
 
         } else if (stateInfo.IsName("TakingHit")) {

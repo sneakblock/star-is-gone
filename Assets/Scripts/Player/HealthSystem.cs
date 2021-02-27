@@ -7,7 +7,7 @@ public class HealthSystem : MonoBehaviour
 
     private int health = 100;
 
-    public void takeDamage(int damage)
+    public void TakeDamage(int damage)
     {
         this.health -= damage;
     }
