@@ -30,6 +30,11 @@ public class HealthSystem : MonoBehaviour
         SetCollidersState(true);
     }
 
+    void Respawn()
+    {
+        
+    }
+
     void SetRigidBodyState(bool state)
     {
         Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();

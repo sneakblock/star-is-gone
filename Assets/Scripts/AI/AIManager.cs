@@ -159,14 +159,14 @@ public class AIManager : MonoBehaviour {
             if (checkPlayerTouching() && !playerTakenDamageYet) {
                 Debug.Log("Dealt damage!");
                 playerTakenDamageYet = true;
-                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage(10);
+                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage(50);
             }
 
         } else if (stateInfo.IsName("SpecialAttack")) {
             if (checkPlayerTouching() && !playerTakenDamageYet) {
                 Debug.Log("Dealt damage!");
                 playerTakenDamageYet = true;
-                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage(20);
+                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage(100);
             }
 
         } else if (stateInfo.IsName("TakingHit")) {
