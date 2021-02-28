@@ -17,15 +17,24 @@ public class AIManager : MonoBehaviour {
     public GameObject form2;
 
     public int health = 100;
-    public float detectionRange = 10f;
+    public float bigSize = 2;
+    public float growthDuration = 3f;
+    int growing = 0; // 0 = nothing, 1 = shrink, 2 = grow
+    float growthTimer = 0f;
+    public float baseDetectionRange = 10f;
+    float detectionRange;
     public int waypointRandomness = 1;
     public float baseSpeed = 1f;
-    public float fov = 160f;
     float speed;
+    public float baseFov = 160f;
+    float fov;
+    public float baseDamage = 50f;
+    float damage;
     Vector3 lastPositionPlayerSeen;
+    Vector3 lookAroundPoint;
     int currWaypoint = 0;
-    int lookingAround = 0;
     Quaternion fromRotation;
+    bool playerSneaking = false;
 
     // state parameters
     bool moving = false;
@@ -55,7 +64,11 @@ public class AIManager : MonoBehaviour {
         }
 
         speed = baseSpeed;
+        detectionRange = baseDetectionRange;
+        fov = baseFov;
+        damage = baseDamage;
         moving = true;
+        ToggleSize();
     }
 
     // Update is called once per frame
@@ -85,7 +98,7 @@ public class AIManager : MonoBehaviour {
             dead = true;
         }
         if (!stateInfo.IsName("Searching")) {
-            lookingAround = 0;
+            lookAroundPoint = Vector3.zero;
         }
 
         // manage activity while in certain states
@@ -111,9 +124,12 @@ public class AIManager : MonoBehaviour {
             }
         } else if (stateInfo.IsName("Searching")) {
             if (canBeLost) {
-                if (Vector3.Distance(gameObject.transform.position, lastPositionPlayerSeen) < 0.1f) {
-                    fromRotation = transform.rotation;
-                    LookAround();
+                if (Vector3.Distance(gameObject.transform.position, lastPositionPlayerSeen) < 2f) {
+                    if (lookAroundPoint == Vector3.zero || Vector3.Distance(gameObject.transform.position, lookAroundPoint) < 2f) {
+                        LookAround();
+                    } else {
+                        MoveTowardPoint(lookAroundPoint);
+                    }
                 } else {
                     MoveTowardPoint(lastPositionPlayerSeen);
                 }
@@ -123,7 +139,7 @@ public class AIManager : MonoBehaviour {
         } else if (stateInfo.IsName("PursuingPlayer")) {
             MoveTowardPoint(lastPositionPlayerSeen);
             float dist = Vector3.Distance(gameObject.transform.position, player.transform.position);
-            if ((dist < 1.5f || (form2.GetComponentInChildren<Renderer>().enabled && dist < 5f)) && timeSinceLastAttack > 3f) {
+            if ((dist < 1.5f || (form2.GetComponentInChildren<Renderer>().enabled && dist < 5f)) && timeSinceLastAttack > 0.5f) {
                 int rand = Random.Range(0, 2);
                 if (rand == 0) {
                     animator1.SetTrigger("BasicAttack");
@@ -147,14 +163,16 @@ public class AIManager : MonoBehaviour {
             if (checkPlayerTouching() && !playerTakenDamageYet) {
                 Debug.Log("Dealt damage!");
                 playerTakenDamageYet = true;
-                // deal damage
+                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage((int) (damage));
+                gameObject.GetComponent<EffectsManager>().SetDamageOffset(0.8f);
             }
 
         } else if (stateInfo.IsName("SpecialAttack")) {
             if (checkPlayerTouching() && !playerTakenDamageYet) {
                 Debug.Log("Dealt damage!");
                 playerTakenDamageYet = true;
-                // deal extra damage
+                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage((int) (damage + 10f));
+                gameObject.GetComponent<EffectsManager>().SetDamageOffset(1f);
             }
 
         } else if (stateInfo.IsName("TakingHit")) {
@@ -163,13 +181,26 @@ public class AIManager : MonoBehaviour {
 
         }
 
+        UpdatePlayerSneaking();
         UpdatePlayerInView();
         UpdatePlayerNear();
         UpdateTimeSincePlayerInView();
+        UpdateSize();
 
         if (changesForm)
         {
             UpdateForm();
+        }
+    }
+
+    void UpdatePlayerSneaking () {
+        playerSneaking = player.transform.parent.gameObject.GetComponent<NewPlayerMovement>().GetSneaking();
+        if (playerSneaking) {
+            detectionRange = baseDetectionRange / 3f;
+            fov = baseFov / 3f;
+        } else {
+            detectionRange = baseDetectionRange;
+            fov = baseFov;
         }
     }
 
@@ -181,7 +212,7 @@ public class AIManager : MonoBehaviour {
         if (angleToPlayer > 360 - (fov / 2) || angleToPlayer < (fov / 2)) { // player is in front of enemy
             RaycastHit hit;
             // Debug.DrawRay (transform.position, dirToPlayer, Color.red, 0f, true);
-            if(Physics.Raycast(transform.position, dirToPlayer, out hit, 100f)) {
+            if(Physics.Raycast(transform.position, dirToPlayer, out hit, detectionRange * 10f)) {
                 if(hit.collider.gameObject == player || hit.collider.gameObject.transform.IsChildOf(player.transform)) { // line of sight is not blocked
                     inView = true;
                 }
@@ -200,7 +231,7 @@ public class AIManager : MonoBehaviour {
     }
 
     bool checkPlayerTouching() {
-        return Vector3.Distance(gameObject.transform.position, player.transform.position) <= 2f;
+        return Vector3.Distance(gameObject.transform.position, player.transform.position) <= 1.5f;
     }
 
     void UpdateTimeSincePlayerInView() {
@@ -223,26 +254,49 @@ public class AIManager : MonoBehaviour {
     }
 
     void LookAround() {
-        if (lookingAround == 0) {
-            Quaternion toRotate = transform.rotation * Quaternion.Euler(0, 90f * Time.deltaTime, 0);
-            transform.rotation = Quaternion.Lerp(fromRotation, toRotate, Time.time * 1);
+        Vector3 randomDirection = Random.insideUnitSphere * baseDetectionRange;
+        randomDirection += transform.position;
+        NavMeshHit hit;
+        NavMesh.SamplePosition(randomDirection, out hit, baseDetectionRange, 1);
+        Vector3 finalPosition = hit.position;
+        lookAroundPoint = finalPosition;
+    }
 
-            if (Quaternion.Angle(transform.rotation, toRotate) < 0.5) {
-                lookingAround = 1;
+    void UpdateSize() {
+        float newScale;
+        Debug.Log(growing);
+        if (growing == 2) {
+            newScale = Mathf.Lerp(1, bigSize, growthTimer / growthDuration);
+            growthTimer += Time.deltaTime;
+            transform.localScale = new Vector3(newScale, newScale, newScale);
+            if (System.Math.Abs(bigSize - newScale) < 0.1) {
+                transform.localScale = new Vector3(bigSize, bigSize, bigSize);
+                growing = 0;
+                growthTimer = 0f;
             }
-        } else if (lookingAround == 1) {
-            Quaternion toRotate = transform.rotation * Quaternion.Euler(0, -180f * Time.deltaTime, 0);
-            transform.rotation = Quaternion.Lerp(fromRotation * Quaternion.Euler(0, 90f * Time.deltaTime, 0), toRotate, Time.time * 1);
-
-            if (Quaternion.Angle(transform.rotation, toRotate) < 0.5) {
-                lookingAround = 2;
+        } else if (growing == 1) {
+            newScale = Mathf.Lerp(bigSize, 1, growthTimer / growthDuration);
+            growthTimer += Time.deltaTime;
+            transform.localScale = new Vector3(newScale, newScale, newScale);
+            if (System.Math.Abs(1 - newScale) < 0.1) {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                growing = 0;
+                growthTimer = 0f;
             }
-        } else if (lookingAround == 2) {
-            Quaternion toRotate = transform.rotation * Quaternion.Euler(0, 90f * Time.deltaTime, 0);
-            transform.rotation = Quaternion.Lerp(fromRotation * Quaternion.Euler(0, -90f * Time.deltaTime, 0), toRotate, Time.time * 1);
+        }
+    }
 
-            if (Quaternion.Angle(transform.rotation, toRotate) < 0.5) {
-                lookingAround = 0;
+
+    public void ToggleSize() {
+        if (growing == 1) {
+            growing = 2;
+        } else if (growing == 2) {
+            growing = 1;
+        } else if (growing == 0) {
+            if (transform.localScale.x > 1) {
+                growing = 1;
+            } else {
+                growing = 2;
             }
         }
     }
@@ -255,10 +309,16 @@ public class AIManager : MonoBehaviour {
     }
 
     public void UpdateForm() {
-        if (form1.GetComponentInChildren<Renderer>().enabled) {
-            speed = baseSpeed;
-        } else if (form2.GetComponentInChildren<Renderer>().enabled) {
-            speed = baseSpeed * 3f;
+        if (checkPlayerTouching()) {
+            speed = 0f;
+        } else {
+            if (form1.GetComponentInChildren<Renderer>().enabled) {
+                speed = baseSpeed;
+                damage = baseDamage;
+            } else if (form2.GetComponentInChildren<Renderer>().enabled) {
+                speed = baseSpeed * 3f;
+                damage = baseDamage * 2f;
+            }
         }
         
     }

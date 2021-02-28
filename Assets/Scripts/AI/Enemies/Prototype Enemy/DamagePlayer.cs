@@ -13,6 +13,6 @@ public class DamagePlayer : MonoBehaviour
         Debug.Log("Enemy did damage");
         GameObject playerGameObject = GameObject.FindGameObjectWithTag("Player");
         HealthSystem target = playerGameObject.GetComponent<HealthSystem>();
-        target.takeDamage(100);
+        target.TakeDamage(100);
     }
 }

@@ -143,4 +143,8 @@ public class NewPlayerMovement : MonoBehaviour
                 
         }
     }
+
+    public bool GetSneaking() {
+        return isSneaking;
+    }
 }
