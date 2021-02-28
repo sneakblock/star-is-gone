@@ -159,6 +159,7 @@ public class AIManager : MonoBehaviour {
                 Debug.Log("Dealt damage!");
                 playerTakenDamageYet = true;
                 player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage((int) (damage));
+                gameObject.GetComponent<EffectsManager>().SetDamageOffset(0.8f);
             }
 
         } else if (stateInfo.IsName("SpecialAttack")) {
@@ -166,6 +167,7 @@ public class AIManager : MonoBehaviour {
                 Debug.Log("Dealt damage!");
                 playerTakenDamageYet = true;
                 player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage((int) (damage + 10f));
+                gameObject.GetComponent<EffectsManager>().SetDamageOffset(1f);
             }
 
         } else if (stateInfo.IsName("TakingHit")) {

@@ -4710,7 +4710,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   camera: {fileID: 710652675}
-  intensityMultiplier: 0
+  intensityMultiplier: 0.2
   duration: 0.5
 --- !u!1 &1714958204
 GameObject:
