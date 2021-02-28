@@ -17,6 +17,10 @@ public class AIManager : MonoBehaviour {
     public GameObject form2;
 
     public int health = 100;
+    public float bigSize = 2;
+    public float growthDuration = 3f;
+    int growing = 0; // 0 = nothing, 1 = shrink, 2 = grow
+    float growthTimer = 0f;
     public float baseDetectionRange = 10f;
     float detectionRange;
     public int waypointRandomness = 1;
@@ -64,6 +68,7 @@ public class AIManager : MonoBehaviour {
         fov = baseFov;
         damage = baseDamage;
         moving = true;
+        ToggleSize();
     }
 
     // Update is called once per frame
@@ -180,6 +185,7 @@ public class AIManager : MonoBehaviour {
         UpdatePlayerInView();
         UpdatePlayerNear();
         UpdateTimeSincePlayerInView();
+        UpdateSize();
 
         if (changesForm)
         {
@@ -254,6 +260,45 @@ public class AIManager : MonoBehaviour {
         NavMesh.SamplePosition(randomDirection, out hit, baseDetectionRange, 1);
         Vector3 finalPosition = hit.position;
         lookAroundPoint = finalPosition;
+    }
+
+    void UpdateSize() {
+        float newScale;
+        Debug.Log(growing);
+        if (growing == 2) {
+            newScale = Mathf.Lerp(1, bigSize, growthTimer / growthDuration);
+            growthTimer += Time.deltaTime;
+            transform.localScale = new Vector3(newScale, newScale, newScale);
+            if (System.Math.Abs(bigSize - newScale) < 0.1) {
+                transform.localScale = new Vector3(bigSize, bigSize, bigSize);
+                growing = 0;
+                growthTimer = 0f;
+            }
+        } else if (growing == 1) {
+            newScale = Mathf.Lerp(bigSize, 1, growthTimer / growthDuration);
+            growthTimer += Time.deltaTime;
+            transform.localScale = new Vector3(newScale, newScale, newScale);
+            if (System.Math.Abs(1 - newScale) < 0.1) {
+                transform.localScale = new Vector3(1f, 1f, 1f);
+                growing = 0;
+                growthTimer = 0f;
+            }
+        }
+    }
+
+
+    public void ToggleSize() {
+        if (growing == 1) {
+            growing = 2;
+        } else if (growing == 2) {
+            growing = 1;
+        } else if (growing == 0) {
+            if (transform.localScale.x > 1) {
+                growing = 1;
+            } else {
+                growing = 2;
+            }
+        }
     }
 
     public void TakeHit(int damage) {
