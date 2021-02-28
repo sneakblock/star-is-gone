@@ -7,6 +7,7 @@ using Kino;
 public class EffectsManager : MonoBehaviour
 {
     public GameObject camera;
+    public GameObject player;
     public float intensityMultiplier = 1f;
     public float duration = 0.5f;
     public bool enableOnLook = false;
@@ -54,14 +55,20 @@ public class EffectsManager : MonoBehaviour
             if (angleToEnemy < (180f - camera.GetComponent<Camera>().fieldOfView) || !inView) {
                 angleToEnemy = 0;
             }
-
             angleToEnemy += damageOffset;
+            if (player.GetComponent<HealthSystem>().GetHealth() <= 0) {
+                angleToEnemy = 180f;
+                intensityMultiplier = 1f;
+            }
                 
             SetDatamosh(intensityMultiplier * angleToEnemy / 180f);  
             SetDigitalGlitch(intensityMultiplier * angleToEnemy / 180f);  
             SetAnalogGlitch(intensityMultiplier * angleToEnemy / 180f); 
         } else {
-            SetDatamosh(damageOffset);
+            if (player.GetComponent<HealthSystem>().GetHealth() <= 0) {
+                damageOffset = 180f;
+            }
+            SetDatamosh(damageOffset);  
         }
      
     }

@@ -42,7 +42,7 @@ public class HealthSystem : MonoBehaviour
     IEnumerator Respawn()
     {
         DontDestroyOnLoad(spawnPoint);
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(5f);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
@@ -64,5 +64,8 @@ public class HealthSystem : MonoBehaviour
         }
     }
     
+    public int GetHealth() {
+        return health;
+    }
     
 }
