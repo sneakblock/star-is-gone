@@ -98,7 +98,7 @@ public class NewPlayerMovement : MonoBehaviour
         //float vertical = Input.GetAxisRaw("Vertical");
         
 
-        if (isRunning)
+        if (isRunning && leftStickMove != Vector2.zero)
         {
             anim.SetBool("isRunning", true);
             anim.SetBool("isSneaking", false);

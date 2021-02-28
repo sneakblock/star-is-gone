@@ -14,6 +14,12 @@ TagManager:
   - DialogueText
   - DialogueButton
   - UIEventSystem
+  - transitioncanvas
+  - puzzleui
+  - button1
+  - button2
+  - button3
+  - button4
   layers:
   - Default
   - TransparentFX
