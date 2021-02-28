@@ -1,15 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class HealthSystem : MonoBehaviour
 {
-
+    public GameObject spawnPoint;
     private int health = 100;
 
     public void TakeDamage(int damage)
     {
         this.health -= damage;
+    }
+
+    void Start()
+    {
+        RespawnMemory mem = spawnPoint.GetComponent<RespawnMemory>();
+        transform.position = mem.GetSpawnPoint();
     }
 
     // Update is called once per frame
@@ -23,16 +30,20 @@ public class HealthSystem : MonoBehaviour
 
     void KillPlayer()
     {
+        Debug.Log("Player Dead!");
         GetComponent<Animator>().enabled = false;
         GetComponent<CharacterController>().enabled = false;
-        GetComponent<ThirdPersonMovement>().enabled = false;
+        GetComponent<NewPlayerMovement>().enabled = false;
         SetRigidBodyState(false);
         SetCollidersState(true);
+        StartCoroutine(Respawn());
     }
-
-    void Respawn()
+    
+    IEnumerator Respawn()
     {
-        
+        DontDestroyOnLoad(spawnPoint);
+        yield return new WaitForSeconds(3f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     void SetRigidBodyState(bool state)

@@ -21,14 +21,14 @@ public class AIManager : MonoBehaviour {
     float detectionRange;
     public int waypointRandomness = 1;
     public float baseSpeed = 1f;
+    float speed;
     public float baseFov = 160f;
     float fov;
-    float speed;
+    public float baseDamage = 50f;
+    float damage;
     Vector3 lastPositionPlayerSeen;
     Vector3 lookAroundPoint;
     int currWaypoint = 0;
-    int lookingAround = 0;
-    bool startLookAround = true;
     Quaternion fromRotation;
     bool playerSneaking = false;
 
@@ -62,6 +62,7 @@ public class AIManager : MonoBehaviour {
         speed = baseSpeed;
         detectionRange = baseDetectionRange;
         fov = baseFov;
+        damage = baseDamage;
         moving = true;
     }
 
@@ -92,8 +93,6 @@ public class AIManager : MonoBehaviour {
             dead = true;
         }
         if (!stateInfo.IsName("Searching")) {
-            lookingAround = 0;
-            startLookAround = true;
             lookAroundPoint = Vector3.zero;
         }
 
@@ -159,14 +158,14 @@ public class AIManager : MonoBehaviour {
             if (checkPlayerTouching() && !playerTakenDamageYet) {
                 Debug.Log("Dealt damage!");
                 playerTakenDamageYet = true;
-                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage(50);
+                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage((int) (damage));
             }
 
         } else if (stateInfo.IsName("SpecialAttack")) {
             if (checkPlayerTouching() && !playerTakenDamageYet) {
                 Debug.Log("Dealt damage!");
                 playerTakenDamageYet = true;
-                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage(100);
+                player.transform.parent.gameObject.GetComponent<HealthSystem>().TakeDamage((int) (damage + 10f));
             }
 
         } else if (stateInfo.IsName("TakingHit")) {
@@ -268,8 +267,10 @@ public class AIManager : MonoBehaviour {
         } else {
             if (form1.GetComponentInChildren<Renderer>().enabled) {
                 speed = baseSpeed;
+                damage = baseDamage;
             } else if (form2.GetComponentInChildren<Renderer>().enabled) {
                 speed = baseSpeed * 3f;
+                damage = baseDamage * 2f;
             }
         }
         
