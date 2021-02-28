@@ -20,10 +20,12 @@ public class EffectsManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("UpdateEffects", 2.0f, 0.3f);
+        InvokeRepeating("UpdateEffects", 0.0f, 0.3f);
         datamosh = camera.GetComponent<Datamosh>();
         digitalGlitch = camera.GetComponent<DigitalGlitch>();
         analogGlitch = camera.GetComponent<AnalogGlitch>();
+        damageOffset = 1f;
+        SetDatamosh(damageOffset);
     }
 
     // Update is called once per frame
