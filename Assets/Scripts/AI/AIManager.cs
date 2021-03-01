@@ -68,7 +68,6 @@ public class AIManager : MonoBehaviour {
         fov = baseFov;
         damage = baseDamage;
         moving = true;
-        ToggleSize();
     }
 
     // Update is called once per frame
@@ -231,7 +230,7 @@ public class AIManager : MonoBehaviour {
     }
 
     bool checkPlayerTouching() {
-        return Vector3.Distance(gameObject.transform.position, player.transform.position) <= 1.5f;
+        return Vector3.Distance(gameObject.transform.position, player.transform.position) <= 2f;
     }
 
     void UpdateTimeSincePlayerInView() {
@@ -264,7 +263,6 @@ public class AIManager : MonoBehaviour {
 
     void UpdateSize() {
         float newScale;
-        Debug.Log(growing);
         if (growing == 2) {
             newScale = Mathf.Lerp(1, bigSize, growthTimer / growthDuration);
             growthTimer += Time.deltaTime;
@@ -309,7 +307,7 @@ public class AIManager : MonoBehaviour {
     }
 
     public void UpdateForm() {
-        if (checkPlayerTouching()) {
+        if (checkPlayerTouching() && isEnemy) {
             speed = 0f;
         } else {
             if (form1.GetComponentInChildren<Renderer>().enabled) {
