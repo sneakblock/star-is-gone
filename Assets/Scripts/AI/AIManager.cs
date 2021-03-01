@@ -23,6 +23,8 @@ public class AIManager : MonoBehaviour {
     float growthTimer = 0f;
     public float baseDetectionRange = 10f;
     float detectionRange;
+    public float baseTouchingRange = 1.5f;
+    float touchingRange;
     public int waypointRandomness = 1;
     public float baseSpeed = 1f;
     float speed;
@@ -230,7 +232,7 @@ public class AIManager : MonoBehaviour {
     }
 
     bool checkPlayerTouching() {
-        return Vector3.Distance(gameObject.transform.position, player.transform.position) <= 2f;
+        return Vector3.Distance(gameObject.transform.position, player.transform.position) <= touchingRange;
     }
 
     void UpdateTimeSincePlayerInView() {
@@ -313,9 +315,11 @@ public class AIManager : MonoBehaviour {
             if (form1.GetComponentInChildren<Renderer>().enabled) {
                 speed = baseSpeed;
                 damage = baseDamage;
+                touchingRange = baseTouchingRange;
             } else if (form2.GetComponentInChildren<Renderer>().enabled) {
                 speed = baseSpeed * 3f;
                 damage = baseDamage * 2f;
+                touchingRange = baseTouchingRange * 2f;
             }
         }
         
