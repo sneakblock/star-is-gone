@@ -11,6 +11,7 @@ public class EffectsManager : MonoBehaviour
     public float intensityMultiplier = 1f;
     public float duration = 0.5f;
     public bool enableOnLook = false;
+    public float deathEffectDelay = 2f;
     Datamosh datamosh;
     DigitalGlitch digitalGlitch;
     AnalogGlitch analogGlitch;
@@ -60,22 +61,26 @@ public class EffectsManager : MonoBehaviour
             }
             angleToEnemy += damageOffset;
             if (player.GetComponent<HealthSystem>().GetHealth() <= 0) {
-                angleToEnemy = 180f;
-                intensityMultiplier = 1f;
+                StartCoroutine(DelayedDeathEffect());
+            } else {               
+                SetDatamosh(intensityMultiplier * angleToEnemy / 180f);  
+                SetDigitalGlitch(intensityMultiplier * angleToEnemy / 180f);  
+                SetAnalogGlitch(intensityMultiplier * angleToEnemy / 180f); 
             }
-                
-            SetDatamosh(intensityMultiplier * angleToEnemy / 180f);  
-            SetDigitalGlitch(intensityMultiplier * angleToEnemy / 180f);  
-            SetAnalogGlitch(intensityMultiplier * angleToEnemy / 180f); 
         } else {
             if (player.GetComponent<HealthSystem>().GetHealth() <= 0) {
-                damageOffset = 180f;
+                StartCoroutine(DelayedDeathEffect());
             } else {
                 SetDigitalGlitch(damageOffset);  
+                SetDatamosh(damageOffset);
             }
-            SetDatamosh(damageOffset);
         }
      
+    }
+
+    IEnumerator DelayedDeathEffect () {
+        yield return new WaitForSeconds(deathEffectDelay);
+        SetDatamosh(180f);
     }
 
     void SetDatamosh(float intensity) {
