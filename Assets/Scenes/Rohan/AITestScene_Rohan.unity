@@ -915,6 +915,32 @@ Transform:
   m_Father: {fileID: 1749642546}
   m_RootOrder: 106
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &296251221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59306422a2ca4454aabce3daa79c3334, type: 3}
+  m_Name: New Aura Base Settings
+  m_EditorClassIdentifier: 
+  useDensity: 1
+  density: 0.25
+  useScattering: 1
+  scattering: 0.5
+  useAmbientLighting: 1
+  ambientLightingStrength: 1
+  useColor: 0
+  color: {r: 0, g: 0.5, b: 0.5, a: 0.5}
+  colorStrength: 1
+  useTint: 0
+  tint: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  tintStrength: 1
+  useExtinction: 0
+  extinction: 0.75
 --- !u!1 &310228345 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100094, guid: bbbd76db8c4f3984f9d3c945f53bd14e, type: 3}
@@ -1158,7 +1184,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6182868062491752305, guid: 0ea6ee20ff8d7e2439d9bf1f3c620d4a, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 6182868062491752305, guid: 0ea6ee20ff8d7e2439d9bf1f3c620d4a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3051,7 +3077,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 563787967964404511, guid: 45b471707a1073e4882ba9bbb82fb1fa, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 563787967964404511, guid: 45b471707a1073e4882ba9bbb82fb1fa, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -3525,7 +3551,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1534718754
 MonoBehaviour:
@@ -3571,7 +3597,7 @@ Transform:
   - {fileID: 1019711689}
   - {fileID: 1167818273}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1608278460 stripped
 GameObject:
@@ -3706,8 +3732,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94204336f0dbb0a44b7fed50fac16192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  form1: {fileID: 1872798190}
-  form2: {fileID: 859667605}
+  form1: {fileID: 0}
+  form2: {fileID: 0}
 --- !u!4 &1698110977
 Transform:
   m_ObjectHideFlags: 0
@@ -3718,12 +3744,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 32.37, y: 0.186, z: 89.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 1872798200}
-  - {fileID: 859667615}
-  - {fileID: 2078839911}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1698110978
 MonoBehaviour:
@@ -3745,10 +3768,11 @@ MonoBehaviour:
   - {fileID: 1019711688}
   - {fileID: 1167818272}
   player: {fileID: 1690736269}
-  form1: {fileID: 1872798190}
-  form2: {fileID: 859667605}
+  form1: {fileID: 0}
+  form2: {fileID: 0}
   health: 100
   bigSize: 2
+  growthDuration: 3
   baseDetectionRange: 10
   waypointRandomness: 0
   baseSpeed: 2
@@ -6171,10 +6195,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4413964169520562452, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4968124263547454752, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
       propertyPath: camera
       value: 
       objectReference: {fileID: 710652675}
+    - target: {fileID: 4968124263547454752, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
+      propertyPath: enableOnLook
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4968124263547454757, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
       propertyPath: m_LocalPosition.x
       value: 32.37
