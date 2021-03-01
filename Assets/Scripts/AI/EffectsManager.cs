@@ -70,8 +70,10 @@ public class EffectsManager : MonoBehaviour
         } else {
             if (player.GetComponent<HealthSystem>().GetHealth() <= 0) {
                 damageOffset = 180f;
+            } else {
+                SetDigitalGlitch(damageOffset);  
             }
-            SetDatamosh(damageOffset);  
+            SetDatamosh(damageOffset);
         }
      
     }
