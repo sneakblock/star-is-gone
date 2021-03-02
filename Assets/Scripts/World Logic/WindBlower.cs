@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class WindBlower : MonoBehaviour
 {
-    public float Xdir = 0;
-    public float Ydir = 0;
-    public float Zdir = 0;
+    public float windForce;
+    public Vector3 windDir;
+    public int secondsRepeating;
 
     private GameObject[] windObjects;
-    
-    
     
     // Start is called before the first frame update
     void Start()
@@ -21,14 +19,18 @@ public class WindBlower : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        InvokeRepeating("ApplyWindForce", 0, secondsRepeating);
+    }
+
+    void ApplyWindForce()
+    {
         foreach (GameObject obj in windObjects)
+        {
+            Rigidbody[] rbs = obj.GetComponentsInChildren<Rigidbody>();
+            foreach (Rigidbody rb in rbs)
             {
-                Rigidbody[] rbs = obj.GetComponentsInChildren<Rigidbody>();
-                foreach (Rigidbody rb in rbs)
-                {
-                    rb.AddForce(new Vector3(Xdir + Random.Range(-1, 1), Ydir + Random.Range(-1, 1), Zdir + 
-                        Random.Range(-1, 1)));
-                }
+                rb.AddForce(windDir * windForce);
             }
+        }
     }
 }
