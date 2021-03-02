@@ -352,10 +352,12 @@ public class AIManager : MonoBehaviour {
     void OnTriggerStay(Collider collider) {
         GameObject obj = collider.gameObject;
         if (obj.name == "StunCone") {
-            timePlayerStunning += Time.deltaTime;
-            if (timePlayerStunning >= timeToStun) {
-                Stun();
-                timePlayerStunning = 0f;
+            if (playerInView) { // checks that this is a line of sight too
+                timePlayerStunning += Time.deltaTime;
+                if (timePlayerStunning >= timeToStun) {
+                    Stun();
+                    timePlayerStunning = 0f;
+                }
             }
         }
     }

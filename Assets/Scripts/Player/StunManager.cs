@@ -16,7 +16,12 @@ public class StunManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // controls to trigger stunning, validate with numCharges
+        if (numCharges > 0) { // check number of charges
+            // check player input
+                // subtract a charge and enabled stunning
+        } else if () { // if not still holding input
+            stunning = false;
+        }
 
         if (stunning) {
             stunCone.GetComponent<Collider>().enabled = true;
