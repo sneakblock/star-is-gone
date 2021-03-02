@@ -29,44 +29,12 @@
   <component name="ChangeListManager">
     <list default="true" id="a5a09af4-1e72-4e91-b2d9-4af807f4bc97" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Interactable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Interactable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Rohan/AITestScene_Rohan.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Rohan/AITestScene_Rohan.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Lights/lanternpost/lanternpost.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Lights/lanternpost/lanternpost.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player &amp; Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player &amp; Camera.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-0_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-1_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-2_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-3_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-3_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-3_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-3_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-3_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-3_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-4_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-4_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-4_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-4_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-4_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-4_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-5_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-5_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-5_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-5_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-5_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-5_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-6_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-6_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-6_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-6_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-6_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-6_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-7_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-7_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-7_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-7_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-7_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-7_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-8_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-8_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-8_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-8_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-8_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-8_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-9_comp_dir.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-9_comp_dir.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-9_comp_light.exr" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-9_comp_light.exr" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-9_comp_shadowmask.png" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld/Lightmap-9_comp_shadowmask.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World Logic/WindBlower.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World Logic/WindBlower.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/TerrainData_f29a1ca7-e420-487b-874a-a52e305839c0.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/TerrainData_f29a1ca7-e420-487b-874a-a52e305839c0.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -114,9 +82,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Enemies/Prototype Enemy/EnemyFormChangeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/AIManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Interactable.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/World Logic/WindBlower.cs" />
         <option value="$PROJECT_DIR$/Assets/SceneLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/SceneLoadInteractable.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/World Logic/WindBlower.cs" />
       </list>
     </option>
   </component>
@@ -234,6 +202,8 @@
       <workItem from="1614124147824" duration="2248000" />
       <workItem from="1614289082060" duration="1814000" />
       <workItem from="1614373969055" duration="959000" />
+      <workItem from="1614379623695" duration="472000" />
+      <workItem from="1614589399650" duration="2985000" />
     </task>
     <servers />
   </component>
@@ -252,6 +222,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
