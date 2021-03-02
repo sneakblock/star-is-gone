@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ContentModelStore">
     <e p="C:\Users\sneak\AppData\Local\JetBrains\Rider2020.2\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\sneak\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Star-Is-Gone.546111729.00" t="ExcludeRecursive" />
-    <e p="C:\Users\sneak\Documents\Star-Is-Gone" t="IncludeRecursive">
+    <e p="C:\Users\sneak\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Star-Is-Gone.-452421224.00" t="ExcludeRecursive" />
+    <e p="C:\Users\sneak\Documents\Star-Is-Gone_testthot\Star-Is-Gone" t="IncludeRecursive">
       <e p="AmplifyShaderEditor.csproj" t="IncludeRecursive" />
       <e p="AmplifyShaderEditor.Samples.BuiltIn.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
@@ -1714,9 +1714,6 @@
                 </e>
               </e>
             </e>
-            <e p="Scripts_Rohan" t="Include">
-              <e p="EffectsManager.cs" t="Include" />
-            </e>
           </e>
           <e p="Tests" t="Include">
             <e p="shadertestshaders" t="Include">
@@ -1728,6 +1725,7 @@
           <e p="AI" t="Include">
             <e p="AIManager.cs" t="Include" />
             <e p="DialogueTriggerAI.cs" t="Include" />
+            <e p="EffectsManager.cs" t="Include" />
             <e p="Enemies" t="Include">
               <e p="Prototype Enemy" t="Include">
                 <e p="AttackPlayer.cs" t="Include" />
@@ -1755,6 +1753,7 @@
             <e p="HealthSystem.cs" t="Include" />
             <e p="IKFootPlacement.cs" t="Include" />
             <e p="NewPlayerMovement.cs" t="Include" />
+            <e p="RespawnMemory.cs" t="Include" />
           </e>
           <e p="SceneLoadInteractable.cs" t="Include" />
           <e p="UI" t="Include">
