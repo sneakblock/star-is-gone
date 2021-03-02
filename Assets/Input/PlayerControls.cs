@@ -57,6 +57,14 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Attack"",
+                    ""type"": ""Button"",
+                    ""id"": ""89f1fafa-6a62-4a25-84c0-abe53e9cfc67"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -202,6 +210,28 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                     ""action"": ""Sprint"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0b372ae9-64c6-4818-8a2d-a455d45d7d4f"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard & Mouse"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bdce1b42-3054-4ac9-b010-1f3c442473d4"",
+                    ""path"": ""<Gamepad>/buttonNorth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Attack"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -311,6 +341,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         m_Standard_Sneak = m_Standard.FindAction("Sneak", throwIfNotFound: true);
         m_Standard_Interact = m_Standard.FindAction("Interact", throwIfNotFound: true);
         m_Standard_Sprint = m_Standard.FindAction("Sprint", throwIfNotFound: true);
+        m_Standard_Attack = m_Standard.FindAction("Attack", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -369,6 +400,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Standard_Sneak;
     private readonly InputAction m_Standard_Interact;
     private readonly InputAction m_Standard_Sprint;
+    private readonly InputAction m_Standard_Attack;
     public struct StandardActions
     {
         private @PlayerControls m_Wrapper;
@@ -378,6 +410,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         public InputAction @Sneak => m_Wrapper.m_Standard_Sneak;
         public InputAction @Interact => m_Wrapper.m_Standard_Interact;
         public InputAction @Sprint => m_Wrapper.m_Standard_Sprint;
+        public InputAction @Attack => m_Wrapper.m_Standard_Attack;
         public InputActionMap Get() { return m_Wrapper.m_Standard; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -402,6 +435,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Sprint.started -= m_Wrapper.m_StandardActionsCallbackInterface.OnSprint;
                 @Sprint.performed -= m_Wrapper.m_StandardActionsCallbackInterface.OnSprint;
                 @Sprint.canceled -= m_Wrapper.m_StandardActionsCallbackInterface.OnSprint;
+                @Attack.started -= m_Wrapper.m_StandardActionsCallbackInterface.OnAttack;
+                @Attack.performed -= m_Wrapper.m_StandardActionsCallbackInterface.OnAttack;
+                @Attack.canceled -= m_Wrapper.m_StandardActionsCallbackInterface.OnAttack;
             }
             m_Wrapper.m_StandardActionsCallbackInterface = instance;
             if (instance != null)
@@ -421,6 +457,9 @@ public class @PlayerControls : IInputActionCollection, IDisposable
                 @Sprint.started += instance.OnSprint;
                 @Sprint.performed += instance.OnSprint;
                 @Sprint.canceled += instance.OnSprint;
+                @Attack.started += instance.OnAttack;
+                @Attack.performed += instance.OnAttack;
+                @Attack.canceled += instance.OnAttack;
             }
         }
     }
@@ -491,6 +530,7 @@ public class @PlayerControls : IInputActionCollection, IDisposable
         void OnSneak(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnSprint(InputAction.CallbackContext context);
+        void OnAttack(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {
