@@ -16,7 +16,7 @@ public class PuzzleUI : MonoBehaviour
     public int counter = 0;
     bool matchingArrays;
     public GameObject enemy;
-
+    public GameObject exitArtifact;
     public GameObject behaviorToBeTriggered;
 
     // Start is called before the first frame update
@@ -33,6 +33,8 @@ public class PuzzleUI : MonoBehaviour
         solutions = new ArrayList() { 1, 4, 2, 3 };
         enemy = GameObject.FindGameObjectWithTag("AI");
         enemy.SetActive(true);
+        exitArtifact = GameObject.FindGameObjectWithTag("ExitArtifact");
+        exitArtifact.SetActive(false);
     }
 
     // Update is called once per frame
@@ -72,6 +74,8 @@ public class PuzzleUI : MonoBehaviour
         if (hasBeenTriggered == true)
         {
             enemy.SetActive(false);
+            //Instantiate(exitArtifact);
+            exitArtifact.SetActive(true);
         }
     }
 
