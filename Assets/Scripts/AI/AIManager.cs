@@ -339,13 +339,31 @@ public class AIManager : MonoBehaviour {
         moving = !start;
     }
 
-    public void Stun() {
+    void Stun() {
         if (isEnemy) {
             stunned = true;
             animator1.SetTrigger("Stun");
             if (changesForm) {
                 animator2.SetTrigger("Stun");
             }
+        }
+    }
+
+    void OnTriggerStay(Collider collider) {
+        GameObject obj = collider.gameObject;
+        if (obj.name == "StunCone") {
+            timePlayerStunning += Time.deltaTime;
+            if (timePlayerStunning >= timeToStun) {
+                Stun();
+                timePlayerStunning = 0f;
+            }
+        }
+    }
+
+    void OnTriggerExit(Collider collider) {
+        GameObject obj = collider.gameObject;
+        if (obj.name == "StunCone") {
+            timePlayerStunning = 0f;
         }
     }
 }
