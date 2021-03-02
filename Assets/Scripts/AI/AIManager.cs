@@ -37,6 +37,8 @@ public class AIManager : MonoBehaviour {
     int currWaypoint = 0;
     Quaternion fromRotation;
     bool playerSneaking = false;
+    public float timeToStun = 5f;
+    float timePlayerStunning = 0f;
 
     // state parameters
     bool moving = false;
@@ -47,6 +49,7 @@ public class AIManager : MonoBehaviour {
     float timeSincePlayerInView = 0f;
     float timeSinceLastAttack = 0f;
     bool playerTakenDamageYet = false;
+    bool stunned = false;
 
 
     // Start is called before the first frame update
@@ -100,6 +103,9 @@ public class AIManager : MonoBehaviour {
         }
         if (!stateInfo.IsName("Searching")) {
             lookAroundPoint = Vector3.zero;
+        }
+        if (!stateInfo.IsName("Stunned")) {
+            stunned = false;
         }
 
         // manage activity while in certain states
@@ -179,6 +185,8 @@ public class AIManager : MonoBehaviour {
         } else if (stateInfo.IsName("TakingHit")) {
 
         } else if (stateInfo.IsName("Death")) {
+
+        } else if (stateInfo.IsName("Stunned")) {
 
         }
 
@@ -305,11 +313,13 @@ public class AIManager : MonoBehaviour {
         // subtract health, set taking hit trigger
         health -= damage;
         animator1.SetTrigger("TakeHit");
-        animator2.SetTrigger("TakeHit");
+        if (changesForm) {
+            animator2.SetTrigger("TakeHit");
+        }
     }
 
     public void UpdateForm() {
-        if (checkPlayerTouching() && isEnemy) {
+        if (checkPlayerTouching() && isEnemy || stunned) {
             speed = 0f;
         } else {
             if (form1.GetComponentInChildren<Renderer>().enabled) {
@@ -327,5 +337,15 @@ public class AIManager : MonoBehaviour {
 
     public void Interact(bool start) {
         moving = !start;
+    }
+
+    public void Stun() {
+        if (isEnemy) {
+            stunned = true;
+            animator1.SetTrigger("Stun");
+            if (changesForm) {
+                animator2.SetTrigger("Stun");
+            }
+        }
     }
 }
