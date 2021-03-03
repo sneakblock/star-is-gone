@@ -18,6 +18,7 @@ public class StunManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log(numCharges);
         if (numCharges > 0 && attacking) {
             stunning = true;
         } else {
@@ -31,8 +32,8 @@ public class StunManager : MonoBehaviour
         }
     }
 
-    void OnTriggerEnter(Collider collider) {
-        // collider for charge pickups
+    public void PickupCharge() {
+        numCharges++;
     }
 
     public void SetIsAttacking(bool isAttacking) {

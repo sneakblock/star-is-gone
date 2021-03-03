@@ -45,9 +45,16 @@ public class Interactable : MonoBehaviour
             Debug.Log("Player has interacted with " + this.name);
             
             //do something e.g
-            //behaviorToBeTriggered.GetComponent<SomeScript>.SomeFunction();
+            behaviorToBeTriggered.GetComponent<StunManager>().PickupCharge();
             
             _anim.SetBool("showButton", false);
+
+            if (_anim.GetBool("showButton"))
+            {
+                _anim.SetBool("showButton", false);
+            }
+
+            transform.parent.gameObject.SetActive(false);
         }
     }
 
