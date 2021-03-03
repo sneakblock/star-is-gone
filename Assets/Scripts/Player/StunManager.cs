@@ -5,6 +5,7 @@ using UnityEngine;
 public class StunManager : MonoBehaviour
 {
     bool stunning = false;
+    bool attacking = false;
     int numCharges = 0;
     public GameObject stunCone;
     // Start is called before the first frame update
@@ -16,10 +17,9 @@ public class StunManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (numCharges > 0) { // check number of charges
-            // check player input
-                // subtract a charge and enabled stunning
-        } else if () { // if not still holding input
+        if (numCharges > 0 && attacking) {
+            stunning = true;
+        } else {
             stunning = false;
         }
 
@@ -32,5 +32,14 @@ public class StunManager : MonoBehaviour
 
     void OnTriggerEnter(Collider collider) {
         // collider for charge pickups
+    }
+
+    public void SetIsAttacking(bool isAttacking) {
+        if (attacking && !isAttacking) {
+            if (numCharges > 0) {
+                numCharges--; // subtract a charge when releasing attack
+            }
+        }
+        attacking = isAttacking;
     }
 }

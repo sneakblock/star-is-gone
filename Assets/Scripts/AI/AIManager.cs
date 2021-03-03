@@ -357,6 +357,7 @@ public class AIManager : MonoBehaviour {
                 if (timePlayerStunning >= timeToStun) {
                     Stun();
                     timePlayerStunning = 0f;
+                    player.GetComponent<StunManager>().SetIsAttacking(false);
                 }
             }
         }
