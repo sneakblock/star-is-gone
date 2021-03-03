@@ -6,8 +6,9 @@ public class StunManager : MonoBehaviour
 {
     bool stunning = false;
     bool attacking = false;
-    int numCharges = 0;
-    public GameObject stunCone;
+    int numCharges = 2;
+    public float stunConeLength = 20f;
+    public float stunConeAngle = 90f;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +25,9 @@ public class StunManager : MonoBehaviour
         }
 
         if (stunning) {
-            stunCone.GetComponent<Collider>().enabled = true;
+
         } else {
-            stunCone.GetComponent<Collider>().enabled = false;
+
         }
     }
 
@@ -41,5 +42,9 @@ public class StunManager : MonoBehaviour
             }
         }
         attacking = isAttacking;
+    }
+
+    public bool GetStunning() {
+        return stunning;
     }
 }
