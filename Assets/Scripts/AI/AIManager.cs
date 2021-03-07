@@ -23,6 +23,8 @@ public class AIManager : MonoBehaviour {
     float growthTimer = 0f;
     public float baseDetectionRange = 10f;
     float detectionRange;
+    public float baseTouchingRange = 1.5f;
+    float touchingRange;
     public int waypointRandomness = 1;
     public float baseSpeed = 1f;
     float speed;
@@ -35,6 +37,9 @@ public class AIManager : MonoBehaviour {
     int currWaypoint = 0;
     Quaternion fromRotation;
     bool playerSneaking = false;
+    public float timeToStun = 2f;
+    float timePlayerStunning = 0f;
+    bool inStunCone = false;
 
     // state parameters
     bool moving = false;
@@ -45,6 +50,7 @@ public class AIManager : MonoBehaviour {
     float timeSincePlayerInView = 0f;
     float timeSinceLastAttack = 0f;
     bool playerTakenDamageYet = false;
+    bool stunned = false;
 
 
     // Start is called before the first frame update
@@ -68,7 +74,6 @@ public class AIManager : MonoBehaviour {
         fov = baseFov;
         damage = baseDamage;
         moving = true;
-        ToggleSize();
     }
 
     // Update is called once per frame
@@ -99,6 +104,9 @@ public class AIManager : MonoBehaviour {
         }
         if (!stateInfo.IsName("Searching")) {
             lookAroundPoint = Vector3.zero;
+        }
+        if (!stateInfo.IsName("Stunned")) {
+            stunned = false;
         }
 
         // manage activity while in certain states
@@ -179,6 +187,8 @@ public class AIManager : MonoBehaviour {
 
         } else if (stateInfo.IsName("Death")) {
 
+        } else if (stateInfo.IsName("Stunned")) {
+
         }
 
         UpdatePlayerSneaking();
@@ -206,16 +216,18 @@ public class AIManager : MonoBehaviour {
 
     void UpdatePlayerInView () {
         bool inView = false;
+        bool unblocked = false;
         Vector3 dirToPlayer = player.transform.position - transform.position;
         float angleToPlayer = Vector3.Angle(new Vector3(dirToPlayer.x, 0, dirToPlayer.z), new Vector3(transform.forward.x, 0, transform.forward.z));
             
-        if (angleToPlayer > 360 - (fov / 2) || angleToPlayer < (fov / 2)) { // player is in front of enemy
-            RaycastHit hit;
-            // Debug.DrawRay (transform.position, dirToPlayer, Color.red, 0f, true);
-            if(Physics.Raycast(transform.position, dirToPlayer, out hit, detectionRange * 10f)) {
-                if(hit.collider.gameObject == player || hit.collider.gameObject.transform.IsChildOf(player.transform)) { // line of sight is not blocked
+        RaycastHit hit;
+        // Debug.DrawRay (transform.position, dirToPlayer, Color.red, 0f, true);
+        if(Physics.Raycast(transform.position, dirToPlayer, out hit, detectionRange * 10f)) {
+            if(hit.collider.gameObject == player || hit.collider.gameObject.transform.IsChildOf(player.transform)) { // line of sight is not blocked
+                if (angleToPlayer > 360 - (fov / 2) || angleToPlayer < (fov / 2)) { // player is in front of enemy
                     inView = true;
                 }
+                unblocked = true;
             }
         }
         inView = inView || checkPlayerTouching();
@@ -224,6 +236,19 @@ public class AIManager : MonoBehaviour {
             timeSincePlayerInView = 0f;
         }
         playerInView = inView;
+
+        StunManager manager = player.transform.parent.gameObject.GetComponent<StunManager>();
+        if (manager.GetStunning() && unblocked 
+        && (angleToPlayer <= manager.stunConeAngle / 2 || angleToPlayer >= 360 - (manager.stunConeAngle / 2)) 
+        && Vector3.Distance(transform.position, player.transform.position) <= manager.stunConeLength) {
+            inStunCone = true;
+            StayInStunCone();
+        } else {
+            if (!inStunCone) {
+                ExitStunCone();
+            }
+            inStunCone = false;
+        }
     }
 
     void UpdatePlayerNear() {
@@ -231,7 +256,7 @@ public class AIManager : MonoBehaviour {
     }
 
     bool checkPlayerTouching() {
-        return Vector3.Distance(gameObject.transform.position, player.transform.position) <= 1.5f;
+        return Vector3.Distance(gameObject.transform.position, player.transform.position) <= touchingRange;
     }
 
     void UpdateTimeSincePlayerInView() {
@@ -257,14 +282,13 @@ public class AIManager : MonoBehaviour {
         Vector3 randomDirection = Random.insideUnitSphere * baseDetectionRange;
         randomDirection += transform.position;
         NavMeshHit hit;
-        NavMesh.SamplePosition(randomDirection, out hit, baseDetectionRange, 1);
+        NavMesh.SamplePosition(randomDirection, out hit, baseDetectionRange * 5, 1);
         Vector3 finalPosition = hit.position;
         lookAroundPoint = finalPosition;
     }
 
     void UpdateSize() {
         float newScale;
-        Debug.Log(growing);
         if (growing == 2) {
             newScale = Mathf.Lerp(1, bigSize, growthTimer / growthDuration);
             growthTimer += Time.deltaTime;
@@ -305,19 +329,25 @@ public class AIManager : MonoBehaviour {
         // subtract health, set taking hit trigger
         health -= damage;
         animator1.SetTrigger("TakeHit");
-        animator2.SetTrigger("TakeHit");
+        if (changesForm) {
+            animator2.SetTrigger("TakeHit");
+        }
     }
 
     public void UpdateForm() {
-        if (checkPlayerTouching()) {
+        if (checkPlayerTouching() && isEnemy || stunned) {
             speed = 0f;
-        } else {
+        } else if (timePlayerStunning > 0f) {
+            speed = 0.5f;
+        } else  {
             if (form1.GetComponentInChildren<Renderer>().enabled) {
                 speed = baseSpeed;
                 damage = baseDamage;
+                touchingRange = baseTouchingRange;
             } else if (form2.GetComponentInChildren<Renderer>().enabled) {
                 speed = baseSpeed * 3f;
                 damage = baseDamage * 2f;
+                touchingRange = baseTouchingRange * 2f;
             }
         }
         
@@ -325,5 +355,30 @@ public class AIManager : MonoBehaviour {
 
     public void Interact(bool start) {
         moving = !start;
+    }
+
+    void Stun() {
+        Debug.Log("Stun complete!");
+        if (isEnemy) {
+            stunned = true;
+            animator1.SetTrigger("Stun");
+            if (changesForm) {
+                animator2.SetTrigger("Stun");
+            }
+        }
+    }
+
+    void StayInStunCone() {
+        Debug.Log("Stun charging for..." + (int) timePlayerStunning);
+        timePlayerStunning += Time.deltaTime;
+        if (timePlayerStunning >= timeToStun) {
+            Stun();
+            timePlayerStunning = 0f;
+            player.GetComponent<StunManager>().SetIsAttacking(false);
+        }
+    }
+
+    void ExitStunCone() {
+        timePlayerStunning = 0f;
     }
 }

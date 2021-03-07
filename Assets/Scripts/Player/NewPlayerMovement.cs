@@ -31,6 +31,8 @@ public class NewPlayerMovement : MonoBehaviour
 
     private bool isRunning = false;
 
+    private bool isAttacking = false;
+
     void Awake()
     {
         Cursor.visible = false;
@@ -42,6 +44,8 @@ public class NewPlayerMovement : MonoBehaviour
         controls.Standard.Sneak.performed += ctx => isSneaking = !isSneaking;
         controls.Standard.Sprint.performed += ctx => isRunning = true;
         controls.Standard.Sprint.canceled += ctx => isRunning = false;
+        controls.Standard.Attack.performed += ctx => isAttacking = true;
+        controls.Standard.Attack.canceled += ctx => isAttacking = false;
     }
 
     private void OnEnable()
@@ -117,6 +121,12 @@ public class NewPlayerMovement : MonoBehaviour
             anim.SetBool("isSneaking", true);
             footstepSource.pitch = 1.2f;
             speed = 1.3f;
+        }
+
+        if (isAttacking) {
+            gameObject.GetComponent<StunManager>().SetIsAttacking(true);
+        } else {
+            gameObject.GetComponent<StunManager>().SetIsAttacking(false);
         }
 
         //Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;

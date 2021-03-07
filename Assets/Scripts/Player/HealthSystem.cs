@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class HealthSystem : MonoBehaviour
 {
     public GameObject spawnPoint;
+    public float respawnDelay = 7f;
     private int health = 100;
 
     public void TakeDamage(int damage)
@@ -42,7 +43,7 @@ public class HealthSystem : MonoBehaviour
     IEnumerator Respawn()
     {
         DontDestroyOnLoad(spawnPoint);
-        yield return new WaitForSeconds(5f);
+        yield return new WaitForSeconds(respawnDelay);
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
