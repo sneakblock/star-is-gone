@@ -6532,7 +6532,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4968124263547454758, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
       propertyPath: isEnemy
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4968124263547454758, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
       propertyPath: changesForm
