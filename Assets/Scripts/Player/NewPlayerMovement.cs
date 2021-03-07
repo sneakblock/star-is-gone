@@ -135,8 +135,8 @@ public class NewPlayerMovement : MonoBehaviour
         
         if (worldDirection.magnitude >= 0.1f)
         {
-            //Debug.Log("Detecting stick input of " + leftStickMove);
-            //Debug.Log("Attempting to move CC along vector" + worldDirection);
+            Debug.Log("Detecting stick input of " + leftStickMove);
+            Debug.Log("Attempting to move CC along vector" + worldDirection);
 
             float targetAngle = Mathf.Atan2(worldDirection.x, worldDirection.z) * 
                 Mathf.Rad2Deg + cam.eulerAngles.y;

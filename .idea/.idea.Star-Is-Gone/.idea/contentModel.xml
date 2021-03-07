@@ -514,6 +514,7 @@
         </e>
         <e p="DialogueChoiceBehavior.cs" t="Include" />
         <e p="FadeInOutManager.cs" t="Include" />
+        <e p="FaderDisabler.cs" t="Include" />
         <e p="Fonts and UI" t="Include">
           <e p="OFL.txt" t="Include" />
         </e>
@@ -1601,6 +1602,18 @@
             </e>
           </e>
         </e>
+        <e p="Real-Time Procedural Cable Simple" t="Include">
+          <e p="ReadmeCurveCable.txt" t="Include" />
+          <e p="ReadmeMultiPointCable.txt" t="Include" />
+          <e p="ReadmeSimpleCable.txt" t="Include" />
+          <e p="ReadmeStaticCable.txt" t="Include" />
+          <e p="Scripts" t="Include">
+            <e p="CableProceduralCurve.cs" t="Include" />
+            <e p="CableProceduralMultipoint.cs" t="Include" />
+            <e p="CableProceduralSimple.cs" t="Include" />
+            <e p="CableProceduralStatic.cs" t="Include" />
+          </e>
+        </e>
         <e p="Sandbox_Ben" t="Include">
           <e p="Demo Files" t="Include">
             <e p="Utilities" t="Include">
@@ -1701,6 +1714,10 @@
                   <e p="Datamosh.shader" t="Include" />
                 </e>
               </e>
+              <e p="DissolveContent" t="Include">
+                <e p="Dissolve.shader" t="Include" />
+                <e p="ShaderLerp.cs" t="Include" />
+              </e>
               <e p="Glitch" t="Include">
                 <e p="AnalogGlitch.cs" t="Include" />
                 <e p="DigitalGlitch.cs" t="Include" />
@@ -1754,6 +1771,7 @@
             <e p="IKFootPlacement.cs" t="Include" />
             <e p="NewPlayerMovement.cs" t="Include" />
             <e p="RespawnMemory.cs" t="Include" />
+            <e p="StunManager.cs" t="Include" />
           </e>
           <e p="SceneLoadInteractable.cs" t="Include" />
           <e p="UI" t="Include">
@@ -1800,6 +1818,7 @@
             </e>
           </e>
         </e>
+        <e p="StartGame.cs" t="Include" />
         <e p="TriggerDialogueRunner.cs" t="Include" />
         <e p="UINavigationAccentsHandler.cs" t="Include" />
         <e p="YarnSpinner" t="Include">
