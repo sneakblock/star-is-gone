@@ -71,8 +71,11 @@ public class NewPlayerMovement : MonoBehaviour
         {
             anim.SetBool("isSneaking", false);
         }
+
         
-        //bool isRunning = (Math.Abs(leftStickMove.x) > Math.Abs(.75) || Math.Abs(leftStickMove.y) > Math.Abs(.75));
+        bool isRunning = (Math.Abs(leftStickMove.x) > Math.Abs(.75) || Math.Abs(leftStickMove.y) > Math.Abs(.75) || this.isRunning);
+        
+        
        
         if (!isRunning)
         {

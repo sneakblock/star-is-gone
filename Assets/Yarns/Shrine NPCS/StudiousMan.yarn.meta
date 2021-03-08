@@ -1,0 +1,42 @@
+fileFormatVersion: 2
+guid: 17a079d8bc18c304dab5d6e8ba5d7957
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - StudiousMan-StudiousMan-0
+  - StudiousMan-StudiousMan-1
+  - StudiousMan-StudiousMan-2
+  - StudiousMan-StudiousMan-3
+  - StudiousMan-StudiousMan-4
+  - StudiousMan-StudiousMan-5
+  - StudiousMan-StudiousMan-6
+  - StudiousMan-Where-7
+  - StudiousMan-Where-8
+  - StudiousMan-Where-9
+  - StudiousMan-Where-10
+  - StudiousMan-Where-11
+  - StudiousMan-Where-12
+  - StudiousMan-Where-13
+  - StudiousMan-Where-14
+  - StudiousMan-Where-15
+  - StudiousMan-Where-16
+  - StudiousMan-Who-17
+  - StudiousMan-Who-18
+  - StudiousMan-Who-19
+  - StudiousMan-Who-20
+  - StudiousMan-Who-21
+  - StudiousMan-Who-22
+  - StudiousMan-Who-23
+  - StudiousMan-Who-24
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: 17a079d8bc18c304dab5d6e8ba5d7957, type: 3}
+  localizations: []

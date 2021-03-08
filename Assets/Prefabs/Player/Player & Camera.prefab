@@ -576,7 +576,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2302759796426269329}
-  m_LocalRotation: {x: -0.025416436, y: -0.0047328244, z: -0.00012033174, w: 0.9996658}
+  m_LocalRotation: {x: -0.025416436, y: -0.0047328174, z: -0.000120331555, w: 0.9996658}
   m_LocalPosition: {x: -288.95703, y: -51.207027, z: 139.39865}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
@@ -2595,7 +2595,7 @@ GameObject:
   - component: {fileID: 2302759797443688749}
   - component: {fileID: 2302759797443688738}
   m_Layer: 9
-  m_Name: Particle System
+  m_Name: SnowSystem
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3183,7 +3183,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    maxNumParticles: 10000
+    maxNumParticles: 50000
     size3D: 0
     rotation3D: 0
     gravityModifier:
@@ -3250,7 +3250,7 @@ ParticleSystem:
     donutRadius: 0.2
     m_Position: {x: 0, y: 0, z: 0}
     m_Rotation: {x: 0, y: 0, z: 0}
-    m_Scale: {x: 80, y: 1, z: 80}
+    m_Scale: {x: 160, y: 1, z: 160}
     placementMode: 0
     m_MeshMaterialIndex: 0
     m_MeshNormalOffset: 0
@@ -3448,7 +3448,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 300
+      scalar: 800
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -7722,7 +7722,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2302759797776780541}
-  m_LocalRotation: {x: -0.041695055, y: -0.00473025, z: -0.00019740193, w: 0.99911916}
+  m_LocalRotation: {x: -0.041695055, y: -0.0047302158, z: -0.00019740048, w: 0.99911916}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

@@ -521,6 +521,7 @@
         <e p="Input" t="Include">
           <e p="PlayerControls.cs" t="Include" />
         </e>
+        <e p="IntroManager.cs" t="Include" />
         <e p="MoveTester.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="AmplifyShaderEditor" t="Include">
