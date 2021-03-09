@@ -1,0 +1,38 @@
+fileFormatVersion: 2
+guid: bedae9e6207a3314886a969899c02345
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - WellWoman-WellWoman-0
+  - WellWoman-WellWoman-1
+  - WellWoman-WellWoman-2
+  - WellWoman-WellWoman-3
+  - WellWoman-WellWoman-4
+  - WellWoman-forme-5
+  - WellWoman-forme-6
+  - WellWoman-forme-7
+  - WellWoman-forme-8
+  - WellWoman-forme-9
+  - WellWoman-forme-10
+  - WellWoman-forme-11
+  - WellWoman-forme-12
+  - WellWoman-helpme-13
+  - WellWoman-helpme-14
+  - WellWoman-helpme-15
+  - WellWoman-helpme-16
+  - WellWoman-dontwantto-17
+  - WellWoman-dontwantto-18
+  - WellWoman-wantto-19
+  - WellWoman-wantto-20
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: bedae9e6207a3314886a969899c02345, type: 3}
+  localizations: []

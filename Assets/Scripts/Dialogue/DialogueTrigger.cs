@@ -15,8 +15,9 @@ public class DialogueTrigger : MonoBehaviour
     public bool isAutomatic;
     private GameObject _animGO;
     private Animator _anim;
-    private bool didPress = false;
+    //private bool didPress = false;
     public string startNode;
+    private bool dialogueBeenTriggered = false;
     
 
 
@@ -41,6 +42,9 @@ public class DialogueTrigger : MonoBehaviour
                 hasBeenTriggered = true;
                 TriggerDialogue();
             }
+        } else
+        {
+            _anim.SetBool("showButton", true);
         }
     }
 
@@ -48,18 +52,16 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (!isAutomatic)
         {
-            if (!didPress)
+            
+            if (controls.Standard.Interact.ReadValue<float>() > .5f && !dialogueBeenTriggered)
             {
-                _anim.SetBool("showButton", true);
-                if (controls.Standard.Interact.ReadValue<float>() > .5f)
-                {
-                    TriggerDialogue();
-                    didPress = true;
-                    _anim.SetBool("showButton", false);
-                }
+
+                TriggerDialogue();
+                dialogueBeenTriggered = true;
             }
         }
     }
+    
 
     private void OnEnable()
     {
@@ -75,25 +77,25 @@ public class DialogueTrigger : MonoBehaviour
     {
         if (!isAutomatic)
         {
-            _anim.SetBool("showButton", false);
+            if (_anim.GetBool("showButton")) {
+                _anim.SetBool("showButton", false);
+            }
             FindObjectOfType<DialogueUI>().DialogueComplete();
             FindObjectOfType<DialogueRunner>().ResetDialogue();
-            StartCoroutine(DidPressResetter());
+            dialogueBeenTriggered = false;
         }
         
     }
 
-    IEnumerator DidPressResetter()
-    {
-        yield return new WaitForSeconds(3);
-        didPress = false;
-    }
+    
 
     public void TriggerDialogue()
     {
         FindObjectOfType<DialogueRunner>().Stop();
         FindObjectOfType<DialogueRunner>().StartDialogue(startNode);
         Debug.Log("Sent order to start " + startNode + "to dialogue runner.");
+        _anim.SetBool("showButton", false);
+        //_anim.Play("closedbutton");
     }
 
 }

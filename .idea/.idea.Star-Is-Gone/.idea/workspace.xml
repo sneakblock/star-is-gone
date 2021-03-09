@@ -28,17 +28,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5a09af4-1e72-4e91-b2d9-4af807f4bc97" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Star-Is-Gone/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAnimController.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/Player/PlayerAnimController.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/faderToBlack/fadeFromBlack.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/faderToBlack/fadeFromBlack.anim" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input/PlayerControls.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/PlayerControls.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Input/PlayerControls.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Input/PlayerControls.inputactions" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Animations/UI/Image.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Animations/UI/Image.controller" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Player/Player &amp; Camera.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Player/Player &amp; Camera.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Main Menu.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Main Menu.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/VGDev Build/Overworld.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Player/NewPlayerMovement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Player/NewPlayerMovement.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Dialogue/DialogueTrigger.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/YarnSpinner/Runtime/DialogueUI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/YarnSpinner/Runtime/DialogueUI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Yarns/Shrine NPCS/StudiousMan.yarn" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Yarns/Shrine NPCS/StudiousMan.yarn" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +77,6 @@
         <option value="$PROJECT_DIR$/Assets/DialogueChoiceBehavior.cs" />
         <option value="$PROJECT_DIR$/Assets/FadeInOutManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/NewPlayerMovement.cs" />
-        <option value="$PROJECT_DIR$/Assets/YarnSpinner/Runtime/DialogueUI.cs" />
         <option value="$PROJECT_DIR$/Assets/YarnSpinner/Runtime/DialogueRunner.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/DialogueTrigger.cs" />
         <option value="$PROJECT_DIR$/Assets/Scenes/Rohan/Scripts_Rohan/DialogueTriggerAI.cs" />
@@ -94,6 +90,7 @@
         <option value="$PROJECT_DIR$/Assets/StartGame.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Player/NewPlayerMovement.cs" />
         <option value="$PROJECT_DIR$/Assets/IntroManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/YarnSpinner/Runtime/DialogueUI.cs" />
       </list>
     </option>
   </component>
@@ -218,6 +215,9 @@
       <workItem from="1615143661374" duration="2034000" />
       <workItem from="1615169076664" duration="946000" />
       <workItem from="1615174686299" duration="1704000" />
+      <workItem from="1615245613073" duration="467000" />
+      <workItem from="1615246276292" duration="83000" />
+      <workItem from="1615250472062" duration="1597000" />
     </task>
     <servers />
   </component>

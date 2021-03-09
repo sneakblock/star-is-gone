@@ -31,6 +31,8 @@ using System.Text;
 using System.Collections.Generic;
 using UnityEngine.EventSystems;
 
+
+
 namespace Yarn.Unity {
     
     /// <summary>
@@ -309,7 +311,9 @@ namespace Yarn.Unity {
                     }
                     yield return new WaitForSeconds (textSpeed);
                 }
+
                 yield return new WaitForSeconds (secondsToWaitAfterTypedIn);
+                
             } else {
                 // Display the entire line immediately if textSpeed <= 0
                 onLineUpdate?.Invoke(text);
@@ -320,10 +324,13 @@ namespace Yarn.Unity {
 
             // Indicate to the rest of the game that the line has finished being delivered
             onLineFinishDisplaying?.Invoke();
+            
 
             while (userRequestedNextLine == false) {
                 yield return null;
             }
+
+
 
             // Avoid skipping lines if textSpeed == 0
             yield return new WaitForEndOfFrame();
