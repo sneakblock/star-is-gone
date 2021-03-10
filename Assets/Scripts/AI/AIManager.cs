@@ -15,6 +15,7 @@ public class AIManager : MonoBehaviour {
     public GameObject player;
     public GameObject form1;
     public GameObject form2;
+    public GameObject camera;
 
     public int health = 100;
     public float bigSize = 2;
@@ -26,6 +27,7 @@ public class AIManager : MonoBehaviour {
     public float baseTouchingRange = 1.5f;
     float touchingRange;
     public int waypointRandomness = 1;
+    public float timeAtWaypoint = 3f;
     public float baseSpeed = 1f;
     float speed;
     public float baseFov = 160f;
@@ -238,8 +240,9 @@ public class AIManager : MonoBehaviour {
         playerInView = inView;
 
         StunManager manager = player.transform.parent.gameObject.GetComponent<StunManager>();
+        float angleToCam = Vector3.Angle(new Vector3(-1 * dirToPlayer.x, 0, -1 * dirToPlayer.z), new Vector3(camera.transform.forward.x, 0, camera.transform.forward.z));
         if (manager.GetStunning() && unblocked 
-        && (angleToPlayer <= manager.stunConeAngle / 2 || angleToPlayer >= 360 - (manager.stunConeAngle / 2)) 
+        && (angleToCam <= manager.stunConeAngle / 2 || angleToCam >= 360 - (manager.stunConeAngle / 2)) 
         && Vector3.Distance(transform.position, player.transform.position) <= manager.stunConeLength) {
             inStunCone = true;
             StayInStunCone();
