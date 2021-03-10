@@ -27,7 +27,7 @@ public class AIManager : MonoBehaviour {
     public float baseTouchingRange = 1.5f;
     float touchingRange;
     public int waypointRandomness = 1;
-    public float timeAtWaypoint = 3f;
+    public float timeIdleAtWaypoint = 3f;
     public float baseSpeed = 1f;
     float speed;
     public float baseFov = 160f;
@@ -42,6 +42,8 @@ public class AIManager : MonoBehaviour {
     public float timeToStun = 2f;
     float timePlayerStunning = 0f;
     bool inStunCone = false;
+    float timeAtCurrWaypoint = 0f;
+    bool interacting = false;
 
     // state parameters
     bool moving = false;
@@ -111,14 +113,27 @@ public class AIManager : MonoBehaviour {
             stunned = false;
         }
 
+        if (Vector3.Distance(gameObject.transform.position, waypoints[currWaypoint].transform.position) < 2f) {
+            timeAtCurrWaypoint += Time.deltaTime;
+            if (timeAtCurrWaypoint >= timeIdleAtWaypoint) {
+                moving = true;
+            } else {
+                moving = false;
+            }
+        } else {
+            timeAtCurrWaypoint = 0f;
+        }
+
         // manage activity while in certain states
         if (stateInfo.IsName("Idle")) {
             // do nothing
             agent.ResetPath(); 
             // look at player
-            Vector3 targetDirection = player.transform.position - transform.position;
-            Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, speed * Time.deltaTime, 0.0f);
-            transform.rotation = Quaternion.LookRotation(newDirection);
+            if (interacting) {
+                Vector3 targetDirection = player.transform.position - transform.position;
+                Vector3 newDirection = Vector3.RotateTowards(transform.forward, targetDirection, speed * Time.deltaTime, 0.0f);
+                transform.rotation = Quaternion.LookRotation(newDirection);
+            }
         } else if (stateInfo.IsName("Wandering")) {
             timeSincePlayerInView = 0f;
             if (moving) {
@@ -358,6 +373,7 @@ public class AIManager : MonoBehaviour {
 
     public void Interact(bool start) {
         moving = !start;
+        interacting = start;
     }
 
     void Stun() {
