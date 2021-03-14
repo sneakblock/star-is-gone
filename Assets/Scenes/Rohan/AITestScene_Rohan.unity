@@ -1640,7 +1640,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stunConeLength: 30
-  stunConeAngle: 180
+  stunConeAngle: 90
 --- !u!1 &610764790
 GameObject:
   m_ObjectHideFlags: 0
@@ -1978,15 +1978,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 516254334014820440, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0053745927
+      value: -0.0053745727
       objectReference: {fileID: 0}
     - target: {fileID: 516254334014820440, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.004734264
+      value: -0.0047342987
       objectReference: {fileID: 0}
     - target: {fileID: 516254334014820440, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000025445393
+      value: -0.000025445484
       objectReference: {fileID: 0}
     - target: {fileID: 516254334014820440, guid: db772b9c434fc084f94ae58d6261aa88, type: 3}
       propertyPath: m_LocalRotation.w
@@ -6532,11 +6532,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4968124263547454758, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
       propertyPath: isEnemy
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4968124263547454758, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
       propertyPath: changesForm
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4968124263547454758, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
+      propertyPath: camera
+      value: 
+      objectReference: {fileID: 710652675}
+    - target: {fileID: 4968124263547454758, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
+      propertyPath: timeIdleAtWaypoint
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 4968124263547455195, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
       propertyPath: m_Name
