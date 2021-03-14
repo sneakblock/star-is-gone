@@ -470,8 +470,8 @@ namespace Yarn.Unity {
                 uiElement.GetComponent<Animator>().SetBool("fadeOut", true);
             }
             
-            yield return new WaitForSeconds(5);
-            Debug.Log("Waited 5 seconds.");
+            yield return null;
+            //Debug.Log("Waited 5 seconds.");
 
             if (conversationFinished)
             {

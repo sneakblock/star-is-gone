@@ -18,7 +18,7 @@ public class StunManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(numCharges);
+        //Debug.Log(numCharges);
         if (numCharges > 0 && attacking) {
             stunning = true;
         } else {

@@ -2857,6 +2857,32 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 0.93
   m_Center: {x: 0, y: 0, z: 1.94}
+--- !u!114 &1282088843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59306422a2ca4454aabce3daa79c3334, type: 3}
+  m_Name: New Aura Base Settings
+  m_EditorClassIdentifier: 
+  useDensity: 1
+  density: 0.25
+  useScattering: 1
+  scattering: 0.5
+  useAmbientLighting: 1
+  ambientLightingStrength: 1
+  useColor: 0
+  color: {r: 0, g: 0.5, b: 0.5, a: 0.5}
+  colorStrength: 1
+  useTint: 0
+  tint: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
+  tintStrength: 1
+  useExtinction: 0
+  extinction: 0.75
 --- !u!1 &1284043923
 GameObject:
   m_ObjectHideFlags: 0
@@ -6016,11 +6042,27 @@ PrefabInstance:
       objectReference: {fileID: 171726343}
     - target: {fileID: 2302759796426269328, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.0047328244
+      value: -0.004732818
       objectReference: {fileID: 0}
     - target: {fileID: 2302759796426269328, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00012033174
+      value: -0.00012033157
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302759796426269328, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.025416436
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302759796426269328, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -288.95703
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302759796426269328, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -51.207027
+      objectReference: {fileID: 0}
+    - target: {fileID: 2302759796426269328, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 139.39865
       objectReference: {fileID: 0}
     - target: {fileID: 2302759796912242856, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
       propertyPath: spawnPoint
@@ -6028,15 +6070,15 @@ PrefabInstance:
       objectReference: {fileID: 1534718752}
     - target: {fileID: 2302759796997358160, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
       propertyPath: m_LocalRotation.x
-      value: -0.0053745927
+      value: -0.0053745727
       objectReference: {fileID: 0}
     - target: {fileID: 2302759796997358160, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.004734264
+      value: -0.0047342987
       objectReference: {fileID: 0}
     - target: {fileID: 2302759796997358160, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.000025445393
+      value: -0.000025445484
       objectReference: {fileID: 0}
     - target: {fileID: 2302759797306041145, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6092,11 +6134,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2302759797776780540, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0.00473025
+      value: -0.0047302204
       objectReference: {fileID: 0}
     - target: {fileID: 2302759797776780540, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
       propertyPath: m_LocalRotation.z
-      value: -0.00019740193
+      value: -0.00019740069
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 231f7d04a6980d1408609faaceb5b2c7, type: 3}
@@ -6270,7 +6312,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4968124263547454758, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
       propertyPath: isEnemy
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4968124263547454758, guid: 79189a573ba8b584a9def3ba1dfb9c96, type: 3}
       propertyPath: changesForm

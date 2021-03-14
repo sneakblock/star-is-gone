@@ -93,7 +93,7 @@ public class DialogueTrigger : MonoBehaviour
     {
         FindObjectOfType<DialogueRunner>().Stop();
         FindObjectOfType<DialogueRunner>().StartDialogue(startNode);
-        Debug.Log("Sent order to start " + startNode + "to dialogue runner.");
+        Debug.Log("Sent order to start " + startNode + " to dialogue runner.");
         _anim.SetBool("showButton", false);
         //_anim.Play("closedbutton");
     }
