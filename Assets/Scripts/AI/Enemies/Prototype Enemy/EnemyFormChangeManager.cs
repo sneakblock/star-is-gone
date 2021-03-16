@@ -57,19 +57,18 @@ public class EnemyFormChangeManager : MonoBehaviour
 
     IEnumerator SwapForms(int fromForm, int toForm)
     {
-        Debug.Log("Swapping from " + fromForm);
         if (fromForm == 1) {
             yield return new WaitForSeconds(form1Mesh.GetComponent<ShaderLerp>().secondDuration);
             form1Mesh.GetComponentInChildren<Renderer>().enabled = false;
             form2.transform.position = form1.transform.position;
             form2.transform.forward = form1.transform.forward;
-            // form2Mesh.GetComponentInChildren<Renderer>().enabled = true;
+            form2Mesh.GetComponentInChildren<Renderer>().enabled = true;
         } else if (fromForm == 2) {
             yield return new WaitForSeconds(form2Mesh.GetComponent<ShaderLerp>().secondDuration);
             form2Mesh.GetComponentInChildren<Renderer>().enabled = false;
             form1.transform.position = form2.transform.position;
             form1.transform.forward = form2.transform.forward;
-            // form1Mesh.GetComponentInChildren<Renderer>().enabled = true;
+            form1Mesh.GetComponentInChildren<Renderer>().enabled = true;
         }
     }
 }
