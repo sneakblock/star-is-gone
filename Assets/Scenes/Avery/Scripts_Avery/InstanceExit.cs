@@ -21,7 +21,7 @@ public class InstanceExit : MonoBehaviour
         
     }
 
-    public void OnCollisionEnter(Collider collider)
+    public void OnTriggerEnter(Collider collider)
     {
         if (puzzleUI.hasBeenTriggered && collider.gameObject.tag == "Player")
         {
