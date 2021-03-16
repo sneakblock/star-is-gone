@@ -72,3 +72,11 @@ crashlytics-build.properties
 .idea/.idea.Star-Is-Gone/.idea/contentModel.xml
 .idea/.idea.Star-Is-Gone/.idea/indexLayout.xml
 .idea/.idea.Star-Is-Gone/.idea/workspace.xml
+
+
+# FMOD
+/[Aa]ssets/FMODStudioCache.asset
+/[Aa]ssets/FMODStudioCache.asset.meta
+/[Aa]ssets/Plugins/FMOD/Cache/Editor/FMODStudioCache.asset
+fmod.log
+fmod_editor.log
