@@ -1,0 +1,54 @@
+title: SingleFather
+tags:
+colorID: 0
+position: 939,-248
+---
+//<<if visited("SingleFather") is false>>
+
+Single Father: Hey, you. Have you seen my son?
+Single Father: He said he wanted to go outside and see the snow, so I let him. But he vanished into thin air.
+Single Father: I've been waiting for him here for years...
+
+    -> What does your son look like?
+        Single Father: Oh, he's...uh...
+        Single Father: Wait...what? W-Why can't I remember...?
+        Single Father: C'mon remember, damn it! You gotta remember!
+        Single Father: Ugh...
+        Single Father: I don't know. I can't remember what he looks like at all.
+        Single Father: Some 'father' I am. I'm a damn failure...
+    -> I haven't seen your son anywhere.
+        Single Father: Seriously?
+        Single Father: Damn it, I knew bringing him here was a bad idea...but he wanted to see snow so badly.
+        Single Father: Now I'm stuck here too, and I get the feeling that I'm being watched by someone...or something...
+        Single Father: ...Whatever. He'll turn up sooner or later. He has to.
+    -> You've been waiting...for years?
+        Single Father: Yeah, why wouldn't I? He's the only family I've got.
+        Single Father: Besides, three years isn't even that long. If you complain about that then you're not a real parent.
+        Single Father: Being a parent means loving your kid unconditionally, no matter the time, matter, or space that separates you.
+        Single Father: Not like I would expect you to understand...
+
+Single Father: Now, get out of here. I don't like the look on your face.
+
+//<<else>>
+/*
+
+Single Father: What the hell else do you want? Can't you see I'm busy here?
+
+    -> Busy doing what?
+        Single Father: What, you think waiting's easy or something? It's a job in and of itself!
+        Single Father: I've been pacing back and forth with what feels like needles prickling my feet for years now!
+        Single Father: You have no idea what loss feels like...
+        single Father: don't act like you care
+    -> I don't think your son is coming back.
+        Single Father: Haha...you're not the first person to tell me that...
+        Single Father: But he's the only hope I can cling onto right now. Without him, I'm...
+        Single Father: nothing
+    -> Sorry, I'll leave you alone now.
+        Single Father: So you approached ME just to tell me that you're leaving me alone...?
+        Single Father: ...
+        Single Father: hahahahahahahahahahaha
+
+*/
+
+//<<endif>>
+===

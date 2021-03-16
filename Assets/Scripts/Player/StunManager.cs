@@ -12,13 +12,13 @@ public class StunManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("# of stun charges: " + numCharges);
+        //Debug.Log("# of stun charges: " + numCharges);
         if (numCharges > 0 && attacking) {
             stunning = true;
         } else {

@@ -1,0 +1,60 @@
+title: WellWoman
+tags: 
+colorID: 0
+position: 166,-753
+---
+Can you hear my voice, angel? Will you come to me?
+Will you fall all over me, all feathered hair?
+Little eyes of lightning. Flashes of snow, are those you, too?
+
+[[Are you looking for me?|forme]]
+[[Where is this? Can you help me?|helpme]]
+===
+title: forme
+tags: 
+colorID: 0
+position: 499,-980
+---
+She was like a shiny red balloon. She was the answer to all of this.
+She was like a song that made me so still.
+You are like stripped wiring. A current of black crackles from you, you wretched bitch.
+You are the last visitor here, here to drown her for good. 
+I know it's true.
+
+[[Help me.|helpme]]
+[[I don't want to drown anyone.|dontwantto]]
+[[I can feel the black. I want to drown her in it.|wantto]]
+===
+title: helpme
+tags: 
+colorID: 0
+position: 495,-545
+---
+It's lost and long gone.
+I can't walk the lights in the wood. They blink out and swim. 
+
+[[Am I who you're looking for?|forme]]
+->Goodbye.
+===
+title: dontwantto
+tags: 
+colorID: 0
+position: 909,-996
+---
+Cold winds carry out the want.
+Cold winds carry...
+
+[[Can you help me?|helpme]]
+-> Goodbye.
+===
+title: wantto
+tags: 
+colorID: 0
+position: 908,-641
+---
+I would pet her little head and think about how it would burn out quick under the sinkwater.
+I could catch it as it flew out the window.
+
+[[Can you help me?|helpme]]
+->Goodbye.
+===

@@ -1,0 +1,52 @@
+fileFormatVersion: 2
+guid: c1412515758d0af4a8767ac4999a0c7e
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - SingleFather-SingleFather-0
+  - SingleFather-SingleFather-1
+  - SingleFather-SingleFather-2
+  - SingleFather-SingleFather-3
+  - SingleFather-SingleFather-4
+  - SingleFather-SingleFather-5
+  - SingleFather-SingleFather-6
+  - SingleFather-SingleFather-7
+  - SingleFather-SingleFather-8
+  - SingleFather-SingleFather-9
+  - SingleFather-SingleFather-10
+  - SingleFather-SingleFather-11
+  - SingleFather-SingleFather-12
+  - SingleFather-SingleFather-13
+  - SingleFather-SingleFather-14
+  - SingleFather-SingleFather-15
+  - SingleFather-SingleFather-16
+  - SingleFather-SingleFather-17
+  - SingleFather-SingleFather-18
+  - SingleFather-SingleFather-19
+  - SingleFather-SingleFather-20
+  - SingleFather-SingleFather-21
+  - SingleFather-SingleFather-22
+  - SingleFather-SingleFather-23
+  - SingleFather-SingleFather-24
+  - SingleFather-SingleFather-25
+  - SingleFather-SingleFather-26
+  - SingleFather-SingleFather-27
+  - SingleFather-SingleFather-28
+  - SingleFather-SingleFather-29
+  - SingleFather-SingleFather-30
+  - SingleFather-SingleFather-31
+  - SingleFather-SingleFather-32
+  - SingleFather-SingleFather-33
+  - SingleFather-SingleFather-34
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: c1412515758d0af4a8767ac4999a0c7e, type: 3}
+  localizations: []

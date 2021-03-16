@@ -21,6 +21,7 @@ TagManager:
   - button3
   - button4
   - ExitArtifact
+  - faderToBlack
   layers:
   - Default
   - TransparentFX
