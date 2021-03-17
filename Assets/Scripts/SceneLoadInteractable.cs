@@ -9,6 +9,7 @@ public class SceneLoadInteractable : MonoBehaviour
     private PlayerControls _controls;
     private Collider _collider;
     private Animator _anim;
+    public string sceneName;
 
     public GameObject behaviorToBeTriggered;
 
@@ -44,7 +45,7 @@ public class SceneLoadInteractable : MonoBehaviour
         {
             Debug.Log("Player has interacted with " + this.name);
             
-            behaviorToBeTriggered.GetComponent<SceneLoader>().LoadScene();
+            behaviorToBeTriggered.GetComponent<SceneLoader>().LoadScene(sceneName);
             
             _anim.SetBool("showButton", false);
         }

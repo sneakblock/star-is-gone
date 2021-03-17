@@ -35,6 +35,7 @@ public class DialogueManager : MonoBehaviour
         if (textQueue.Count == 0)
         {
             EndDialogue();
+            Debug.Log("Dialogue ended.");
             return;
         }
 

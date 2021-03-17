@@ -5,12 +5,12 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    //private Animator anim;
-    public string sceneName;
+    private Animator anim;
+    private string sceneName;
     // Start is called before the first frame update
     void Start()
     {
-        //anim = GameObject.FindWithTag("transitioncanvas").GetComponent<Animator>();
+        anim = GameObject.FindWithTag("faderToBlack").GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,8 +19,16 @@ public class SceneLoader : MonoBehaviour
         
     }
 
-    public void LoadScene()
+    public void LoadScene(string sceneName)
     {
+        StartCoroutine(FadeToBlack(sceneName));
+    }
+    
+    private IEnumerator FadeToBlack(string sceneName)
+    {
+        Debug.Log("Loading scene " + sceneName);
+        anim.SetBool("fadeToBlack", true);
+        yield return new WaitForSeconds(3);
         SceneManager.LoadScene(sceneName);
     }
 }
