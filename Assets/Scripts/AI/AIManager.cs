@@ -238,7 +238,7 @@ public class AIManager : MonoBehaviour {
         float angleToPlayer = Vector3.Angle(new Vector3(dirToPlayer.x, 0, dirToPlayer.z), new Vector3(transform.forward.x, 0, transform.forward.z));
             
         RaycastHit hit;
-        // Debug.DrawRay (transform.position, dirToPlayer, Color.red, 0f, true);
+        // Debug.DrawRay(transform.position, dirToPlayer, Color.red, 0f, true);
         if(Physics.Raycast(transform.position, dirToPlayer, out hit, detectionRange * 10f)) {
             if(hit.collider.gameObject == player || hit.collider.gameObject.transform.IsChildOf(player.transform)) { // line of sight is not blocked
                 if (angleToPlayer > 360 - (fov / 2) || angleToPlayer < (fov / 2)) { // player is in front of enemy
@@ -255,7 +255,14 @@ public class AIManager : MonoBehaviour {
         playerInView = inView;
 
         StunManager manager = player.transform.parent.gameObject.GetComponent<StunManager>();
-        float angleToCam = Vector3.Angle(new Vector3(-1 * dirToPlayer.x, 0, -1 * dirToPlayer.z), new Vector3(camera.transform.forward.x, 0, camera.transform.forward.z));
+        Vector3 camAngleFromPlayer = new Vector3(camera.transform.forward.x, 0, camera.transform.forward.z);
+        float angleToCam = Vector3.Angle(new Vector3(-1 * dirToPlayer.x, 0, -1 * dirToPlayer.z), camAngleFromPlayer);
+
+        Debug.DrawRay(player.transform.position, new Vector3(-1 * dirToPlayer.x, 0, -1 * dirToPlayer.z), Color.red, 0f, true);
+        Debug.DrawRay(player.transform.position, 100 * camAngleFromPlayer, Color.red, 0f, true);
+        Debug.DrawRay(player.transform.position, manager.stunConeLength * (Quaternion.Euler(0, -1 * manager.stunConeAngle / 2, 0) * camAngleFromPlayer), Color.green, 0f, true);
+        Debug.DrawRay(player.transform.position, manager.stunConeLength * (Quaternion.Euler(0, manager.stunConeAngle / 2, 0) * camAngleFromPlayer), Color.blue, 0f, true);
+        
         if (manager.GetStunning() && unblocked 
         && (angleToCam <= manager.stunConeAngle / 2 || angleToCam >= 360 - (manager.stunConeAngle / 2)) 
         && Vector3.Distance(transform.position, player.transform.position) <= manager.stunConeLength) {
@@ -267,6 +274,8 @@ public class AIManager : MonoBehaviour {
             }
             inStunCone = false;
         }
+        bool inStunConeAngle = angleToCam <= manager.stunConeAngle / 2 || angleToCam >= 360 - (manager.stunConeAngle / 2);
+        Debug.Log("in stun cone angle: " + inStunConeAngle);
     }
 
     void UpdatePlayerNear() {
