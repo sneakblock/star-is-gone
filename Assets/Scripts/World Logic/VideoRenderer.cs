@@ -21,6 +21,6 @@ public class VideoRenderer : MonoBehaviour
     }
 
     public void changeChannel(int channelNum) {
-        currChannel = Mathf.Clamp(channelNum, 0, clips.Count);
+        currChannel = Mathf.Clamp(channelNum, 0, clips.Count - 1);
     }
 }
