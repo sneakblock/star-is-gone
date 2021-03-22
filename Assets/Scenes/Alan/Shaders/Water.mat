@@ -63,11 +63,11 @@ Material:
     - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _ChromaticAberration: 0
-    - _Color: 0.1
+    - _Color: 0.294
     - _Contrast: 1
     - _Cutoff: 0.5
-    - _Depth: 3.5
-    - _DepthOffset: 2.02
+    - _Depth: 3.55
+    - _DepthOffset: 2.7
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
     - _Float7: 0.93
@@ -83,9 +83,9 @@ Material:
     - _Resolution: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.2
+    - _Speed: 0.97
     - _SrcBlend: 1
-    - _Strips: 0.83
+    - _Strips: 0.874
     - _TransAmbient: 0
     - _TransDirect: 1
     - _TransNormalDistortion: 0.3
@@ -93,7 +93,7 @@ Material:
     - _TransShadow: 0
     - _Translucency: 14.5
     - _UVSec: 0
-    - _WaveHeight: 1
+    - _WaveHeight: 0.9
     - _ZWrite: 0
     - __dirty: 0
     m_Colors:
