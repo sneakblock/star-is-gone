@@ -1,0 +1,188 @@
+﻿// Each #kernel tells which function to compile; you can have many kernels
+#pragma kernel AddRipple
+#pragma kernel UpdateRipples
+
+struct RippleData {
+	float4 pos; // w = strength
+	float4 drssParams;//xyzw = decay, radius, sharpness, speed 
+};
+
+struct Counter {
+	uint4 val;
+};
+
+uniform float4 pos;
+uniform float4 drssParams;
+uniform float ripDeltaTime;
+
+uniform RWStructuredBuffer<RippleData> rippleBuffer;
+uniform RWStructuredBuffer<Counter> rippleCount;
+
+#define MAX_RIPPLES 128
+
+#include "UnityCG.cginc"
+
+
+[numthreads(1, 1, 1)]
+void AddRipple(uint3 id : SV_DispatchThreadID) {
+	uint ripIdx = rippleCount[0].val.x; // get current ripple count
+	rippleCount[0].val.x += ripIdx < MAX_RIPPLES - 1; //incrememnt ripple count but dont go past max ripples
+
+	//ripIdx = 0;
+
+	RippleData rip;
+	rip.pos = pos;
+	rip.drssParams = drssParams;
+
+	rippleBuffer[ripIdx] = rip; // add this ripple to the list
+}
+
+[numthreads(1, 1, 1)]
+void UpdateRipples(uint3 id : SV_DispatchThreadID) {
+	uint ripCount = rippleCount[0].val.x; // get current ripple count
+	RippleData rip;
+
+	for (uint i = 0; i < ripCount; i++) {
+		rip = rippleBuffer[i];
+
+		//strength less than zero so replace this ripple and move on;
+		rip.pos.w -= rip.drssParams.x * ripDeltaTime;
+
+		if (rip.pos.w <= 0) {
+			ripCount--;
+			rippleBuffer[i] = rippleBuffer[ripCount];
+			continue;
+		}
+
+		rip.drssParams.y += rip.drssParams.w * ripDeltaTime;
+		rippleBuffer[i] = rip;
+	}
+
+	rippleCount[0].val.x = ripCount;
+}
+
+
+
+#pragma kernel NoiseMain
+
+//Changing these allows to control the precomputed noise appearance
+//Do not change unless you seriously know what youre doing
+#define falloff 0.45
+#define noiseScale 10.0
+
+#include "NoiseCompute.cginc"
+
+RWTexture3D<half> NoiseResult;
+
+[numthreads(8, 8, 8)]
+void NoiseMain(uint3 id : SV_DispatchThreadID) {
+
+	uint w, h, d;
+	NoiseResult.GetDimensions(w, h, d);
+
+	float3 uvw = id / float3(w, h, d) * noiseScale;
+
+	NoiseResult[id] = NoiseCombinedOctaves(uvw);
+	//NoiseResult[id] = float4(uvw, 1);
+}
+
+
+
+#pragma kernel NormalsMain
+#pragma kernel HeightmapMain
+
+uniform uint resolution;
+StructuredBuffer<float> inHeights;
+RWTexture2D<half3> NormalResult;
+RWTexture2D<float> HeightResult;
+Texture2D<float> HeightMapInput;
+
+static int3 off = int3(-1, 0, 1);
+
+
+[numthreads(8, 8, 1)]
+void HeightmapMain(uint3 id : SV_DispatchThreadID) {
+	HeightResult[id.xy] = inHeights[id.x + resolution * id.y];
+}
+
+
+[numthreads(8, 8, 1)]
+void NormalsMain(uint3 id : SV_DispatchThreadID) {
+
+	int2 p = id.xy - off.zz;
+
+	float s[9];
+
+	s[6] = HeightMapInput[int2(p.x++, p.y)];
+	s[7] = HeightMapInput[int2(p.x++, p.y)];
+	s[8] = HeightMapInput[int2(p.x, p.y++)];
+	p.x -= 2;
+
+	s[3] = HeightMapInput[int2(p.x++, p.y)];
+	s[4] = HeightMapInput[int2(p.x++, p.y)];
+	s[5] = HeightMapInput[int2(p.x, p.y++)];
+	p.x -= 2;
+
+	s[0] = HeightMapInput[int2(p.x++, p.y)];
+	s[1] = HeightMapInput[int2(p.x++, p.y)];
+	s[2] = HeightMapInput[int2(p.x, p.y)];
+
+	if (id.x < 1) {
+		s[6] = s[4];
+		s[3] = s[4];
+		s[0] = s[4];
+	}
+
+	if (id.x >= resolution - 1) {
+		s[8] = s[4];
+		s[5] = s[4];
+		s[2] = s[4];
+	}
+
+	if (id.y < 1) {
+		s[6] = s[4];
+		s[7] = s[4];
+		s[8] = s[4];
+	}
+
+	if (id.y >= resolution - 1) {
+		s[0] = s[4];
+		s[1] = s[4];
+		s[2] = s[4];
+	}
+
+	float3 n;
+	n.x = -(s[2] - s[0] + 2.0 * (s[5] - s[3]) + s[8] - s[6]);
+	n.z = (s[6] - s[0] + 2.0 * (s[7] - s[1]) + s[8] - s[2]);
+	n.y = 0.01;
+	n = normalize(n);
+
+	NormalResult[id.xy] = n;
+}
+
+
+// checks to see if a chunk contains any grass
+#pragma kernel EmptyChunkDetect
+
+RWStructuredBuffer<int> chunkResults;
+RWTexture2D<float4> paramMap;
+float2 chunkDims;
+
+[numthreads(8, 8, 1)]
+void EmptyChunkDetect(uint3 id : SV_DispatchThreadID) {
+
+	uint w, h;
+	paramMap.GetDimensions(w, h);
+	if (id.x > w || id.y > h) return;
+
+	float density = paramMap[id.xy].r;
+
+	if(density > 0){
+		float2 uv = id.xy / float2(w, h);
+		uv = saturate(uv);
+		float2 chunk = floor(uv * chunkDims.xy);
+		int idx = floor(chunk.y * chunkDims.x + chunk.x);
+		chunkResults[idx] = 1;
+	}
+
+}
