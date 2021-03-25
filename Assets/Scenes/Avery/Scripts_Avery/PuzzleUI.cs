@@ -46,13 +46,13 @@ public class PuzzleUI : MonoBehaviour
             matchingArrays = input[0].Equals(solutions[0]);
             Debug.Log(matchingArrays);
             Debug.Log(input[1] + " " + solutions[1]);
-            matchingArrays = input[1].Equals(solutions[1]);
+            matchingArrays = matchingArrays && input[1].Equals(solutions[1]);
             Debug.Log(matchingArrays);
             Debug.Log(input[2] + " " + solutions[2]);
-            matchingArrays = input[2].Equals(solutions[2]);
+            matchingArrays = matchingArrays && input[2].Equals(solutions[2]);
             Debug.Log(matchingArrays);
             Debug.Log(input[3] + " " + solutions[3]);
-            matchingArrays = input[3].Equals(solutions[3]);
+            matchingArrays = matchingArrays && input[3].Equals(solutions[3]);
             Debug.Log(matchingArrays);
             if (matchingArrays)
             {
