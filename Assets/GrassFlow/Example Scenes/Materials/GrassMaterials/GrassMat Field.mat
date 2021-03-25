@@ -61,7 +61,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - colorMap:
-        m_Texture: {fileID: 2800000, guid: 3589c6084e8073645b91c25a67e02497, type: 3}
+        m_Texture: {fileID: 2800000, guid: 91053d9e8d0b05f498c9d7fde9faadb4, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - dhfParamMap:
@@ -136,8 +136,8 @@ Material:
     - _noiseScale: {r: 1, g: 1, b: 0.7, a: 0}
     - _noiseSpeed: {r: 1.5, g: 1, b: 0.35, a: 0}
     - noiseScale: {r: 1, g: 1, b: 0.5, a: 0}
-    - terrainChunkSize: {r: 50, g: 50, b: 0, a: 0}
-    - terrainSize: {r: 250, g: 600, b: 250, a: 0}
+    - terrainChunkSize: {r: 33.333332, g: 33.333332, b: 0, a: 0}
+    - terrainSize: {r: 1000, g: 600, b: 1000, a: 0}
     - variance: {r: 0.6, g: 0.2, b: 0.6, a: 0.65}
     - windDir: {r: -0.7, g: -0.6, b: 0.1, a: 0}
     - windDir2: {r: 0.5, g: 0.5, b: 1.2, a: 1}

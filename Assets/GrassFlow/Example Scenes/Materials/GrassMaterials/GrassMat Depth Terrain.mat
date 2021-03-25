@@ -130,13 +130,13 @@ Material:
     m_Colors:
     - _Color: {r: 0.57363087, g: 0.74264705, b: 0.38224483, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _LOD: {r: 30, g: 2, b: -0.005, a: 0}
+    - _LOD: {r: 15, g: 1.1, b: 0, a: 0}
     - _chunkPos: {r: 0, g: 0, b: 0, a: 0}
     - _noiseScale: {r: 1, g: 1, b: 0.7, a: 0}
     - _noiseSpeed: {r: 1.5, g: 1, b: 0.35, a: 0}
     - noiseScale: {r: 1, g: 1, b: 0.5, a: 0}
-    - terrainChunkSize: {r: 25, g: 25, b: 0, a: 0}
-    - terrainSize: {r: 250, g: 600, b: 250, a: 0}
+    - terrainChunkSize: {r: 22.222221, g: 22.222221, b: 0, a: 0}
+    - terrainSize: {r: 1000, g: 600, b: 1000, a: 0}
     - variance: {r: 0.5, g: 0.2, b: 0.6, a: 0.65}
     - windDir: {r: -0.7, g: -0.6, b: 0.1, a: 0}
     - windDir2: {r: 0.5, g: 0.5, b: 1.2, a: 1}
