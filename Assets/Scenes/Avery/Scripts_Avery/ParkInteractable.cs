@@ -34,7 +34,7 @@ public class ParkInteractable : MonoBehaviour
         _collider = GetComponent<Collider>();
         _anim = GameObject.FindWithTag("buttonprompt").GetComponent<Animator>();
         puzzleUI = GameObject.FindGameObjectWithTag("puzzleui").GetComponent<PuzzleUI>();
-        puzzleUI.enabled = false;
+        puzzleUI.enabled = false; 
     }
 
     private void OnTriggerEnter(Collider _collider)
