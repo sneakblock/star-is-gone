@@ -18,6 +18,7 @@ public class DialogueTrigger : MonoBehaviour
     //private bool didPress = false;
     public string startNode;
     private bool dialogueBeenTriggered = false;
+    public bool canBeCanceled;
     
 
 
@@ -75,7 +76,7 @@ public class DialogueTrigger : MonoBehaviour
 
     public void OnTriggerExit(Collider _collider)
     {
-        if (!isAutomatic)
+        if (!isAutomatic && canBeCanceled)
         {
             if (_anim.GetBool("showButton")) {
                 _anim.SetBool("showButton", false);

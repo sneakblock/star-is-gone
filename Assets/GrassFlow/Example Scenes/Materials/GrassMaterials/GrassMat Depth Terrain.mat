@@ -128,7 +128,7 @@ Material:
     - variance: 0.3
     - widthLODscale: 0.04
     m_Colors:
-    - _Color: {r: 0.57363087, g: 0.74264705, b: 0.38224483, a: 1}
+    - _Color: {r: 0.04602056, g: 0.0754717, b: 0.012459949, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
     - _LOD: {r: 15, g: 1.1, b: 0, a: 0}
     - _chunkPos: {r: 0, g: 0, b: 0, a: 0}
