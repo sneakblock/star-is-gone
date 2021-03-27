@@ -45,7 +45,7 @@ public class Interactable : MonoBehaviour
             Debug.Log("Player has interacted with " + this.name);
             
             //do something e.g
-            behaviorToBeTriggered.GetComponent<StunManager>().PickupCharge();
+            behaviorToBeTriggered.GetComponent<AudioSource>().Play();
             
             _anim.SetBool("showButton", false);
 

@@ -16,6 +16,9 @@ public class ParkConvoController : MonoBehaviour
     private Animator anim;
     private Animator bfAnim;
     public GameObject enemy;
+    public GameObject radio;
+    private AudioSource radioAudioSource;
+    private bool wasTriggered = false;
     
     private void Awake()
     {
@@ -25,6 +28,9 @@ public class ParkConvoController : MonoBehaviour
         anim = player.GetComponent<Animator>();
         bfAnim = bf.GetComponent<Animator>();
         enemy.SetActive(false);
+        radio.GetComponent<Interactable>().enabled = false;
+        radio.GetComponent<Collider>().enabled = false;
+        radioAudioSource = radio.GetComponent<AudioSource>();
     }
 
     private void OnEnable()
@@ -39,8 +45,9 @@ public class ParkConvoController : MonoBehaviour
 
     private void OnTriggerStay(Collider coll)
     {
-        if (controls.Standard.Interact.ReadValue<float>() > .5f)
+        if (controls.Standard.Interact.ReadValue<float>() > .5f && !wasTriggered)
         {
+            wasTriggered = true;
             //RotatePlayer(faceObj);
             SeatPlayer();
         }
@@ -50,6 +57,7 @@ public class ParkConvoController : MonoBehaviour
     {
         movement.enabled = false;
         anim.SetBool("sitting", true);
+        radioAudioSource.Play();
     }
 
     public void CompleteConvo()
@@ -58,8 +66,9 @@ public class ParkConvoController : MonoBehaviour
         movement.enabled = true;
         bfAnim.SetBool("stand", true);
         StartCoroutine(wait(3));
-        
-
+        coll.enabled = false;
+        radio.GetComponent<Interactable>().enabled = true;
+        radio.GetComponent<Collider>().enabled = true;
     }
 
     IEnumerator wait(int seconds)
