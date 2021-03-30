@@ -9,7 +9,7 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Water
   m_Shader: {fileID: 4800000, guid: 0f651f895eab4e844bedf241d3c5a482, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
+  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON _GLOSSYREFLECTIONS_OFF
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 1
   m_DoubleSidedGI: 0
@@ -63,30 +63,37 @@ Material:
     - _AlphaCutoff: 0.5
     - _BumpScale: 1
     - _ChromaticAberration: 0
-    - _Color: 0.089401394
+    - _Color: 0.294
     - _Contrast: 1
     - _Cutoff: 0.5
+    - _Depth: 3.55
+    - _DepthOffset: 2.7
     - _DetailNormalMapScale: 1
     - _DstBlend: 10
+    - _Float7: 0.93
     - _GlossMapScale: 1
     - _Glossiness: 0.5
-    - _GlossyReflections: 1
+    - _GlossyReflections: 0
     - _Metallic: 0
+    - _MinOpacity: 0
     - _Mode: 3
     - _OcclusionStrength: 1
     - _Parallax: 0.02
-    - _Resolution: 0.31
+    - _Refraction: 1.13
+    - _Resolution: 1
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
+    - _Speed: 0.97
     - _SrcBlend: 1
-    - _Strips: 0.27
-    - _TransAmbient: 0.43
+    - _Strips: 0.874
+    - _TransAmbient: 0
     - _TransDirect: 1
     - _TransNormalDistortion: 0.3
     - _TransScattering: 1
     - _TransShadow: 0
-    - _Translucency: 0
+    - _Translucency: 14.5
     - _UVSec: 0
+    - _WaveHeight: 0.9
     - _ZWrite: 0
     - __dirty: 0
     m_Colors:
