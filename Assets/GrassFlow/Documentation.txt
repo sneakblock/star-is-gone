@@ -1,0 +1,388 @@
+
+GrassFlow V1.69
+
+
+Contents:
+1. Intro
+2. Usage
+3. Functions
+4. Example Scenes
+5. All About Performance
+ a - LOD
+ b - Shadows
+ c - Lighting
+ d - BURST
+ e - Misc
+6. Troubleshooting And You
+7. Material Property Info
+8. SRP-URP/HDRP
+9. Notes
+
+
+
+----- 1. Intro -----
+
+Thanks for using my GrassFlow asset, hopefully you'll find everything you need here and create some sweet looking interactive grasses.
+This asset was inspired by the game Flower. I wanted to create a similarly impressive grass simulation, and so, here we are.
+If you like it, please feel free to leave a review, it helps a lot!
+
+
+
+----- 2. Usage -----
+
+Because it's important and I feel like sometimes people don't know to do it, read the tooltips for any setting in the inspector you want to know more about!
+Nearly every setting/button has a tooltip that can be read by hovering over it and often the most pertinent information is in those.
+Wanted to get this out up front so if nothing else you hopefully know this.
+
+The main and recomended way to use GrassFlow is with the grassflow component, as it manages all the things for you including LOD chunks, etc.
+It's mostly as simple as adding the component and assigning the required variables. The required variables are as follows:
+ -grassMaterial
+ -terrainTransform
+ -grassMesh/terrainObject (grassMesh is required for mesh mode and terrainObject for terrain mode)
+ 
+The component can be found under: Rendering/GrassFlow
+The component does not need to be placed on the mesh or terrain gameobject, for organizational purposes, but works fine if you do.
+ 
+grassMaterial needs to use one of the included shaders:
+ -GrassFlow/Grass Material Shader: Base version of the shader, cannot receive more than the main direct light or cast shadows or receive shadows properly.
+ -GrassFlow/Grass Material Shader With Depth Pass: Same as above but with an added Depth pass to allow for casting and receiving shadows.
+ -GrassFlow/Grass Material Shader With Depth&Add Passes: Same as above but with a forward add pass to allow for supporting extra unity lights. Can be costly on perforamnce with many lights.
+For more information about perforamnce of these different shaders, see: All About Performance.
+The material also needs to have gpuInstancing enabled to work at all, as GrassFlow relies on GPU instancing.
+
+If you need to know more about a setting in the GrassFlowRenderer inspector, pretty much all things have very descriptive tooltips you can refer to.
+
+You can technically use the material on it's own and it will function more or less properly.
+You'd have to use the GrassFlowRenderer component to change the material type from terrain to mesh, as it's terrain by default and not exposed in the editor.
+You'd also have to manually assign the noise texture for wind to work properly. And maybe some other things I'm forgetting.
+At any rate I wouldn't recomend this as you have no control over grass amount or LOD settings that way, but you do you.
+
+Painting:
+Hopefully the painting controls are fairly intuitive. I modeled them after Unity's terrain editing tools so hopefully they are familiar at least.
+The brush list loads brushes in the same way and from the same places as the terrain editor, so you can add more brushes in the same way you can for terrain editing.
+When in doubt, read the tooltip for the setting you're confused about.
+For the paramter map, the color channels are mapped as following:
+Red channel = density. Green channel = height, Blue channel = flattenedness. Alpha channel = wind strength.
+---
+For the grass type map:
+NOTE: This texture should have NO compression, or at most, high quality compression.
+Because of the way this texture is stored, compressing it will cause bad artifacts.
+Due to how this texture works, when painting with a normal brush, the edges might paint unexpected density due to the texture filtering of the brush texture.
+It's a single channel texture, using the red channel with 8 bits, 256 different values
+The value stored is basically = [the index into the texture atlas] divided by 16
+15 is the max index stored (zero indexed). Values inbetween each index are treated as density of that particular grass type.
+So for example, a value 0 to 0.05859375 would control density of the first texture, 0.0625 to 0.12109375 for the second texture, etc
+To put it in 255 color terms: a value 0 to 15 would control density of the first texture, 16 to 31 for the second texture, etc
+
+
+
+For terrain mode, density can be automatically controlled by terrain splat maps if you have them set up.
+e.g. if you have a dirt terrain texture and a grass terrain texture and some areas are painted with dirt, and you don't want grass to show up on the places with the dirt texture,
+you can use the splat maps section under paint mode to select the appropriate layer and remove grass from the dirt layer etc.
+
+IMPORTANT: If using mesh mode, it's important (albeit not strictly necessary) the import scale is such that the scale in the editor is 1,1,1
+The scale of the transform effects the scale of the grassblades, so if your mesh imports with a small scale and you scale the transform up by like say, 8000...
+You're going to have a bad time.
+
+ALSO IMPORTANT: In mesh mode grass is rendered per triangle of the source mesh, so for uniform looking grass make sure the mesh has fairly uniform triangles.
+Or, if you want denser patches of grass in areas, the most efficient way to do that is to make the source mesh triangles denser in that area.
+This can also be accomplished by using the density channel of the parameter map, but this is less effecient.
+
+If you run into trouble, well, take a look at the troubleshooting section!
+
+
+
+----- 3. Functions -----
+
+I wont describe them all here as they all have descriptions and summaries that should work with intellisense and the monodevelop equivalent. Barring that, you can always just open the script up and read them from there.
+So here's a list of public functions on the script you can use.
+
+Control:
+public void Refresh()
+public void RevertDetailMaps()
+public void UpdateTransform()
+public void UpdateTransformAsync()
+public void UpdateShaders()
+
+Ripples:
+public static void AddRipple()
+public void AddARipple()
+
+Forces:
+public static void RemoveGrassForce
+public static GrassForce AddGrassForce
+public void RemoveForce
+public GrassForce AddForce
+(View GrassFlowForce example script for example on use.)
+
+Painting:
+public static void SetPaintBrushTexture()
+public void PaintColor()
+public void PaintParameters()
+
+
+----- 4. Example Scenes -----
+
+I just want to mention that example scenes are provided and include some scripts that show how to interface with GrassFlow.
+The scenes aren't necessarily optimized for best performance possible and well, I'm not exactly an artist so take the visuals with a grain of salt.
+That being said I do think I've made a pretty darn good looking grass shader, under the right circumstances anyway.
+Due to the scales involved the example scenes with shadows are meant to have a high shadow draw distance to look right but it's not that important I guess.
+
+
+
+----- 5. All About Performance -----
+
+5.a --- LOD ---
+ -The LOD system is based on the chunks the Mesh or Terrain is split into.
+ -They are culled by the frustum of the currently rendering camera.
+ -LOD works by decreasing the instances of grass rendered over distance based on the LOD parametrs.
+ -If a chunk is further away than maxRenderDist it is rejected immediately.
+ -Chunk bounds are expanded by blade height so that in almost all cases grass should be encapsulated by the bounds even at max grass height.
+ -Chunk bounds can be visualized with visualizeChunkBounds.
+ -In mesh mode, chunking is dependant on the import orientation of the mesh. So be sure that the mesh is imported in the orientation you'd like it to be chunked in to avoid confusing situations.
+ 
+ -In terrain mode you can use discardEmptyChunks to discard chunks that don't have ANY grass in them based on the parameter map density channel.
+ -This will be significantly more performant if your terrain has large areas without grass.
+ -WARNING: enabling this removes the chunks completely, meaning that grass could not be dynamically added back in those chunks during runtime. 
+ -Recommended you leave this off while styling the grass or you might remove chunks and then if you try to paint density back into those areas it wont show up until you refresh.
+ 
+ IMPORTANT: The settings grassPerTri/grassPerChunk for mesh/terrain mode respectively, control how much grass gets rendered PER INSTANCE.
+ This means the higher this setting, the more grass pops out at a time as the camera gets further away.
+ Here's the kicker though, 100 instanceCount and 10 grass per chunk is much less efficient than 25 instances and 40 gress per chunk, even though they both render 1000 blades per chunk.
+ This efficiency boost has diminishing returns though and would look very bad to have 1 instance and 1000 blades per chunk, as there would be no room for the LOD system to lower the amount of grass rendered at a distance.
+ Finding a good balance can be tricky but in general, set them such that instanceCount is as low as possible while still giving a fair amount of range for the LOD system to play with.
+ 
+ 
+ IMPORTANT V2: Too many LOD chunks is bad for performance, but so is too few, and too few also can look bad as it is more apparent that grass dwindles out in chunks.
+ Read the tooltip on MeshLodChunks for more info.
+ 
+ BURST Note: See section 'd' on BURST to learn about GrassFlow's BURST Job support for faster LOD chunk culling.
+ 
+
+5.b --- Shadows ---
+ -This situation is quite tricky, and this is where the depth pass version of the shader comes in.
+ -See, when rendering with cascaded shadows in unity, it's done in a special way that requires a depth pass to receive shadows properly.
+ -This is not the case for non cascaded shadows as they are sampled differently. So you can receive non cascaded shadows without the depth pass, which is the fastest way to receive shadows.
+ -For some reason in forward rendering in unity we don't get depth for free, it has to be done in a separate pass.
+ -BUT even if receiving shadows and casting shadows is turned off, the depth pass still gets run, which adds to render time unnecessarily in some cases.
+ -There may be other effects that require depth that you would want to use the version with depth pass for though.
+ -So in short: the version of the shader that has the depth pass is required to receive cascaded shadows in forward rendering.
+ -It shouldn't be required to receive non cascaded shadows.
+ -Technically in deffered rendering you do get depth for free, but GrassFlow doesnt have a deffered mode (It doesn't really make sense to) so it isn't relevant here.
+ -For casting shadows, the depth pass is required always as the depth pass is rendered from the light source's perspective to create the shadowmap.
+ -It should be noted that casting shadows is especially expensive, because well, they're shadows. It's not as bad without cascaded shadows though.
+ -Receiving shadows has a performance impact but not nearly as much as casting shadows.
+ -I think you can get some pretty decent looking results in most cases without casting shadows or even receiving them depending on the scene.
+ -And finally, custom shadowing solutions are unknown so I cannot comment whether or not they would work with GrassFlow, so results may vary.
+ 
+ 
+5.c --- Lighting ---
+ -If youre using forward rendering, Grassflow technically supports all standard unity lights with the "GrassFlow/Grass Material Shader With Depth&Add Passes" version of the shader.
+ -The comments below only apply to this version of the shader.
+ -This functionality is somewhat experimental and may have issues.
+ -Something that MUST be understood is that for each LOD chunk affected by additional lights (not the main direct light) that chunk will be rendered again to render that additional lighting
+ -This can be pretty taxing on perforamnce if you have a lot of lights or the lights affect a large area.
+ -So in short, if you can get away without needing grass affected by extra lights, you should.
+ -And if you have to have grass affected by extra lights then try to be as minimal as possible about it.
+ -If you want to have grass affected by extra lights but dont need to receive or cast shadows, then you could duplicate the shader file and comment out the shadowcaster/depth pass to maybe save a little performance.
+ -It is known that for some reason in older versions of unity, instanced meshes are not affected properly by extra lights.
+ -In my tests it doesn't work on 2017.1, I've read that this issue was fixed by 2017.3 but I have not confirmed it.
+ 
+ -However, if you're using deferred rendering, a deferred version of the shader is available that takes advantage of all the benefits of deferred rendering.
+ -All lights are supported and shaded using the deferred lighting shader built in to Unity.
+ -This is much more efficient than the way lighting works in forward rendering.
+ -An extra depth pass is also no longer needed in deferred rendering.
+ -So in short, deferred rendering is much more efficient to render Grassflow.
+ -But this comes at the downside of not being able to have transparent grass, dithering must be used to fade grass out at a distance.
+ -Also MSAA does not work on deferred rendering.
+ 
+ 
+5.d --- BURST ---
+ 
+ -GrassFlow offers a BURST mode, this currently only does one thing, which enables BURST support for LOD chunk culling.
+ -This basically speeds up the calculation of determining if a chunk is close enough to be rendered and how many instances to draw for that chunk.
+ -In my testing, the worst case scenario for this was that it didn't hurt or help performance on small scale scenes.
+ -In the best case scenario in a scene that had a huge number of chunks, I saw a 15x speedup taking it from almost unplayable to very respectable.
+ -Do note however that I have a more high end CPU so your results with burst may vary.
+ -Let me know if something is off if you try out this feature.
+ 
+ -Now that you have read the above, to enable BURST, right click the top of the GrassFlow Renderer component (where the name of the component is) and toggle the BURST option
+ -NOTE: In at least Unity 2019 it *should* be able to automatically import the required packages (listed below)
+ -Then give it a hot minute to recompile scripts, you'll know it's on when the message at the top shows up telling you it is enabled.
+ 
+ -NOTE: Burst support requires these packages
+    -Burst
+    -Mathematics
+    -Collections (might be a preview package)
+	 
+ -IMPORTANT: These packages are only available on a suitably new version of Unity
+ -In my tests anything above 2018.3 should work
+ 
+5.e --- Misc ---
+ -Should be noted that GrassFlow grass is procedurally generated on GPU based on a consistent RNG seed.
+ -Because of this, it is not treated the same as normal mesh and may not be treated correctly in certain situations.
+ 
+ -Painting density to make no grass render in a certain spot is NOT as efficient as actually not rendering any grass there.
+ -This is because the GPU still has to do some calculations to even get to the point to reject the blade of grass, not to mention other rendering overhead.
+ -It still has a sizeable performance boost for not rendering large portions of grass this way but it's mostly for aesthetic use only.
+ -IMPORTANT: For mesh based use, you can use the "Bake Density to Mesh" button to create a version of the base mesh that only has triangles where you have painted grass density.
+ -You could further improve efficiency by creating your own custom mesh that only has triangles where you want grass, and use regional triangle density of that mesh to control grass density.
+ -You can also use discardEmptyChunks ONLY in terrain mode to potentially optimize terrain better. See more in the section on performance.
+ 
+ -While it may not seem obvious at first, grass bladeHeight (and other settings that increase grass size) can have a very sizeable performance impact depending on the circumstances.
+ -This is simply because there are more pixels to shade the larger the grass blades are.
+ -I've simplified the pixel shading code as much as I can but there are still a few unavoidable things that need to be done there.
+
+ -If youre using any kind of transparent cutout style texture, it may be more performant to set the render queue on the material to Transparent.
+ -The reverse is true for opaque textures and rendering individual grass blades, but to a much lesser degree.
+ -HOWEVER: Please note that objects in the transparent section of the render queue CANNOT receive shadows.
+ -Also on the note of transparent cutout textures, counterintuitively, clipping more pixels actually is MORE costly to performance. So you should set AlphaClip as low as is reasonable and design textures that take advantage of most of the space.
+ 
+ -The Better Transparency option can be very costly when using a texture with a lot of transparent pixels.
+ -Any sort of transparency is costly, and more so with this option on, including the LOD fading.
+ -However because the LOD fade usually only affects a small amount of grass at the edge of the LOD distance, this impact isn't much.
+ 
+ -Indirect instancing is weird. In my tests it performs a bit worse but I cant tell why. The profiler doesn't tell me anything useful, it just says all the time is spent on Gfx.waitforpresent
+ -I tested performance in actual builds as well and it was consistent as with editor results.
+ -What's weird is that the render thread times go down a bunch with indirect instancing on but something on the CPU side makes it perform worse.
+ -If you know anything about this, I would love to know.
+ 
+ 
+ 
+----- 6. Troubleshooting And You -----
+
+Hopefully most of the time if something goes wrong it can be fixed by simply refreshing.
+
+There are various "IMORTANT"s and "NOTE"s around the documentation as well that can be worth looking at.
+
+Grass not properly attached to terrain?
+Well, try refreshing the component, the grass needs to be updated if you move the terrainTransform.
+If using terrain mode, unity lets you rotate/scale the terrain transform even though it doesnt actually affect the terrain, but this will affect GrassFlow,
+So make sure the terrainTransform doesn't get rotated/scaled when it's not supposed to.
+If none of that works then thats kind of weird, email me and hopefully we can figure that out.
+
+Can't see any grass?
+Well there could be a few reasons for this.
+Firstly I'll put this here again: if using mesh mode, it's important the import scale is such that the scale in the editor is 1,1,1
+The scale of the transform effects the scale of the grassblades, so if your mesh imports with a small scale and you scale the transform up by like say, 8000...
+You're going to have a bad time.
+Secondly it's possible your LOD settings are bad, make sure LodParams.X is high enough and that LodParams.Y and Z are set to something that makes sense as well.
+Your instanceCount could also be too low, make sure it is at least 1 but preferably more than that.
+Make sure maxRenderDist is set high enough as well.
+All else fails make sure you try refreshing, some things don't update unless you refresh or it could be stuck and just need a reset.
+
+Map painting isn't working?
+Map painting requires a collider to raycast against to get coordinates to paint at. So either add a mesh collider to your mesh or for a terrain, the terrain collider works fine.
+Make sure you have actually assigned textures in their slots, or used the texture creator to create a base to edit from (accessed by clicking the + button by the texture slots)
+This is required because changes are saved back to the textures themselves.
+Textures should be in .PNG format, if you want to be able to save them anyway.
+
+
+Feel free to contact me with questions or issues.
+
+
+
+----- 7. Material Property Info -----
+
+The Unity material inspector doesn't easily let you add tooltips so I'll discuss some more confusing settings here.
+
+bladeSharp - Controls sharpness of grass blades, 0 is perfect point, 1 is rectangular
+seekSun - Controls how much the grass aligns to the surface normal. 0 aligns all the way, 1 points up.
+variances - these four values control how randomized the grass is in certain ways. The values are: X = Position, Y = Height, Z = Color, W = Width
+
+AO - Controls how dark the bottom of the grass blades are, 0 is darker, 1 is no darkness. 
+Ambient - Controls how dark the shading can be.
+Shadow Ambient - On top of the light source shadow strength setting, this allows you to further tune received shadow strength.
+Edge On Light - Controls strength of added brightness when the light direction is edge on to the grass blades.
+Edge On Light Sharpness - Controls sharpness of the added edge on light brightness.
+
+Alpha To Mask - If enabled, AlphaToMask is turned on in the shader. And the performance of this is quite complicated.
+Sometimes grass looks better with it enabled and sometimes it doesn't.
+The general rule is that if you can get away without this, then you should. But there are some situations where it barely impacts performance and looks a lot better.
+This option barely has any performance impact only if youre rendering grass without a transparent texture (like as in small individual grass blades), in which case it only serves to improve the look of grass as it fades out.
+
+widthLODscale - Controls how the width of blades grows as distance from camera increases. This helps less grass cover the same area while not being very noticeable.
+grassFade - distance the grass visually fades at. NOTE: This does NOT control lod settings, those must be set separately from the GrassFlow component, this setting is visual only.
+grassFadeSharpness - Sharpness of the grass fade.
+
+windTint - Color the grass is tinted when the wind affects them strongly, alpha controls strength.
+These next parameters are for wind and probably will take some playing around with to fully understand, but the default settings look pretty good.
+Noise Scale - Scale of the noise sampling for wind, Sort of controls wind gust size.
+Noise Speed - How fast the noise scrolls accross the grass to change wind patterns. Sort of acts like wind speed but you'll need to adjust wind strength to match.
+Wind Direction - Direction the wind blows, the size of these values determines strength essentially.
+Secondary Wind Direction - Same as wind direction but controls secondary wind direction, helps give more variety to the wind instead of always being blown in one direction.
+
+Enable Alpha Clip - Enables the use of AlphaClip. This should be enabled only if you are using a cutout texture.
+Grass that doesnt need alpha clip should leave this off as it will be more performant.
+This setting is not technically needed if you are not rendering depth/casting/receiving shadows AND have the Alpha To Mask setting enabled.
+NOTE: If youre using any kind of transparent cutout style texture, it may be more performant to set the render queue on the material to AlphaTest, this is the default queue setting.
+The reverse is true for opaque textures and rendering individual grass blades, but to a much lesser degree.
+Based on my quick results anyway, take with a grain of salt.
+
+Alpha Clip - Only matters when using Semi Transparent Texture.
+Number of Textures - Should be 1 unless using a texture atlas style texture for grass cutouts, if you are, set it to the number of textures in the atlas. (only supports horizontal atlasing, textures are picked at random for the time being)
+
+Enable Bending - Adds extra segments to each grass blade, allowing it to bend either from the wind, or from curvature.
+The minimum and maximum number of segments can be changed by adjusting the number at the top of the GrassFlow/Shaders/GrassStructsVars.cginc file.
+Based on the LOD settings the number of grass segments is reduced over distance.
+
+Bending Curvature - How much natural bend the grass has.
+Bending Droop - Sort've pulls the grass down towards the surface.
+Bending Stiffness - Controls how much the grass bends in response to wind/ripples.
+
+
+----- 8. SRP-URP/HDRP -----
+
+Newly added is experimental URP support.
+It IS experimental so something may go terribly wrong. But do notify me if it does.
+Unfortunately theres no HDRP support at this time because HDRP is completely different.
+And there are no good resources available on how to implement lighting on HDRP. Unity doesn't seem to care about writing shaders anymore, it's all about *graphs* now.
+If you know of a good simple HDRP template resource, let me know. Shoutout to phi-lira for the nice URP template https://gist.github.com/phi-lira/225cd7c5e8545be602dca4eb5ed111ba
+Why we have to rely on the community to figure this out......... Anyway:
+
+IMPORTANT: You MUST go into the GrassFlow/URP folder and extract the .UnityPackage into your project.
+This is annoying but I'm not sure of a better way to do this, bc on non URP projects the files would just import as an error.
+
+IMPORTANT V2: To enable URP in GrassFlow you'll need to right click the GrassFlowRenderer component to open the context menu
+and click the enable URP support option, and give Unity a hot sec to reload everything.
+
+IMPORTANT v3: Then you'll need to make sure to use the URP version of the GrassFlow shader for your grass material.
+There's a URP example scene already set up with this ready to go.
+
+Also important, the URP version of the shader has an additional material setting for shading additional light sources per-pixel.
+This is everything except the main directional light. So any additional point/spot light etc.
+It may or may not look better to enable this, depending on style and preferences.
+BUT it is SIGNIFICANTLY more expensive to enable this.
+The only situation where it seriously affects things is when you have an additional light that also casts shadows.
+In this case, when per-pixel shading is DISABLED, lighting/shadows are only calculated once per blade, at the top, which is obviously not accurate, but may be good enough for you.
+
+
+
+
+----- 9. Notes -----
+
+Just some other random things worth mentioning:
+
+You should already know this but GrassFlow relies on modern desktop only features.
+Requiring at least shadermodel 4.0, And ripples I think require shadermodel 5.0 to work properly
+Even if this could run on mobile or whatever, it wouldn't run well because mobile GPUs don't handle heavy vertex shader use very well I dont think, or really any heavy shader use I guess.
+Though I'm curious about Apple's Metal GPUs, they might handle it better but I'm not sure if GrassFlow would run on Metal so don't hold your breath.
+
+GrassFlow was designed as a highly interactive high density grass simulation shader, but it's also pretty versatile.
+You can use it to render more traditional grass textures in a less dense way and if done right it can look good.
+Not saying i recommend that as there are probably more efficient ways to do that.
+
+I've worked pretty hard on this script to try and make it fairly robust. A lot of work went into optimization.
+As always there's still bound to be sneaky bugs and room for improvement, feel free to message me with suggestions/requests/bug reports.
+If you like it though, it would be great if you could leave a review!
+
+
+
+Hopefully all the settings have good tooltips and the script does everything you need.
+If not, feel free to send me a message at boltsoft@gmail.com
+
+
+
+
+
+

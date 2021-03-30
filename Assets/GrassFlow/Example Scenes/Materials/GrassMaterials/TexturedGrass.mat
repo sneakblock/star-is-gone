@@ -1,0 +1,143 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: TexturedGrass
+  m_Shader: {fileID: 4800000, guid: 670f904d8dba2d64da2a16b58b02b5e0, type: 3}
+  m_ShaderKeywords: BILLBOARD GRASS_EDITOR RENDERMODE_TERRAIN SEMI_TRANSPARENT UNITY_EDITOR
+    _RENDERMODE_TERRAIN _USE_MESH
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 1
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: 2450
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _BumpMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailAlbedoMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailMask:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _DetailNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _EmissionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 2800000, guid: d6b25e9a7a30d1a44a78e63af81228b5, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MetallicGlossMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _NoiseTex:
+        m_Texture: {fileID: 8400000, guid: dea7f088858bd2a449abec833e9032d0, type: 2}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _OcclusionMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _ParallaxMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - colorMap:
+        m_Texture: {fileID: 2800000, guid: 93637f1cd5963f240a3569f3f99be2f9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - dhfParamMap:
+        m_Texture: {fileID: 2800000, guid: 6ad529de9ae702548b0c67e4939a00d8, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - terrainNormalMap:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - typeMap:
+        m_Texture: {fileID: 2800000, guid: 7e339abe88c3f4f4896f65ba072409c3, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - Rendermode: 0
+    - _ALPHA_TO_MASK: 0
+    - _AO: -0.1
+    - _BILLBOARD: 1
+    - _BumpScale: 1
+    - _CollapseEnd: 0
+    - _CollapseStart: 0
+    - _Cutoff: 0.5
+    - _DetailNormalMapScale: 1
+    - _DstBlend: 89.73
+    - _GlossMapScale: 1
+    - _Glossiness: 0.5
+    - _GlossyReflections: 1
+    - _MULTI_SEGMENT: 0
+    - _Metallic: 0
+    - _Mode: 0
+    - _OcclusionStrength: 1
+    - _Parallax: 0.02
+    - _Rendermode: 0
+    - _SEMI_TRANSPARENT: 1
+    - _SmoothnessTextureChannel: 0
+    - _SpecularHighlights: 1
+    - _SrcBlend: 16.02
+    - _USE: 0
+    - _UVSec: 0
+    - _Use: 1
+    - _ZWrite: 1
+    - alphaClip: 0.5
+    - ambientCO: 0.5
+    - ambientCOShadow: 0.5
+    - bladeHeight: 30
+    - bladeLateralCurve: 0
+    - bladeSharp: 1
+    - bladeStiffness: 0
+    - bladeVerticalCurve: 0
+    - bladeWidth: 0.75
+    - cellSize: 0.03
+    - edgeLight: 0.5
+    - edgeLightSharp: 8
+    - falloff: 0.45
+    - flatnessMult: 1.25
+    - grassFade: 180
+    - grassFadeSharpness: 8
+    - noiseScale: 0.08
+    - noiseSpeed: 2
+    - numTextures: 5
+    - seekSun: 0.7
+    - topViewPush: 0.5
+    - variance: 0.3
+    - widthLODscale: 0.01
+    m_Colors:
+    - _Color: {r: 6.964404, g: 6.964404, b: 6.964404, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _LOD: {r: 15, g: 1.1, b: 0, a: 0}
+    - _noiseScale: {r: 1, g: 1, b: 0.7, a: 0}
+    - _noiseSpeed: {r: 1.5, g: 1, b: 0.35, a: 0}
+    - noiseScale: {r: 1, g: 1, b: 0.5, a: 0}
+    - terrainChunkSize: {r: 200, g: 200, b: 0, a: 0}
+    - terrainSize: {r: 1000, g: 600, b: 1000, a: 0}
+    - variance: {r: 0.3, g: 0.8, b: 0.5, a: 0.65}
+    - windDir: {r: -0.7, g: -0.6, b: 0.1, a: 0}
+    - windDir2: {r: 0.5, g: 0.5, b: 1.2, a: 1}
+    - windTint: {r: 1, g: 1, b: 0.9251731, a: 0.1}
+  m_BuildTextureStacks: []

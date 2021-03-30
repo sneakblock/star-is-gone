@@ -1,0 +1,56 @@
+fileFormatVersion: 2
+guid: bccf04fc65a7eba49a8e9a3ddbcaacb2
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: 94073015eacc34c1d8fc6786e43d60ca, type: 3}
+  baseLanguageID: en-US
+  stringIDs:
+  - bfconvo-bfconvo-0
+  - bfconvo-bfconvo-1
+  - bfconvo-bfconvo-2
+  - bfconvo-bfconvo-3
+  - bfconvo-bfconvo-4
+  - bfconvo-bfconvo-5
+  - bfconvo-bfconvo-6
+  - bfconvo-bfconvo-7
+  - bfconvo-bfconvo-8
+  - bfconvo-bfconvo-9
+  - bfconvo-bfconvo-10
+  - bfconvo-bfconvo-11
+  - bfconvo-bfconvo-12
+  - bfconvo-bfconvo-13
+  - bfconvo-bfconvo-14
+  - bfconvo-bfconvo-15
+  - bfconvo-bfconvo-16
+  - bfconvo-bfconvo-17
+  - bfconvo-bfconvo-18
+  - bfconvo-bfconvo-19
+  - bfconvo-bfconvo-20
+  - bfconvo-bfconvo-21
+  - bfconvo-bfconvo-22
+  - bfconvo-bfconvo-23
+  - bfconvo-bfconvo-24
+  - bfconvo-bfconvo-25
+  - bfconvo-bfconvo-26
+  - bfconvo-bfconvo-27
+  - bfconvo-bfconvo-28
+  - bfconvo-bfconvo-29
+  - bfconvo-bfconvo-30
+  - bfconvo-bfconvo-31
+  - bfconvo-bfconvo-32
+  - bfconvo-bfconvo-33
+  - bfconvo-bfconvo-34
+  - bfconvo-bfconvo-35
+  - bfconvo-bfconvo-36
+  - bfconvo-bfconvo-37
+  - bfconvo-bfconvo-38
+  compilationStatus: 1
+  isSuccesfullyCompiled: 1
+  compilationErrorMessage: 
+  baseLanguage: {fileID: 7128917941130120860, guid: bccf04fc65a7eba49a8e9a3ddbcaacb2, type: 3}
+  localizations: []

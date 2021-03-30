@@ -1,0 +1,76 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &624195648572761776
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 624195648572761782}
+  - component: {fileID: 624195648572761777}
+  m_Layer: 0
+  m_Name: Grassflow Terrain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &624195648572761782
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624195648572761776}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.3, y: 10.62, z: 0.61}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &624195648572761777
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 624195648572761776}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10df6ca5ce6def6488908b919007a2c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _instanceCount: 25
+  receiveShadows: 1
+  _castShadows: 0
+  shadowMode: 0
+  updateBuffers: 1
+  useManualCulling: 0
+  _enableMapPainting: 1
+  colorMap: {fileID: 2800000, guid: 3589c6084e8073645b91c25a67e02497, type: 3}
+  paramMap: {fileID: 2800000, guid: 124d620ea74b6054b8ef1cc513c36fd5, type: 3}
+  typeMap: {fileID: 0}
+  useMaterialInstance: 0
+  grassMaterial: {fileID: 2100000, guid: def3a78cf7f75bf48bf609ceed96b3a4, type: 2}
+  renderLayer: 0
+  renderType: 0
+  terrainExpansion: 0.35
+  useTerrainNormalMap: 1
+  terrainTransform: {fileID: 0}
+  terrainObject: {fileID: 0}
+  grassMesh: {fileID: 4300002, guid: f7483bc44cc560f4b9f9811d95b069e8, type: 3}
+  grassPerTri: 1200
+  useIndirectInstancing: 0
+  visualizeChunkBounds: 0
+  discardEmptyChunks: 0
+  _lodParams: {x: 30, y: 2, z: -0.005}
+  maxRenderDistSqr: 28900
+  _maxRenderDist: 170
+  chunksX: 10
+  chunksY: 1
+  chunksZ: 10
+  numGrassAtlasTexes: 1
+  drawMat: {fileID: 2100000, guid: def3a78cf7f75bf48bf609ceed96b3a4, type: 2}

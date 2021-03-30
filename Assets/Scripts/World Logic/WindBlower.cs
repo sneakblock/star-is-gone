@@ -14,13 +14,10 @@ public class WindBlower : MonoBehaviour
     void Start()
     {
         windObjects = GameObject.FindGameObjectsWithTag("windable");
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         InvokeRepeating("ApplyWindForce", 0, secondsRepeating);
     }
+
+    
 
     void ApplyWindForce()
     {
