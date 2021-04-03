@@ -21,6 +21,7 @@ public class DialsUI : MonoBehaviour
     [SerializeField] Button channel10;
     [SerializeField] Button exit;
     [SerializeField] Canvas canvas;
+    [SerializeField] GameObject knob;
     public VideoRenderer vid;
     public bool hasBeenTriggered = false;
     public int chan = 0;
@@ -62,6 +63,7 @@ public class DialsUI : MonoBehaviour
         Debug.Log("Off");
         Quaternion r = Quaternion.AngleAxis(defaultAngle, Vector3.forward);
         handle.rotation = r;
+        knob.transform.rotation = Quaternion.Euler(0, 0, 90);
         vid.currChannel = 0;
     }
     public void OnChannel1()
@@ -70,6 +72,7 @@ public class DialsUI : MonoBehaviour
         Debug.Log("Channel 1");
         Quaternion r = Quaternion.AngleAxis(defaultAngle - 27, Vector3.forward);
         handle.rotation = r;
+        knob.transform.rotation = Quaternion.Euler(-360 / 11, 0, 90);
         vid.currChannel = 1;
     }
     public void OnChannel2()
@@ -78,6 +81,7 @@ public class DialsUI : MonoBehaviour
         Debug.Log("Channel 2");
         Quaternion r = Quaternion.AngleAxis(defaultAngle - 54, Vector3.forward);
         handle.rotation = r;
+        knob.transform.rotation = Quaternion.Euler(-(2 * 360) / 11, 0, 90);
         vid.currChannel = 2;
     }
     public void OnChannel3()
@@ -86,6 +90,7 @@ public class DialsUI : MonoBehaviour
         Debug.Log("Channel 3");
         Quaternion r = Quaternion.AngleAxis(defaultAngle - 81, Vector3.forward);
         handle.rotation = r;
+        knob.transform.rotation = Quaternion.Euler(-(3 * 360) / 11, 0, 90);
         vid.currChannel = 3;
     }
     public void OnChannel4()
@@ -94,6 +99,7 @@ public class DialsUI : MonoBehaviour
         Debug.Log("Channel 4");
         Quaternion r = Quaternion.AngleAxis(defaultAngle - 108, Vector3.forward);
         handle.rotation = r;
+        knob.transform.rotation = Quaternion.Euler(-(4 * 360) / 11, 0, 90);
         vid.currChannel = 4;
     }
     public void OnChannel5()
@@ -102,6 +108,7 @@ public class DialsUI : MonoBehaviour
         Debug.Log("Channel 5");
         Quaternion r = Quaternion.AngleAxis(defaultAngle - 135, Vector3.forward);
         handle.rotation = r;
+        knob.transform.rotation = Quaternion.Euler(-(5 * 360) / 11, 0, 90);
         vid.currChannel = 5;
     }
     public void OnChannel6()
@@ -110,6 +117,7 @@ public class DialsUI : MonoBehaviour
         Debug.Log("Channel 6");
         Quaternion r = Quaternion.AngleAxis(defaultAngle - 162, Vector3.forward);
         handle.rotation = r;
+        knob.transform.rotation = Quaternion.Euler(-(6 * 360) / 11, 0, 90);
         vid.currChannel = 6;
     }
     public void OnChannel7()
@@ -118,6 +126,7 @@ public class DialsUI : MonoBehaviour
         Debug.Log("Channel 7");
         Quaternion r = Quaternion.AngleAxis(defaultAngle - 189, Vector3.forward);
         handle.rotation = r;
+        knob.transform.rotation = Quaternion.Euler(-(7 * 360) / 11, 0, 90);
         vid.currChannel = 7;
     }
     public void OnChannel8()
@@ -126,6 +135,7 @@ public class DialsUI : MonoBehaviour
         Debug.Log("Channel 8");
         Quaternion r = Quaternion.AngleAxis(defaultAngle - 216, Vector3.forward);
         handle.rotation = r;
+        knob.transform.rotation = Quaternion.Euler(-(8 * 360) / 11, 0, 90);
         vid.currChannel = 8;
     }
     public void OnChannel9()
@@ -134,6 +144,7 @@ public class DialsUI : MonoBehaviour
         Debug.Log("Channel 9");
         Quaternion r = Quaternion.AngleAxis(defaultAngle - 243, Vector3.forward);
         handle.rotation = r;
+        knob.transform.rotation = Quaternion.Euler(-(9 * 360) / 11, 0, 90);
         vid.currChannel = 9;
     }
     public void OnChannel10()
@@ -142,6 +153,7 @@ public class DialsUI : MonoBehaviour
         Debug.Log("Channel 10");
         Quaternion r = Quaternion.AngleAxis(defaultAngle - 270, Vector3.forward);
         handle.rotation = r;
+        knob.transform.rotation = Quaternion.Euler(-(10 * 360) / 11, 0, 90);
         vid.currChannel = 10;
     }
 }
