@@ -3,7 +3,22 @@ guid: 2d4bd99b9ba1da241a45e7dd6b3df13b
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GlowingEyes
+    second: {fileID: 2100000, guid: 79b8389441a31f8468d9b53b578b3ae5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Shadow
+    second: {fileID: 2100000, guid: 80f3b6cca8cc97d45b1fc2646c50a01f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spatula
+    second: {fileID: 2100000, guid: 783655b28118e7d428d7385d646bb019, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0
