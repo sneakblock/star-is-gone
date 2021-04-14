@@ -1699,6 +1699,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.019847913
       objectReference: {fileID: 0}
+    - target: {fileID: -2441429801773043610, guid: 263b8b682ffe0c447a701214f309b64f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 340cebac519dbbe4d924ef78c3a42e08, type: 2}
     - target: {fileID: 919132149155446097, guid: 263b8b682ffe0c447a701214f309b64f, type: 3}
       propertyPath: m_Name
       value: grilll_top_ovens (3)
@@ -2380,6 +2384,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 30.728506
       objectReference: {fileID: 0}
+    - target: {fileID: -3855335175272487014, guid: a610a6d4376ba1846861a3c7099c3812, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 340cebac519dbbe4d924ef78c3a42e08, type: 2}
     - target: {fileID: 919132149155446097, guid: a610a6d4376ba1846861a3c7099c3812, type: 3}
       propertyPath: m_Name
       value: shalve v1
@@ -3362,6 +3370,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.019847913
       objectReference: {fileID: 0}
+    - target: {fileID: -2441429801773043610, guid: 263b8b682ffe0c447a701214f309b64f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 340cebac519dbbe4d924ef78c3a42e08, type: 2}
     - target: {fileID: 919132149155446097, guid: 263b8b682ffe0c447a701214f309b64f, type: 3}
       propertyPath: m_Name
       value: grilll_top_ovens (1)
@@ -3771,6 +3783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchen_sink
       objectReference: {fileID: 0}
+    - target: {fileID: 7894850946704846058, guid: 9ca7d9ed89c4e7e49a3fb0c47d6d8b21, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 340cebac519dbbe4d924ef78c3a42e08, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ca7d9ed89c4e7e49a3fb0c47d6d8b21, type: 3}
 --- !u!4 &484353773 stripped
@@ -5840,6 +5856,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.019847913
       objectReference: {fileID: 0}
+    - target: {fileID: -2441429801773043610, guid: 263b8b682ffe0c447a701214f309b64f, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 340cebac519dbbe4d924ef78c3a42e08, type: 2}
     - target: {fileID: 919132149155446097, guid: 263b8b682ffe0c447a701214f309b64f, type: 3}
       propertyPath: m_Name
       value: grilll_top_ovens (2)
@@ -7774,6 +7794,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: kitchen_sink (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7894850946704846058, guid: 9ca7d9ed89c4e7e49a3fb0c47d6d8b21, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 340cebac519dbbe4d924ef78c3a42e08, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9ca7d9ed89c4e7e49a3fb0c47d6d8b21, type: 3}
 --- !u!1 &1010263753 stripped
@@ -9582,6 +9606,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.4079746
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: da7bf75dd2fc5f4469945a1b9eaa7cd0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 340cebac519dbbe4d924ef78c3a42e08, type: 2}
     - target: {fileID: 919132149155446097, guid: da7bf75dd2fc5f4469945a1b9eaa7cd0, type: 3}
       propertyPath: m_Name
       value: kitchen_shelf_counter (1)
@@ -14373,6 +14401,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1.4079746
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: da7bf75dd2fc5f4469945a1b9eaa7cd0, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 340cebac519dbbe4d924ef78c3a42e08, type: 2}
     - target: {fileID: 919132149155446097, guid: da7bf75dd2fc5f4469945a1b9eaa7cd0, type: 3}
       propertyPath: m_Name
       value: kitchen_shelf_counter (2)
