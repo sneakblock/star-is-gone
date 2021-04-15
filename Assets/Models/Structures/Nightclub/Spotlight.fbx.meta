@@ -3,7 +3,12 @@ guid: 0d4c93779083c1b4489403d5686e7036
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spotlight
+    second: {fileID: 2100000, guid: 5d2d9a8933f6c634a820cc960a851289, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

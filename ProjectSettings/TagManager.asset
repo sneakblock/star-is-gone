@@ -38,6 +38,7 @@ TagManager:
   - handle
   - valTxt
   - exitButton
+  - flickerlights
   layers:
   - Default
   - TransparentFX
