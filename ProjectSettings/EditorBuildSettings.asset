@@ -5,12 +5,15 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Alpha Build/Levels/mountains/mountains.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Alpha Build/Levels/diner/diner.unity
     guid: e4e6c4bd66dc346438297cc7e9376514
+  - enabled: 1
+    path: Assets/Scenes/VGDev Build/Main Menu.unity
+    guid: a60618d3551db564c849ef4324551bbc
   - enabled: 1
     path: Assets/Scenes/VGDev Build/Overworld.unity
     guid: a2a0177d9c7b88349a9d7e061fa0fe3e
@@ -29,9 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VGDev Build/DinerTrue.unity
     guid: e889bc2de82e9264a93084fa85bd6045
-  - enabled: 1
-    path: Assets/Scenes/VGDev Build/Main Menu.unity
-    guid: a60618d3551db564c849ef4324551bbc
   - enabled: 1
     path: Assets/Scenes/VGDev Build/Nightclub.unity
     guid: 54e9216fbc924944d886e59b0462ee90
@@ -59,4 +59,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/VGDev Build/OverworldFromWarehouse.unity
     guid: a54378ade6e3430429e354486b6cdcdb
+  - enabled: 1
+    path: Assets/Scenes/VGDev Build/OverworldToPower.unity
+    guid: abbded45b224cc24ea2a25fd8ea58925
+  - enabled: 1
+    path: Assets/Scenes/VGDev Build/DinerTrueEnding.unity
+    guid: aeb9b64c22437544fb17de0ab4621019
+  - enabled: 1
+    path: Assets/Scenes/VGDev Build/End.unity
+    guid: c2e9642ad1385da4491b789325589003
   m_configObjects: {}

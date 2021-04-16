@@ -48,7 +48,7 @@ public class EffectsManager : MonoBehaviour
             angleToEnemy = Math.Abs(180f - angleToEnemy); 
 
             RaycastHit hit;
-            // Debug.DrawRay (camera.transform.position, dirToEnemy, Color.red, 0f, true);
+            Debug.DrawRay (camera.transform.position, dirToEnemy, Color.red, 0f, true);
             if(Physics.Raycast(camera.transform.position, dirToEnemy, out hit, 100f)) {
                 GameObject hitObject = hit.collider.gameObject;
                 if (hitObject == gameObject || hitObject.transform.IsChildOf(transform)) { // line of sight is not blocked

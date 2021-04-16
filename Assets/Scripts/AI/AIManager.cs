@@ -18,7 +18,7 @@ public class AIManager : MonoBehaviour {
     public GameObject camera;
 
     public int health = 100;
-    public float bigSize = 2;
+    //public float bigSize = 2;
     public float growthDuration = 3f;
     int growing = 0; // 0 = nothing, 1 = shrink, 2 = grow
     float growthTimer = 0f;
@@ -78,6 +78,7 @@ public class AIManager : MonoBehaviour {
         fov = baseFov;
         damage = baseDamage;
         moving = true;
+        touchingRange = baseTouchingRange;
     }
 
     // Update is called once per frame
@@ -212,7 +213,7 @@ public class AIManager : MonoBehaviour {
         UpdatePlayerInView();
         UpdatePlayerNear();
         UpdateTimeSincePlayerInView();
-        UpdateSize();
+        //UpdateSize();
 
         if (changesForm)
         {
@@ -282,7 +283,9 @@ public class AIManager : MonoBehaviour {
         playerNear = Vector3.Distance(gameObject.transform.position, player.transform.position) <= detectionRange;
     }
 
-    bool checkPlayerTouching() {
+    bool checkPlayerTouching()
+    {
+        Debug.Log((int)(Vector3.Distance(gameObject.transform.position, player.transform.position)));
         return Vector3.Distance(gameObject.transform.position, player.transform.position) <= touchingRange;
     }
 
@@ -314,6 +317,7 @@ public class AIManager : MonoBehaviour {
         lookAroundPoint = finalPosition;
     }
 
+    /*
     void UpdateSize() {
         float newScale;
         if (growing == 2) {
@@ -351,6 +355,7 @@ public class AIManager : MonoBehaviour {
             }
         }
     }
+    */
 
     public void TakeHit(int damage) {
         // subtract health, set taking hit trigger
