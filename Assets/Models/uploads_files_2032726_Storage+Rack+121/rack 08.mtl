@@ -1,0 +1,144 @@
+# 3ds Max Wavefront OBJ Exporter v0.97b - (c)2007 guruware
+# File Created: 09.07.2019 10:52:23
+
+newmtl rack
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.5880 0.5880 0.5880
+	Kd 0.3843 0.6000 0.7686
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka rack.jpg
+	map_Kd rack.jpg
+
+newmtl cbox01
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.3569 0.3569 0.3569
+	Kd 0.8157 0.6902 0.4745
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka cabx1.jpg
+	map_Kd cabx1.jpg
+
+newmtl woodpl
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.3569 0.3569 0.3569
+	Kd 0.7922 0.7451 0.5608
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka pald.jpg
+	map_Kd pald.jpg
+	map_bump palb.jpg
+	bump palb.jpg
+
+newmtl cbox02
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.3569 0.3569 0.3569
+	Kd 0.8157 0.6902 0.4745
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka cabx2.jpg
+	map_Kd cabx2.jpg
+
+newmtl cbox03
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.3569 0.3569 0.3569
+	Kd 0.8353 0.8275 0.8039
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka cabx3.jpg
+	map_Kd cabx3.jpg
+
+newmtl cbox04
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.3569 0.3569 0.3569
+	Kd 0.8157 0.6902 0.4745
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka cabx4.jpg
+	map_Kd cabx4.jpg
+
+newmtl cbox06
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.3569 0.3569 0.3569
+	Kd 0.8157 0.6902 0.4745
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka cabx7.jpg
+	map_Kd cabx7.jpg
+
+newmtl cbox05
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.3569 0.3569 0.3569
+	Kd 0.1804 0.1412 0.0196
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka cabx5.jpg
+	map_Kd cabx5.jpg
+
+newmtl cbox07
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.3569 0.3569 0.3569
+	Kd 0.8157 0.6902 0.4745
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka cabx6.jpg
+	map_Kd cabx6.jpg
+
+newmtl cbox08
+	Ns 10.0000
+	Ni 1.5000
+	d 1.0000
+	Tr 0.0000
+	Tf 1.0000 1.0000 1.0000 
+	illum 2
+	Ka 0.3569 0.3569 0.3569
+	Kd 0.8157 0.6902 0.4745
+	Ks 0.0000 0.0000 0.0000
+	Ke 0.0000 0.0000 0.0000
+	map_Ka cabx8.jpg
+	map_Kd cabx8.jpg
