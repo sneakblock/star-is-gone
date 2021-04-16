@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7709985226068483960}
   - component: {fileID: 2863362182853905249}
   - component: {fileID: 6570669752916586633}
+  - component: {fileID: 7334805512671145705}
   m_Layer: 0
   m_Name: supermarket_shelf-1B_LOD0
   m_TagString: Untagged
@@ -82,6 +83,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7334805512671145705
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3598667678878664998}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2949323638874347973, guid: 5ec147b39718d5941af34d8d0eb6ff7f, type: 3}
 --- !u!1 &7205182420161824172
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,6 +108,7 @@ GameObject:
   - component: {fileID: 3399075781578821562}
   - component: {fileID: 129470936903029585}
   - component: {fileID: 7099784901629054325}
+  - component: {fileID: 7969796349666247207}
   m_Layer: 0
   m_Name: supermarket_shelf-1B_LOD0
   m_TagString: Untagged
@@ -163,3 +179,17 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7969796349666247207
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7205182420161824172}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 2949323638874347973, guid: 5ec147b39718d5941af34d8d0eb6ff7f, type: 3}
