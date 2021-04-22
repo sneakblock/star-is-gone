@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using AmplifyShaderEditor;
+//using AmplifyShaderEditor;
 using Aura2API;
 using UnityEngine;
 using Yarn.Unity;

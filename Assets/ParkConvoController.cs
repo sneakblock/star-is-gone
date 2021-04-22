@@ -18,6 +18,7 @@ public class ParkConvoController : MonoBehaviour
     public GameObject enemy;
     public GameObject radio;
     private AudioSource radioAudioSource;
+    public AudioSource music;
     private bool wasTriggered = false;
     
     private void Awake()
@@ -57,11 +58,13 @@ public class ParkConvoController : MonoBehaviour
     {
         movement.enabled = false;
         anim.SetBool("sitting", true);
+        music.Pause();
         radioAudioSource.Play();
     }
 
     public void CompleteConvo()
     {
+        music.Play();
         anim.SetBool("sitting", false);
         movement.enabled = true;
         bfAnim.SetBool("stand", true);

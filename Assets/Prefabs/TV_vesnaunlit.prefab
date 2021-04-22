@@ -1,0 +1,111 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7054412024311361842
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7686974895353424776}
+  m_Layer: 0
+  m_Name: TV_vesnaunlit
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7686974895353424776
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7054412024311361842}
+  m_LocalRotation: {x: -0, y: -0.7919359, z: -0, w: 0.6106042}
+  m_LocalPosition: {x: 574.823, y: 4.502694, z: 399.528}
+  m_LocalScale: {x: 0.56285, y: 0.56285, z: 0.56285}
+  m_Children:
+  - {fileID: 137161844162260467}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: -104.734, z: 0}
+--- !u!1001 &463292989880011288
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7686974895353424776}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.27
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.24
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.19
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.026644673
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.999645
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -3.054
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.0010304
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.0010306
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.0010304
+      objectReference: {fileID: 0}
+    - target: {fileID: -1526509560930016547, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -1242230322862417841, guid: a4275de4a294a1f48bfc7a0438417e04, type: 3}
+    - target: {fileID: 919132149155446097, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+      propertyPath: m_Name
+      value: TV_vesna
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+--- !u!4 &137161844162260467 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: c0309cf140d125648b4d51e227693c20, type: 3}
+  m_PrefabInstance: {fileID: 463292989880011288}
+  m_PrefabAsset: {fileID: 0}

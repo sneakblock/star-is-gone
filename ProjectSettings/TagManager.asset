@@ -38,6 +38,10 @@ TagManager:
   - handle
   - valTxt
   - exitButton
+  - flickerlights
+  - channelA
+  - channelB
+  - channelC
   layers:
   - Default
   - TransparentFX

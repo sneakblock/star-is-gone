@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class SceneLoader : MonoBehaviour
 {
-    private Animator anim;
+    public Animator anim;
     // Start is called before the first frame update
     void Start()
     {
-        anim = GameObject.FindWithTag("faderToBlack").GetComponent<Animator>();
+        //anim = GameObject.FindWithTag("faderToBlack").GetComponent<Animator>();
     }
 
     // Update is called once per frame
